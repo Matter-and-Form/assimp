@@ -67,6 +67,8 @@ ObjFileParser::ObjFileParser()
     // empty
 }
 
+// -------------------------------------------------------------------
+//  Constructor with loaded data and directories.
 ObjFileParser::ObjFileParser( IOStreamBuffer<char> &streamBuffer, const std::string &modelName,
                               IOSystem *io, ProgressHandler* progress,
                               const std::string &originalObjFileName) :
@@ -83,10 +85,6 @@ ObjFileParser::ObjFileParser( IOStreamBuffer<char> &streamBuffer, const std::str
     // Create the model instance to store all the data
     m_pModel.reset(new ObjFile::Model());
     m_pModel->m_ModelName = modelName;
-
-    // create default material and store it
-    m_pModel->m_pDefaultMaterial = new ObjFile::Material;
-    m_pModel->m_pDefaultMaterial->MaterialName.Set( DEFAULT_MATERIAL );
 
     // Start parsing the file
     parseFile( streamBuffer );
