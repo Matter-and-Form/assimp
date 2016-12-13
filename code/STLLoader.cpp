@@ -470,6 +470,7 @@ void STLImporter::LoadBinaryFile()
 
                 ASSIMP_LOG_INFO("STL: Mesh has vertex colors");
             }
+
             aiColor4D* clr = &pMesh->mColors[0][i*3];
             clr->a = 1.0;
             const ai_real invVal( (ai_real)1.0 / ( ai_real )31.0 );
