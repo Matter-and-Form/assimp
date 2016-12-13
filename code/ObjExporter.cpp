@@ -75,7 +75,8 @@ void ExportSceneObj(const char* pFile,IOSystem* pIOSystem, const aiScene* pScene
         }
         outfile->Write( exporter.mOutput.str().c_str(), static_cast<size_t>(exporter.mOutput.tellp()),1);
     }
-    {
+
+    if (pScene->mNumMaterials > 0) {
         std::unique_ptr<IOStream> outfile (pIOSystem->Open(exporter.GetMaterialLibFileName(),"wt"));
         if(outfile == NULL) {
             throw DeadlyExportError("could not open output .mtl file: " + std::string(exporter.GetMaterialLibFileName()));
@@ -173,12 +174,12 @@ void ObjExporter::WriteHeader(std::ostringstream& out) {
 
 // ------------------------------------------------------------------------------------------------
 std::string ObjExporter::GetMaterialName(unsigned int index) {
-    const aiMaterial* const mat = pScene->mMaterials[index];
-    if ( nullptr == mat ) {
+    if (index >= pScene->mNumMaterials) {
         static const std::string EmptyStr;
         return EmptyStr;
     }
 
+    const aiMaterial* const mat = pScene->mMaterials[index];
     aiString s;
     if(AI_SUCCESS == mat->Get(AI_MATKEY_NAME,s)) {
         return std::string(s.data,s.length);
@@ -191,6 +192,11 @@ std::string ObjExporter::GetMaterialName(unsigned int index) {
 
 // ------------------------------------------------------------------------------------------------
 void ObjExporter::WriteMaterialFile() {
+
+    if (pScene->mNumMaterials == 0) {
+        return;
+    }
+
     WriteHeader(mOutputMat);
 
     for(unsigned int i = 0; i < pScene->mNumMaterials; ++i) {
@@ -259,8 +265,9 @@ void ObjExporter::WriteMaterialFile() {
 
 void ObjExporter::WriteGeometryFile(bool noMtl) {
     WriteHeader(mOutput);
-    if (!noMtl)
+    if (!noMtl && pScene->mNumMaterials > 0) {
         mOutput << "mtllib "  << GetMaterialLibName() << endl << endl;
+    }
 
     // collect mesh geometry
     aiMatrix4x4 mBase;
@@ -303,7 +310,7 @@ void ObjExporter::WriteGeometryFile(bool noMtl) {
         if (!m.name.empty()) {
             mOutput << "g " << m.name << endl;
         }
-        if ( !noMtl ) {
+        if ( !noMtl && !m.matname.empty() ) {
             mOutput << "usemtl " << m.matname << endl;
         }
 
