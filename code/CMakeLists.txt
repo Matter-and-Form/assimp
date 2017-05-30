@@ -654,6 +654,18 @@ ADD_ASSIMP_IMPORTER( 3MF
     D3MFOpcPackage.cpp
 )
 
+ADD_ASSIMP_IMPORTER( STEP
+    STEPImporter.h
+    STEPImporter.cpp
+    STEPGeometry.cpp
+    STEPMaterial.cpp
+    STEPCurve.cpp
+    STEPUtil.h
+    STEPUtil.cpp
+    STEPReaderGen.cpp
+    STEPReaderGen.h
+)
+
 SET( Step_SRCS
   StepExporter.h
   StepExporter.cpp
