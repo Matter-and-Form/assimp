@@ -98,7 +98,7 @@ template_converter_prologue_a = '\tsize_t base = GenericFill(db,params,static_ca
 template_converter_prologue_b = '\tsize_t base = 0;\n'
 template_converter_check_argcnt = '\tif (params.GetSize() < {max_arg}) {{ throw STEP::TypeError("expected {max_arg} arguments to {name}"); }}'
 template_converter_code_per_field = r"""    do {{ // convert the '{fieldname}' argument
-        boost::shared_ptr<const DataType> arg = params[base++];{handle_unset}{convert}
+        std::shared_ptr<const DataType> arg = params[base++];{handle_unset}{convert}
     }} while(0);
 """
 template_allow_optional = r"""
@@ -153,7 +153,7 @@ def handle_unset_args(field,entity,schema,argnum):
 
 def get_single_conversion(field,schema,argnum=0,classname='?'):
     typen = field.type
-    name = field.name
+    name = cleaned_field_name(field.name)
     if field.collection:
         typen = 'LIST'
     return template_convert_single.format(type=typen,name=name,argnum=argnum,classname=classname,full_type=field.fullspec)
@@ -184,7 +184,7 @@ def gen_converter(entity,schema):
     max_arg = count_args_up(entity,schema)
     arg_idx = arg_idx_ofs = max_arg - len(entity.members)
     
-    code = template_converter_prologue_a.format(parent=entity.parent) if entity.parent else template_converter_prologue_b
+    code = template_converter_prologue_a.format(parent=cleaned_name(entity.parent)) if entity.parent else template_converter_prologue_b
     if entity.name in schema.blacklist_partial:
         return code+template_converter_omitted+template_converter_epilogue;
         
@@ -275,7 +275,7 @@ def work(filename):
 
     for ntype in schema.types.values():
         typedefs += gen_type_struct(ntype,schema)
-        schema_table.append(template_schema_type.format(normalized_name=cleaned_name(ntype.name)))
+        schema_table.append(template_schema_type.format(normalized_name=ntype.name))
 
     sorted_entities = sort_entity_list(schema)
     for entity in sorted_entities:
@@ -284,7 +284,7 @@ def work(filename):
         name = cleaned_name(entity.name)
         if entity.name in schema.whitelist:
             converters += template_converter.format(type=name,contents=gen_converter(entity,schema))
-            schema_table.append(template_schema.format(type=name,normalized_name=name,argcnt=len(entity.members)))
+            schema_table.append(template_schema.format(type=name,normalized_name=entity.name,argcnt=len(entity.members)))
             entities += template_entity.format(entity=name,argcnt=len(entity.members),parent=parent,fields=generate_fields(entity,schema))
             predefs += template_entity_predef.format(entity=name)
             stub_decls += template_stub_decl.format(type=name)

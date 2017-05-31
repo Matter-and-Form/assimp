@@ -274,8 +274,7 @@ void AssignAddedMeshes(std::vector<unsigned int>& mesh_indices,aiNode* nd,Conver
 void ProcessSweptAreaSolid(const STEPSwept_Area_Solid& swept, TempMesh& meshout,
                            ConversionData& conv);
 
-void ProcessExtrudedAreaSolid(const STEPExtruded_Area_Solid& solid, TempMesh& result,
-                              ConversionData& conv, bool collect_openings);
+void ProcessExtrudedAreaSolid(const STEPExtruded_Area_Solid& solid, TempMesh& result);
 
 // STEPBoolean.cpp
 

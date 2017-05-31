@@ -563,15 +563,15 @@ namespace STEP {
 	typedef NotImplemented STEPAction_Request_Status; // (not currently used by Assimp)
 	typedef NotImplemented STEPAction_Status; // (not currently used by Assimp)
 	typedef NotImplemented STEPAddress; // (not currently used by Assimp)
-	typedef NotImplemented STEPRepresentation; // (not currently used by Assimp)
-	typedef NotImplemented STEPShape_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPAdvanced_Brep_Shape_Representation; // (not currently used by Assimp)
+	struct STEPRepresentation;
+	struct STEPShape_Representation;
+	struct STEPAdvanced_Brep_Shape_Representation;
 	typedef NotImplemented STEPFace_Surface; // (not currently used by Assimp)
 	typedef NotImplemented STEPAdvanced_Face; // (not currently used by Assimp)
 	typedef NotImplemented STEPAlternate_Product_Relationship; // (not currently used by Assimp)
 	typedef NotImplemented STEPAmount_Of_Substance_Measure_With_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPNamed_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPAmount_Of_Substance_Unit; // (not currently used by Assimp)
+	struct STEPNamed_Unit;
+	struct STEPAmount_Of_Substance_Unit;
 	typedef NotImplemented STEPAngle_Direction_Reference; // (not currently used by Assimp)
 	struct STEPRepresentation_Item;
 	struct STEPGeometric_Representation_Item;
@@ -691,9 +691,9 @@ namespace STEP {
 	typedef NotImplemented STEPRule_Definition; // (not currently used by Assimp)
 	typedef NotImplemented STEPBack_Chaining_Rule; // (not currently used by Assimp)
 	typedef NotImplemented STEPBack_Chaining_Rule_Body; // (not currently used by Assimp)
-	typedef NotImplemented STEPColour; // (not currently used by Assimp)
+	struct STEPColour;
 	typedef NotImplemented STEPBackground_Colour; // (not currently used by Assimp)
-	typedef NotImplemented STEPBeveled_Sheet_Representation; // (not currently used by Assimp)
+	struct STEPBeveled_Sheet_Representation;
 	struct STEPBezier_Curve;
 	struct STEPBezier_Surface;
 	typedef NotImplemented STEPGeneric_Expression; // (not currently used by Assimp)
@@ -735,15 +735,15 @@ namespace STEP {
 	struct STEPCamera_Model_D3_Multi_Clipping_Union;
 	struct STEPCamera_Model_D3_With_Hlhsr;
 	struct STEPCamera_Model_With_Light_Sources;
-	typedef NotImplemented STEPRepresentation_Map; // (not currently used by Assimp)
-	typedef NotImplemented STEPCamera_Usage; // (not currently used by Assimp)
+	struct STEPRepresentation_Map;
+	struct STEPCamera_Usage;
 	typedef NotImplemented STEPCapacitance_Measure_With_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPCapacitance_Unit; // (not currently used by Assimp)
 	struct STEPPoint;
 	struct STEPCartesian_Point;
-	typedef NotImplemented STEPCartesian_Transformation_Operator; // (not currently used by Assimp)
-	typedef NotImplemented STEPCartesian_Transformation_Operator_2d; // (not currently used by Assimp)
-	typedef NotImplemented STEPCartesian_Transformation_Operator_3d; // (not currently used by Assimp)
+	struct STEPCartesian_Transformation_Operator;
+	struct STEPCartesian_Transformation_Operator_2d;
+	struct STEPCartesian_Transformation_Operator_3d;
 	typedef NotImplemented STEPCc_Design_Approval; // (not currently used by Assimp)
 	typedef NotImplemented STEPCc_Design_Certification; // (not currently used by Assimp)
 	typedef NotImplemented STEPCc_Design_Contract; // (not currently used by Assimp)
@@ -760,11 +760,11 @@ namespace STEP {
 	typedef NotImplemented STEPCharacter_Glyph_Font_Usage; // (not currently used by Assimp)
 	typedef NotImplemented STEPCharacter_Glyph_Style_Outline; // (not currently used by Assimp)
 	typedef NotImplemented STEPCharacter_Glyph_Style_Stroke; // (not currently used by Assimp)
-	typedef NotImplemented STEPSymbol_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPGeneric_Character_Glyph_Symbol; // (not currently used by Assimp)
-	typedef NotImplemented STEPCharacter_Glyph_Symbol; // (not currently used by Assimp)
-	typedef NotImplemented STEPCharacter_Glyph_Symbol_Outline; // (not currently used by Assimp)
-	typedef NotImplemented STEPCharacter_Glyph_Symbol_Stroke; // (not currently used by Assimp)
+	struct STEPSymbol_Representation;
+	struct STEPGeneric_Character_Glyph_Symbol;
+	struct STEPCharacter_Glyph_Symbol;
+	struct STEPCharacter_Glyph_Symbol_Outline;
+	struct STEPCharacter_Glyph_Symbol_Stroke;
 	typedef NotImplemented STEPGeneral_Property; // (not currently used by Assimp)
 	typedef NotImplemented STEPCharacteristic_Data_Column_Header; // (not currently used by Assimp)
 	typedef NotImplemented STEPGeneral_Property_Relationship; // (not currently used by Assimp)
@@ -789,8 +789,8 @@ namespace STEP {
 	struct STEPConnected_Face_Set;
 	struct STEPClosed_Shell;
 	typedef NotImplemented STEPCoaxiality_Tolerance; // (not currently used by Assimp)
-	typedef NotImplemented STEPColour_Specification; // (not currently used by Assimp)
-	typedef NotImplemented STEPColour_Rgb; // (not currently used by Assimp)
+	struct STEPColour_Specification;
+	struct STEPColour_Rgb;
 	typedef NotImplemented STEPCommon_Datum; // (not currently used by Assimp)
 	typedef NotImplemented STEPComparison_Expression; // (not currently used by Assimp)
 	struct STEPComplex_Clause;
@@ -808,13 +808,13 @@ namespace STEP {
 	typedef NotImplemented STEPMaterial_Designation; // (not currently used by Assimp)
 	typedef NotImplemented STEPComposite_Material_Designation; // (not currently used by Assimp)
 	typedef NotImplemented STEPComposite_Shape_Aspect; // (not currently used by Assimp)
-	typedef NotImplemented STEPComposite_Sheet_Representation; // (not currently used by Assimp)
+	struct STEPComposite_Sheet_Representation;
 	struct STEPComposite_Text;
 	struct STEPComposite_Text_With_Associated_Curves;
 	struct STEPComposite_Text_With_Blanking_Box;
 	struct STEPComposite_Text_With_Delineation;
 	struct STEPComposite_Text_With_Extent;
-	typedef NotImplemented STEPCompound_Shape_Representation; // (not currently used by Assimp)
+	struct STEPCompound_Shape_Representation;
 	typedef NotImplemented STEPConcentricity_Tolerance; // (not currently used by Assimp)
 	typedef NotImplemented STEPConcept_Feature_Operator; // (not currently used by Assimp)
 	typedef NotImplemented STEPConcept_Feature_Relationship; // (not currently used by Assimp)
@@ -839,24 +839,24 @@ namespace STEP {
 	struct STEPConical_Surface;
 	struct STEPConnected_Edge_Set;
 	struct STEPConnected_Face_Sub_Set;
-	typedef NotImplemented STEPConstructive_Geometry_Representation; // (not currently used by Assimp)
+	struct STEPConstructive_Geometry_Representation;
 	typedef NotImplemented STEPRepresentation_Relationship; // (not currently used by Assimp)
 	typedef NotImplemented STEPConstructive_Geometry_Representation_Relationship; // (not currently used by Assimp)
-	typedef NotImplemented STEPContact_Ratio_Representation; // (not currently used by Assimp)
+	struct STEPContact_Ratio_Representation;
 	typedef NotImplemented STEPInvisibility; // (not currently used by Assimp)
 	typedef NotImplemented STEPContext_Dependent_Invisibility; // (not currently used by Assimp)
 	struct STEPOver_Riding_Styled_Item;
 	struct STEPContext_Dependent_Over_Riding_Styled_Item;
 	typedef NotImplemented STEPContext_Dependent_Shape_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPContext_Dependent_Unit; // (not currently used by Assimp)
+	struct STEPContext_Dependent_Unit;
 	typedef NotImplemented STEPContract; // (not currently used by Assimp)
 	typedef NotImplemented STEPContract_Relationship; // (not currently used by Assimp)
 	typedef NotImplemented STEPContract_Type; // (not currently used by Assimp)
-	typedef NotImplemented STEPConversion_Based_Unit; // (not currently used by Assimp)
+	struct STEPConversion_Based_Unit;
 	typedef NotImplemented STEPCoordinated_Universal_Time_Offset; // (not currently used by Assimp)
-	typedef NotImplemented STEPCsg_Shape_Representation; // (not currently used by Assimp)
+	struct STEPCsg_Shape_Representation;
 	struct STEPCsg_Solid;
-	typedef NotImplemented STEPCurrency; // (not currently used by Assimp)
+	struct STEPCurrency;
 	typedef NotImplemented STEPCurrency_Measure_With_Unit; // (not currently used by Assimp)
 	struct STEPCurve_Bounded_Surface;
 	struct STEPCurve_Dimension;
@@ -866,7 +866,7 @@ namespace STEP {
 	typedef NotImplemented STEPCurve_Style_Font_And_Scaling; // (not currently used by Assimp)
 	typedef NotImplemented STEPCurve_Style_Font_Pattern; // (not currently used by Assimp)
 	typedef NotImplemented STEPCurve_Style_Rendering; // (not currently used by Assimp)
-	typedef NotImplemented STEPCurve_Swept_Solid_Shape_Representation; // (not currently used by Assimp)
+	struct STEPCurve_Swept_Solid_Shape_Representation;
 	struct STEPCylindrical_Surface;
 	typedef NotImplemented STEPCylindricity_Tolerance; // (not currently used by Assimp)
 	typedef NotImplemented STEPData_Environment; // (not currently used by Assimp)
@@ -882,10 +882,10 @@ namespace STEP {
 	typedef NotImplemented STEPDatum_Reference; // (not currently used by Assimp)
 	typedef NotImplemented STEPDatum_Target; // (not currently used by Assimp)
 	struct STEPDatum_Target_Callout;
-	typedef NotImplemented STEPDefault_Tolerance_Table; // (not currently used by Assimp)
+	struct STEPDefault_Tolerance_Table;
 	struct STEPDefault_Tolerance_Table_Cell;
 	struct STEPDefined_Symbol;
-	typedef NotImplemented STEPDefinitional_Representation; // (not currently used by Assimp)
+	struct STEPDefinitional_Representation;
 	typedef NotImplemented STEPDefinitional_Representation_Relationship; // (not currently used by Assimp)
 	typedef NotImplemented STEPDefinitional_Representation_Relationship_With_Same_Context; // (not currently used by Assimp)
 	struct STEPDegenerate_Pcurve;
@@ -938,18 +938,18 @@ namespace STEP {
 	typedef NotImplemented STEPDraped_Defined_Transformation; // (not currently used by Assimp)
 	struct STEPDraughting_Annotation_Occurrence;
 	struct STEPDraughting_Elements;
-	typedef NotImplemented STEPDraughting_Model; // (not currently used by Assimp)
+	struct STEPDraughting_Model;
 	typedef NotImplemented STEPItem_Identified_Representation_Usage; // (not currently used by Assimp)
 	typedef NotImplemented STEPDraughting_Model_Item_Association; // (not currently used by Assimp)
 	typedef NotImplemented STEPPre_Defined_Colour; // (not currently used by Assimp)
 	typedef NotImplemented STEPDraughting_Pre_Defined_Colour; // (not currently used by Assimp)
-	typedef NotImplemented STEPPre_Defined_Item; // (not currently used by Assimp)
+	struct STEPPre_Defined_Item;
 	typedef NotImplemented STEPPre_Defined_Curve_Font; // (not currently used by Assimp)
 	typedef NotImplemented STEPDraughting_Pre_Defined_Curve_Font; // (not currently used by Assimp)
 	typedef NotImplemented STEPPre_Defined_Text_Font; // (not currently used by Assimp)
 	typedef NotImplemented STEPDraughting_Pre_Defined_Text_Font; // (not currently used by Assimp)
-	typedef NotImplemented STEPDraughting_Subfigure_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPDraughting_Symbol_Representation; // (not currently used by Assimp)
+	struct STEPDraughting_Subfigure_Representation;
+	struct STEPDraughting_Symbol_Representation;
 	struct STEPText_Literal;
 	struct STEPText_Literal_With_Delineation;
 	struct STEPDraughting_Text_Literal_With_Delineation;
@@ -958,14 +958,14 @@ namespace STEP {
 	typedef NotImplemented STEPPresentation_Set; // (not currently used by Assimp)
 	typedef NotImplemented STEPDrawing_Revision; // (not currently used by Assimp)
 	typedef NotImplemented STEPDrawing_Revision_Sequence; // (not currently used by Assimp)
-	typedef NotImplemented STEPPresentation_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPPresentation_Area; // (not currently used by Assimp)
-	typedef NotImplemented STEPDrawing_Sheet_Revision; // (not currently used by Assimp)
+	struct STEPPresentation_Representation;
+	struct STEPPresentation_Area;
+	struct STEPDrawing_Sheet_Revision;
 	typedef NotImplemented STEPDrawing_Sheet_Revision_Sequence; // (not currently used by Assimp)
 	typedef NotImplemented STEPDrawing_Sheet_Revision_Usage; // (not currently used by Assimp)
 	struct STEPEdge;
 	struct STEPEdge_Based_Wireframe_Model;
-	typedef NotImplemented STEPEdge_Based_Wireframe_Shape_Representation; // (not currently used by Assimp)
+	struct STEPEdge_Based_Wireframe_Shape_Representation;
 	struct STEPEdge_Blended_Solid;
 	typedef NotImplemented STEPEdge_Curve; // (not currently used by Assimp)
 	typedef NotImplemented STEPEdge_Loop; // (not currently used by Assimp)
@@ -974,10 +974,10 @@ namespace STEP {
 	typedef NotImplemented STEPElectric_Charge_Measure_With_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPElectric_Charge_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPElectric_Current_Measure_With_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPElectric_Current_Unit; // (not currently used by Assimp)
+	struct STEPElectric_Current_Unit;
 	typedef NotImplemented STEPElectric_Potential_Measure_With_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPElectric_Potential_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPElementary_Brep_Shape_Representation; // (not currently used by Assimp)
+	struct STEPElementary_Brep_Shape_Representation;
 	struct STEPEllipse;
 	typedef NotImplemented STEPEnergy_Measure_With_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPEnergy_Unit; // (not currently used by Assimp)
@@ -1041,9 +1041,9 @@ namespace STEP {
 	struct STEPFace_Bound;
 	struct STEPFace_Outer_Bound;
 	struct STEPFaceted_Brep;
-	typedef NotImplemented STEPFaceted_Brep_Shape_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPFill_Area_Style; // (not currently used by Assimp)
-	typedef NotImplemented STEPFill_Area_Style_Colour; // (not currently used by Assimp)
+	struct STEPFaceted_Brep_Shape_Representation;
+	struct STEPFill_Area_Style;
+	struct STEPFill_Area_Style_Colour;
 	struct STEPFill_Area_Style_Hatching;
 	struct STEPFill_Area_Style_Tile_Coloured_Region;
 	struct STEPFill_Area_Style_Tile_Curve_With_Style;
@@ -1073,20 +1073,20 @@ namespace STEP {
 	typedef NotImplemented STEPGeometric_Intersection; // (not currently used by Assimp)
 	typedef NotImplemented STEPGeometric_Item_Specific_Usage; // (not currently used by Assimp)
 	typedef NotImplemented STEPGeometric_Model_Element_Relationship; // (not currently used by Assimp)
-	typedef NotImplemented STEPRepresentation_Context; // (not currently used by Assimp)
-	typedef NotImplemented STEPGeometric_Representation_Context; // (not currently used by Assimp)
+	struct STEPRepresentation_Context;
+	struct STEPGeometric_Representation_Context;
 	typedef NotImplemented STEPGeometric_Tolerance_Relationship; // (not currently used by Assimp)
 	typedef NotImplemented STEPGeometric_Tolerance_With_Defined_Unit; // (not currently used by Assimp)
 	struct STEPGeometrical_Tolerance_Callout;
-	typedef NotImplemented STEPGeometrically_Bounded_2d_Wireframe_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPGeometrically_Bounded_Surface_Shape_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPGeometrically_Bounded_Wireframe_Shape_Representation; // (not currently used by Assimp)
+	struct STEPGeometrically_Bounded_2d_Wireframe_Representation;
+	struct STEPGeometrically_Bounded_Surface_Shape_Representation;
+	struct STEPGeometrically_Bounded_Wireframe_Shape_Representation;
 	typedef NotImplemented STEPGlobal_Assignment; // (not currently used by Assimp)
-	typedef NotImplemented STEPGlobal_Uncertainty_Assigned_Context; // (not currently used by Assimp)
-	typedef NotImplemented STEPGlobal_Unit_Assigned_Context; // (not currently used by Assimp)
+	struct STEPGlobal_Uncertainty_Assigned_Context;
+	struct STEPGlobal_Unit_Assigned_Context;
 	struct STEPGround_Fact;
 	typedef NotImplemented STEPGroup_Relationship; // (not currently used by Assimp)
-	typedef NotImplemented STEPHardness_Representation; // (not currently used by Assimp)
+	struct STEPHardness_Representation;
 	struct STEPHidden_Element_Over_Riding_Styled_Item;
 	struct STEPHyperbola;
 	typedef NotImplemented STEPId_Attribute; // (not currently used by Assimp)
@@ -1110,7 +1110,7 @@ namespace STEP {
 	struct STEPSurface_Curve;
 	struct STEPIntersection_Curve;
 	typedef NotImplemented STEPInterval_Expression; // (not currently used by Assimp)
-	typedef NotImplemented STEPIso4217_Currency; // (not currently used by Assimp)
+	struct STEPIso4217_Currency;
 	typedef NotImplemented STEPKnown_Source; // (not currently used by Assimp)
 	typedef NotImplemented STEPLaid_Defined_Transformation; // (not currently used by Assimp)
 	typedef NotImplemented STEPLanguage; // (not currently used by Assimp)
@@ -1119,7 +1119,7 @@ namespace STEP {
 	struct STEPLeader_Directed_Dimension;
 	struct STEPLeader_Terminator;
 	typedef NotImplemented STEPLength_Measure_With_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPLength_Unit; // (not currently used by Assimp)
+	struct STEPLength_Unit;
 	struct STEPLight_Source;
 	struct STEPLight_Source_Ambient;
 	struct STEPLight_Source_Directional;
@@ -1139,43 +1139,43 @@ namespace STEP {
 	typedef NotImplemented STEPLoss_Tangent_Measure_With_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPLot_Effectivity; // (not currently used by Assimp)
 	typedef NotImplemented STEPLuminous_Flux_Measure_With_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPLuminous_Flux_Unit; // (not currently used by Assimp)
+	struct STEPLuminous_Flux_Unit;
 	typedef NotImplemented STEPLuminous_Intensity_Measure_With_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPLuminous_Intensity_Unit; // (not currently used by Assimp)
+	struct STEPLuminous_Intensity_Unit;
 	typedef NotImplemented STEPMagnetic_Flux_Density_Measure_With_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPMagnetic_Flux_Density_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPMagnetic_Flux_Measure_With_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPMagnetic_Flux_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPMake_From_Usage_Option; // (not currently used by Assimp)
-	typedef NotImplemented STEPManifold_Subsurface_Shape_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPManifold_Surface_Shape_Representation; // (not currently used by Assimp)
+	struct STEPManifold_Subsurface_Shape_Representation;
+	struct STEPManifold_Surface_Shape_Representation;
 	typedef NotImplemented STEPMass_Measure_With_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPMass_Unit; // (not currently used by Assimp)
+	struct STEPMass_Unit;
 	typedef NotImplemented STEPMaterial_Designation_Characterization; // (not currently used by Assimp)
 	typedef NotImplemented STEPMaterial_Property; // (not currently used by Assimp)
-	typedef NotImplemented STEPProperty_Definition_Representation; // (not currently used by Assimp)
+	struct STEPProperty_Definition_Representation;
 	typedef NotImplemented STEPMaterial_Property_Representation; // (not currently used by Assimp)
 	typedef NotImplemented STEPMeasure_Qualification; // (not currently used by Assimp)
 	typedef NotImplemented STEPMeasure_Representation_Item; // (not currently used by Assimp)
 	typedef NotImplemented STEPProduct_Context; // (not currently used by Assimp)
 	typedef NotImplemented STEPMechanical_Context; // (not currently used by Assimp)
 	typedef NotImplemented STEPMechanical_Design_And_Draughting_Relationship; // (not currently used by Assimp)
-	typedef NotImplemented STEPMechanical_Design_Geometric_Presentation_Area; // (not currently used by Assimp)
-	typedef NotImplemented STEPMechanical_Design_Geometric_Presentation_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPMechanical_Design_Presentation_Representation_With_Draughting; // (not currently used by Assimp)
-	typedef NotImplemented STEPMechanical_Design_Shaded_Presentation_Area; // (not currently used by Assimp)
-	typedef NotImplemented STEPMechanical_Design_Shaded_Presentation_Representation; // (not currently used by Assimp)
+	struct STEPMechanical_Design_Geometric_Presentation_Area;
+	struct STEPMechanical_Design_Geometric_Presentation_Representation;
+	struct STEPMechanical_Design_Presentation_Representation_With_Draughting;
+	struct STEPMechanical_Design_Shaded_Presentation_Area;
+	struct STEPMechanical_Design_Shaded_Presentation_Representation;
 	typedef NotImplemented STEPMin_And_Major_Ply_Orientation_Basis; // (not currently used by Assimp)
 	typedef NotImplemented STEPModified_Geometric_Tolerance; // (not currently used by Assimp)
 	struct STEPModified_Solid_With_Placed_Configuration;
-	typedef NotImplemented STEPMoments_Of_Inertia_Representation; // (not currently used by Assimp)
+	struct STEPMoments_Of_Inertia_Representation;
 	typedef NotImplemented STEPMulti_Language_Attribute_Assignment; // (not currently used by Assimp)
 	typedef NotImplemented STEPMultiple_Arity_Boolean_Expression; // (not currently used by Assimp)
 	typedef NotImplemented STEPMultiple_Arity_Generic_Expression; // (not currently used by Assimp)
 	typedef NotImplemented STEPMultiple_Arity_Numeric_Expression; // (not currently used by Assimp)
 	typedef NotImplemented STEPName_Attribute; // (not currently used by Assimp)
 	typedef NotImplemented STEPNext_Assembly_Usage_Occurrence; // (not currently used by Assimp)
-	typedef NotImplemented STEPNon_Manifold_Surface_Shape_Representation; // (not currently used by Assimp)
+	struct STEPNon_Manifold_Surface_Shape_Representation;
 	struct STEPNull_Representation_Item;
 	typedef NotImplemented STEPNumeric_Expression; // (not currently used by Assimp)
 	typedef NotImplemented STEPObject_Role; // (not currently used by Assimp)
@@ -1206,7 +1206,7 @@ namespace STEP {
 	struct STEPParabola;
 	typedef NotImplemented STEPParallel_Offset; // (not currently used by Assimp)
 	typedef NotImplemented STEPParallelism_Tolerance; // (not currently used by Assimp)
-	typedef NotImplemented STEPParametric_Representation_Context; // (not currently used by Assimp)
+	struct STEPParametric_Representation_Context;
 	typedef NotImplemented STEPPartial_Document_With_Structured_Text_Representation_Assignment; // (not currently used by Assimp)
 	struct STEPPcurve;
 	typedef NotImplemented STEPPercentage_Laminate_Definition; // (not currently used by Assimp)
@@ -1222,15 +1222,15 @@ namespace STEP {
 	typedef NotImplemented STEPPersonal_Address; // (not currently used by Assimp)
 	typedef NotImplemented STEPPhysical_Breakdown_Context; // (not currently used by Assimp)
 	typedef NotImplemented STEPPhysical_Element_Usage; // (not currently used by Assimp)
-	typedef NotImplemented STEPPresentation_View; // (not currently used by Assimp)
-	typedef NotImplemented STEPPicture_Representation; // (not currently used by Assimp)
+	struct STEPPresentation_View;
+	struct STEPPicture_Representation;
 	typedef NotImplemented STEPPlaced_Datum_Target_Feature; // (not currently used by Assimp)
 	typedef NotImplemented STEPPlaced_Feature; // (not currently used by Assimp)
 	struct STEPPlanar_Extent;
 	struct STEPPlanar_Box;
 	struct STEPPlane;
 	typedef NotImplemented STEPPlane_Angle_Measure_With_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPPlane_Angle_Unit; // (not currently used by Assimp)
+	struct STEPPlane_Angle_Unit;
 	typedef NotImplemented STEPPlus_Minus_Tolerance; // (not currently used by Assimp)
 	typedef NotImplemented STEPPly_Laminate_Definition; // (not currently used by Assimp)
 	typedef NotImplemented STEPPly_Laminate_Sequence_Definition; // (not currently used by Assimp)
@@ -1254,7 +1254,7 @@ namespace STEP {
 	typedef NotImplemented STEPPre_Defined_Marker; // (not currently used by Assimp)
 	typedef NotImplemented STEPPre_Defined_Point_Marker_Symbol; // (not currently used by Assimp)
 	typedef NotImplemented STEPPre_Defined_Surface_Condition_Symbol; // (not currently used by Assimp)
-	typedef NotImplemented STEPPre_Defined_Surface_Side_Style; // (not currently used by Assimp)
+	struct STEPPre_Defined_Surface_Side_Style;
 	typedef NotImplemented STEPPre_Defined_Terminator_Symbol; // (not currently used by Assimp)
 	typedef NotImplemented STEPPre_Defined_Tile; // (not currently used by Assimp)
 	typedef NotImplemented STEPPrecision_Qualifier; // (not currently used by Assimp)
@@ -1266,11 +1266,11 @@ namespace STEP {
 	typedef NotImplemented STEPPresented_Item_Representation; // (not currently used by Assimp)
 	typedef NotImplemented STEPPressure_Measure_With_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPPressure_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPProcedural_Representation; // (not currently used by Assimp)
+	struct STEPProcedural_Representation;
 	struct STEPProcedural_Representation_Sequence;
 	typedef NotImplemented STEPProcedural_Shape_Representation; // (not currently used by Assimp)
 	typedef NotImplemented STEPProcedural_Shape_Representation_Sequence; // (not currently used by Assimp)
-	typedef NotImplemented STEPProduct; // (not currently used by Assimp)
+	struct STEPProduct;
 	typedef NotImplemented STEPProduct_Category; // (not currently used by Assimp)
 	typedef NotImplemented STEPProduct_Class; // (not currently used by Assimp)
 	typedef NotImplemented STEPProduct_Concept; // (not currently used by Assimp)
@@ -1307,7 +1307,7 @@ namespace STEP {
 	typedef NotImplemented STEPRadioactivity_Unit; // (not currently used by Assimp)
 	struct STEPRadius_Dimension;
 	typedef NotImplemented STEPRange_Characteristic; // (not currently used by Assimp)
-	typedef NotImplemented STEPRatio_Unit; // (not currently used by Assimp)
+	struct STEPRatio_Unit;
 	struct STEPRational_B_Spline_Curve;
 	struct STEPRational_B_Spline_Surface;
 	typedef NotImplemented STEPRational_Representation_Item; // (not currently used by Assimp)
@@ -1361,13 +1361,13 @@ namespace STEP {
 	typedef NotImplemented STEPSerial_Numbered_Effectivity; // (not currently used by Assimp)
 	typedef NotImplemented STEPShape_Aspect_Associativity; // (not currently used by Assimp)
 	typedef NotImplemented STEPShape_Aspect_Deriving_Relationship; // (not currently used by Assimp)
-	typedef NotImplemented STEPShape_Definition_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPShape_Dimension_Representation; // (not currently used by Assimp)
+	struct STEPShape_Definition_Representation;
+	struct STEPShape_Dimension_Representation;
 	typedef NotImplemented STEPShape_Feature_Definition; // (not currently used by Assimp)
-	typedef NotImplemented STEPShape_Representation_With_Parameters; // (not currently used by Assimp)
+	struct STEPShape_Representation_With_Parameters;
 	struct STEPShell_Based_Surface_Model;
 	struct STEPShell_Based_Wireframe_Model;
-	typedef NotImplemented STEPShell_Based_Wireframe_Shape_Representation; // (not currently used by Assimp)
+	struct STEPShell_Based_Wireframe_Shape_Representation;
 	typedef NotImplemented STEPSi_Absorbed_Dose_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPSi_Capacitance_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPSi_Conductance_Unit; // (not currently used by Assimp)
@@ -1385,13 +1385,13 @@ namespace STEP {
 	typedef NotImplemented STEPSi_Pressure_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPSi_Radioactivity_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPSi_Resistance_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPSi_Unit; // (not currently used by Assimp)
+	struct STEPSi_Unit;
 	typedef NotImplemented STEPSimple_Boolean_Expression; // (not currently used by Assimp)
 	typedef NotImplemented STEPSimple_Numeric_Expression; // (not currently used by Assimp)
 	typedef NotImplemented STEPSlash_Expression; // (not currently used by Assimp)
 	typedef NotImplemented STEPSmeared_Material_Definition; // (not currently used by Assimp)
 	typedef NotImplemented STEPSolid_Angle_Measure_With_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPSolid_Angle_Unit; // (not currently used by Assimp)
+	struct STEPSolid_Angle_Unit;
 	typedef NotImplemented STEPSolid_Curve_Font; // (not currently used by Assimp)
 	struct STEPSolid_Replica;
 	struct STEPSolid_With_Chamfered_Edges;
@@ -1438,7 +1438,7 @@ namespace STEP {
 	typedef NotImplemented STEPStraightness_Tolerance; // (not currently used by Assimp)
 	struct STEPStructured_Dimension_Callout;
 	struct STEPStructured_Text_Composition;
-	typedef NotImplemented STEPStructured_Text_Representation; // (not currently used by Assimp)
+	struct STEPStructured_Text_Representation;
 	struct STEPSubedge;
 	struct STEPSubface;
 	typedef NotImplemented STEPSupplied_Part_Relationship; // (not currently used by Assimp)
@@ -1450,33 +1450,33 @@ namespace STEP {
 	typedef NotImplemented STEPSurface_Profile_Tolerance; // (not currently used by Assimp)
 	typedef NotImplemented STEPSurface_Rendering_Properties; // (not currently used by Assimp)
 	struct STEPSurface_Replica;
-	typedef NotImplemented STEPSurface_Side_Style; // (not currently used by Assimp)
+	struct STEPSurface_Side_Style;
 	typedef NotImplemented STEPSurface_Style_Boundary; // (not currently used by Assimp)
 	typedef NotImplemented STEPSurface_Style_Control_Grid; // (not currently used by Assimp)
-	typedef NotImplemented STEPSurface_Style_Fill_Area; // (not currently used by Assimp)
+	struct STEPSurface_Style_Fill_Area;
 	typedef NotImplemented STEPSurface_Style_Parameter_Line; // (not currently used by Assimp)
 	typedef NotImplemented STEPSurface_Style_Reflectance_Ambient; // (not currently used by Assimp)
 	typedef NotImplemented STEPSurface_Style_Reflectance_Ambient_Diffuse; // (not currently used by Assimp)
 	typedef NotImplemented STEPSurface_Style_Reflectance_Ambient_Diffuse_Specular; // (not currently used by Assimp)
-	struct STEPSurface_Style_Rendering;
-	struct STEPSurface_Style_Rendering_With_Properties;
+	typedef NotImplemented STEPSurface_Style_Rendering; // (not currently used by Assimp)
+	typedef NotImplemented STEPSurface_Style_Rendering_With_Properties; // (not currently used by Assimp)
 	typedef NotImplemented STEPSurface_Style_Segmentation_Curve; // (not currently used by Assimp)
 	typedef NotImplemented STEPSurface_Style_Silhouette; // (not currently used by Assimp)
 	typedef NotImplemented STEPSurface_Style_Transparent; // (not currently used by Assimp)
-	typedef NotImplemented STEPSurface_Style_Usage; // (not currently used by Assimp)
-	typedef NotImplemented STEPSurface_Texture_Representation; // (not currently used by Assimp)
+	struct STEPSurface_Style_Usage;
+	struct STEPSurface_Texture_Representation;
 	struct STEPSurfaced_Open_Shell;
 	struct STEPSwept_Disk_Solid;
 	struct STEPSymbol;
 	typedef NotImplemented STEPSymbol_Colour; // (not currently used by Assimp)
-	typedef NotImplemented STEPSymbol_Representation_Map; // (not currently used by Assimp)
+	struct STEPSymbol_Representation_Map;
 	typedef NotImplemented STEPSymbol_Style; // (not currently used by Assimp)
 	struct STEPSymbol_Target;
 	typedef NotImplemented STEPSymmetric_Shape_Aspect; // (not currently used by Assimp)
 	typedef NotImplemented STEPSymmetry_Tolerance; // (not currently used by Assimp)
 	struct STEPTable_Representation_Item;
-	typedef NotImplemented STEPTactile_Appearance_Representation; // (not currently used by Assimp)
-	typedef NotImplemented STEPTagged_Text_Format; // (not currently used by Assimp)
+	struct STEPTactile_Appearance_Representation;
+	struct STEPTagged_Text_Format;
 	struct STEPTagged_Text_Item;
 	typedef NotImplemented STEPTangent; // (not currently used by Assimp)
 	typedef NotImplemented STEPText_Font; // (not currently used by Assimp)
@@ -1485,7 +1485,7 @@ namespace STEP {
 	struct STEPText_Literal_With_Associated_Curves;
 	struct STEPText_Literal_With_Blanking_Box;
 	struct STEPText_Literal_With_Extent;
-	typedef NotImplemented STEPText_String_Representation; // (not currently used by Assimp)
+	struct STEPText_String_Representation;
 	typedef NotImplemented STEPText_Style; // (not currently used by Assimp)
 	typedef NotImplemented STEPText_Style_For_Defined_Font; // (not currently used by Assimp)
 	typedef NotImplemented STEPText_Style_With_Box_Characteristics; // (not currently used by Assimp)
@@ -1494,7 +1494,7 @@ namespace STEP {
 	typedef NotImplemented STEPThermal_Resistance_Measure_With_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPThermal_Resistance_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPThermodynamic_Temperature_Measure_With_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPThermodynamic_Temperature_Unit; // (not currently used by Assimp)
+	struct STEPThermodynamic_Temperature_Unit;
 	struct STEPThickened_Face_Solid;
 	typedef NotImplemented STEPThickness_Laminate_Definition; // (not currently used by Assimp)
 	typedef NotImplemented STEPThickness_Laminate_Table; // (not currently used by Assimp)
@@ -1504,7 +1504,7 @@ namespace STEP {
 	typedef NotImplemented STEPTime_Interval_Role; // (not currently used by Assimp)
 	typedef NotImplemented STEPTime_Interval_With_Bounds; // (not currently used by Assimp)
 	typedef NotImplemented STEPTime_Measure_With_Unit; // (not currently used by Assimp)
-	typedef NotImplemented STEPTime_Unit; // (not currently used by Assimp)
+	struct STEPTime_Unit;
 	typedef NotImplemented STEPTolerance_Value; // (not currently used by Assimp)
 	typedef NotImplemented STEPTolerance_Zone; // (not currently used by Assimp)
 	typedef NotImplemented STEPTolerance_Zone_Form; // (not currently used by Assimp)
@@ -1517,7 +1517,7 @@ namespace STEP {
 	typedef NotImplemented STEPType_Qualifier; // (not currently used by Assimp)
 	typedef NotImplemented STEPUnary_Generic_Expression; // (not currently used by Assimp)
 	typedef NotImplemented STEPUnary_Numeric_Expression; // (not currently used by Assimp)
-	typedef NotImplemented STEPUncertainty_Assigned_Representation; // (not currently used by Assimp)
+	struct STEPUncertainty_Assigned_Representation;
 	typedef NotImplemented STEPUncertainty_Measure_With_Unit; // (not currently used by Assimp)
 	struct STEPUniform_Curve;
 	struct STEPUniform_Resource_Identifier;
@@ -1541,7 +1541,7 @@ namespace STEP {
 	typedef NotImplemented STEPVertex_Point; // (not currently used by Assimp)
 	struct STEPVertex_Shell;
 	typedef NotImplemented STEPView_Volume; // (not currently used by Assimp)
-	typedef NotImplemented STEPVisual_Appearance_Representation; // (not currently used by Assimp)
+	struct STEPVisual_Appearance_Representation;
 	typedef NotImplemented STEPVolume_Measure_With_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPVolume_Unit; // (not currently used by Assimp)
 	typedef NotImplemented STEPWeek_Of_Year_And_Day_Date; // (not currently used by Assimp)
@@ -1549,6 +1549,33 @@ namespace STEP {
 	typedef NotImplemented STEPYear_Month; // (not currently used by Assimp)
 
 
+
+    // C++ wrapper for STEPRepresentation
+    struct STEPRepresentation :  ObjectHelper<STEPRepresentation,3> { STEPRepresentation() : Object("STEPRepresentation") {}
+		STEPLabel::Out Name;
+		ListOf< Lazy< STEPRepresentation_Item >, 1, 0 > Items;
+		Lazy< STEPRepresentation_Context > ContextOfItems;
+    };
+
+    // C++ wrapper for STEPShape_Representation
+    struct STEPShape_Representation : STEPRepresentation, ObjectHelper<STEPShape_Representation,0> { STEPShape_Representation() : Object("STEPShape_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPAdvanced_Brep_Shape_Representation
+    struct STEPAdvanced_Brep_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPAdvanced_Brep_Shape_Representation,0> { STEPAdvanced_Brep_Shape_Representation() : Object("STEPAdvanced_Brep_Shape_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPNamed_Unit
+    struct STEPNamed_Unit :  ObjectHelper<STEPNamed_Unit,1> { STEPNamed_Unit() : Object("STEPNamed_Unit") {}
+		Lazy< NotImplemented > Dimensions;
+    };
+
+    // C++ wrapper for STEPAmount_Of_Substance_Unit
+    struct STEPAmount_Of_Substance_Unit : STEPNamed_Unit, ObjectHelper<STEPAmount_Of_Substance_Unit,0> { STEPAmount_Of_Substance_Unit() : Object("STEPAmount_Of_Substance_Unit") {}
+
+    };
 
     // C++ wrapper for STEPRepresentation_Item
     struct STEPRepresentation_Item :  ObjectHelper<STEPRepresentation_Item,1> { STEPRepresentation_Item() : Object("STEPRepresentation_Item") {}
@@ -1613,7 +1640,7 @@ namespace STEP {
 
     // C++ wrapper for STEPMapped_Item
     struct STEPMapped_Item : STEPRepresentation_Item, ObjectHelper<STEPMapped_Item,2> { STEPMapped_Item() : Object("STEPMapped_Item") {}
-		Lazy< NotImplemented > MappingSource;
+		Lazy< STEPRepresentation_Map > MappingSource;
 		Lazy< STEPRepresentation_Item > MappingTarget;
     };
 
@@ -1721,6 +1748,16 @@ namespace STEP {
 		ListOf< STEPParameter_Value, 2, 0 >::Out UKnots;
 		ListOf< STEPParameter_Value, 2, 0 >::Out VKnots;
 		STEPKnot_Type::Out KnotSpec;
+    };
+
+    // C++ wrapper for STEPColour
+    struct STEPColour :  ObjectHelper<STEPColour,0> { STEPColour() : Object("STEPColour") {}
+
+    };
+
+    // C++ wrapper for STEPBeveled_Sheet_Representation
+    struct STEPBeveled_Sheet_Representation : STEPShape_Representation, ObjectHelper<STEPBeveled_Sheet_Representation,0> { STEPBeveled_Sheet_Representation() : Object("STEPBeveled_Sheet_Representation") {}
+
     };
 
     // C++ wrapper for STEPBezier_Curve
@@ -1851,6 +1888,17 @@ namespace STEP {
 		ListOf< Lazy< STEPLight_Source >, 1, 0 > Sources;
     };
 
+    // C++ wrapper for STEPRepresentation_Map
+    struct STEPRepresentation_Map :  ObjectHelper<STEPRepresentation_Map,2> { STEPRepresentation_Map() : Object("STEPRepresentation_Map") {}
+		Lazy< STEPRepresentation_Item > MappingOrigin;
+		Lazy< STEPRepresentation > MappedRepresentation;
+    };
+
+    // C++ wrapper for STEPCamera_Usage
+    struct STEPCamera_Usage : STEPRepresentation_Map, ObjectHelper<STEPCamera_Usage,0> { STEPCamera_Usage() : Object("STEPCamera_Usage") {}
+
+    };
+
     // C++ wrapper for STEPPoint
     struct STEPPoint : STEPGeometric_Representation_Item, ObjectHelper<STEPPoint,0> { STEPPoint() : Object("STEPPoint") {}
 
@@ -1859,6 +1907,50 @@ namespace STEP {
     // C++ wrapper for STEPCartesian_Point
     struct STEPCartesian_Point : STEPPoint, ObjectHelper<STEPCartesian_Point,1> { STEPCartesian_Point() : Object("STEPCartesian_Point") {}
 		ListOf< STEPLength_Measure, 1, 3 >::Out Coordinates;
+    };
+
+    // C++ wrapper for STEPCartesian_Transformation_Operator
+    struct STEPCartesian_Transformation_Operator :  ObjectHelper<STEPCartesian_Transformation_Operator,4> { STEPCartesian_Transformation_Operator() : Object("STEPCartesian_Transformation_Operator") {}
+		Maybe< Lazy< STEPDirection > > Axis1;
+		Maybe< Lazy< STEPDirection > > Axis2;
+		Lazy< STEPCartesian_Point > LocalOrigin;
+		Maybe< REAL::Out > Scale;
+    };
+
+    // C++ wrapper for STEPCartesian_Transformation_Operator_2d
+    struct STEPCartesian_Transformation_Operator_2d : STEPCartesian_Transformation_Operator, ObjectHelper<STEPCartesian_Transformation_Operator_2d,0> { STEPCartesian_Transformation_Operator_2d() : Object("STEPCartesian_Transformation_Operator_2d") {}
+
+    };
+
+    // C++ wrapper for STEPCartesian_Transformation_Operator_3d
+    struct STEPCartesian_Transformation_Operator_3d : STEPCartesian_Transformation_Operator, ObjectHelper<STEPCartesian_Transformation_Operator_3d,1> { STEPCartesian_Transformation_Operator_3d() : Object("STEPCartesian_Transformation_Operator_3d") {}
+		Maybe< Lazy< STEPDirection > > Axis3;
+    };
+
+    // C++ wrapper for STEPSymbol_Representation
+    struct STEPSymbol_Representation : STEPRepresentation, ObjectHelper<STEPSymbol_Representation,0> { STEPSymbol_Representation() : Object("STEPSymbol_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPGeneric_Character_Glyph_Symbol
+    struct STEPGeneric_Character_Glyph_Symbol : STEPSymbol_Representation, ObjectHelper<STEPGeneric_Character_Glyph_Symbol,0> { STEPGeneric_Character_Glyph_Symbol() : Object("STEPGeneric_Character_Glyph_Symbol") {}
+
+    };
+
+    // C++ wrapper for STEPCharacter_Glyph_Symbol
+    struct STEPCharacter_Glyph_Symbol : STEPGeneric_Character_Glyph_Symbol, ObjectHelper<STEPCharacter_Glyph_Symbol,2> { STEPCharacter_Glyph_Symbol() : Object("STEPCharacter_Glyph_Symbol") {}
+		Lazy< STEPPlanar_Extent > CharacterBox;
+		STEPRatio_Measure::Out BaselineRatio;
+    };
+
+    // C++ wrapper for STEPCharacter_Glyph_Symbol_Outline
+    struct STEPCharacter_Glyph_Symbol_Outline : STEPCharacter_Glyph_Symbol, ObjectHelper<STEPCharacter_Glyph_Symbol_Outline,1> { STEPCharacter_Glyph_Symbol_Outline() : Object("STEPCharacter_Glyph_Symbol_Outline") {}
+		ListOf< Lazy< STEPAnnotation_Fill_Area >, 1, 0 > Outlines;
+    };
+
+    // C++ wrapper for STEPCharacter_Glyph_Symbol_Stroke
+    struct STEPCharacter_Glyph_Symbol_Stroke : STEPCharacter_Glyph_Symbol, ObjectHelper<STEPCharacter_Glyph_Symbol_Stroke,1> { STEPCharacter_Glyph_Symbol_Stroke() : Object("STEPCharacter_Glyph_Symbol_Stroke") {}
+		ListOf< Lazy< STEPCurve >, 1, 0 > Strokes;
     };
 
     // C++ wrapper for STEPConic
@@ -1884,6 +1976,18 @@ namespace STEP {
     // C++ wrapper for STEPClosed_Shell
     struct STEPClosed_Shell : STEPConnected_Face_Set, ObjectHelper<STEPClosed_Shell,0> { STEPClosed_Shell() : Object("STEPClosed_Shell") {}
 
+    };
+
+    // C++ wrapper for STEPColour_Specification
+    struct STEPColour_Specification : STEPColour, ObjectHelper<STEPColour_Specification,1> { STEPColour_Specification() : Object("STEPColour_Specification") {}
+		STEPLabel::Out Name;
+    };
+
+    // C++ wrapper for STEPColour_Rgb
+    struct STEPColour_Rgb : STEPColour_Specification, ObjectHelper<STEPColour_Rgb,3> { STEPColour_Rgb() : Object("STEPColour_Rgb") {}
+		REAL::Out Red;
+		REAL::Out Green;
+		REAL::Out Blue;
     };
 
     // C++ wrapper for STEPComplex_Clause
@@ -1925,6 +2029,11 @@ namespace STEP {
 		Lazy< STEPCurve > ParentCurve;
     };
 
+    // C++ wrapper for STEPComposite_Sheet_Representation
+    struct STEPComposite_Sheet_Representation : STEPShape_Representation, ObjectHelper<STEPComposite_Sheet_Representation,0> { STEPComposite_Sheet_Representation() : Object("STEPComposite_Sheet_Representation") {}
+
+    };
+
     // C++ wrapper for STEPComposite_Text
     struct STEPComposite_Text : STEPGeometric_Representation_Item, ObjectHelper<STEPComposite_Text,1> { STEPComposite_Text() : Object("STEPComposite_Text") {}
 		ListOf< STEPText_Or_Character, 2, 0 >::Out CollectedText;
@@ -1948,6 +2057,11 @@ namespace STEP {
     // C++ wrapper for STEPComposite_Text_With_Extent
     struct STEPComposite_Text_With_Extent : STEPComposite_Text, ObjectHelper<STEPComposite_Text_With_Extent,1> { STEPComposite_Text_With_Extent() : Object("STEPComposite_Text_With_Extent") {}
 		Lazy< STEPPlanar_Extent > Extent;
+    };
+
+    // C++ wrapper for STEPCompound_Shape_Representation
+    struct STEPCompound_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPCompound_Shape_Representation,0> { STEPCompound_Shape_Representation() : Object("STEPCompound_Shape_Representation") {}
+
     };
 
     // C++ wrapper for STEPConical_Stepped_Hole_Transition
@@ -1978,6 +2092,16 @@ namespace STEP {
 		Lazy< STEPConnected_Face_Set > ParentFaceSet;
     };
 
+    // C++ wrapper for STEPConstructive_Geometry_Representation
+    struct STEPConstructive_Geometry_Representation : STEPRepresentation, ObjectHelper<STEPConstructive_Geometry_Representation,0> { STEPConstructive_Geometry_Representation() : Object("STEPConstructive_Geometry_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPContact_Ratio_Representation
+    struct STEPContact_Ratio_Representation : STEPRepresentation, ObjectHelper<STEPContact_Ratio_Representation,0> { STEPContact_Ratio_Representation() : Object("STEPContact_Ratio_Representation") {}
+
+    };
+
     // C++ wrapper for STEPOver_Riding_Styled_Item
     struct STEPOver_Riding_Styled_Item : STEPStyled_Item, ObjectHelper<STEPOver_Riding_Styled_Item,1> { STEPOver_Riding_Styled_Item() : Object("STEPOver_Riding_Styled_Item") {}
 		Lazy< STEPStyled_Item > OverRiddenStyle;
@@ -1988,9 +2112,30 @@ namespace STEP {
 		ListOf< STEPStyle_Context_Select, 1, 0 >::Out StyleContext;
     };
 
+    // C++ wrapper for STEPContext_Dependent_Unit
+    struct STEPContext_Dependent_Unit : STEPNamed_Unit, ObjectHelper<STEPContext_Dependent_Unit,1> { STEPContext_Dependent_Unit() : Object("STEPContext_Dependent_Unit") {}
+		STEPLabel::Out Name;
+    };
+
+    // C++ wrapper for STEPConversion_Based_Unit
+    struct STEPConversion_Based_Unit : STEPNamed_Unit, ObjectHelper<STEPConversion_Based_Unit,2> { STEPConversion_Based_Unit() : Object("STEPConversion_Based_Unit") {}
+		STEPLabel::Out Name;
+		Lazy< NotImplemented > ConversionFactor;
+    };
+
+    // C++ wrapper for STEPCsg_Shape_Representation
+    struct STEPCsg_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPCsg_Shape_Representation,0> { STEPCsg_Shape_Representation() : Object("STEPCsg_Shape_Representation") {}
+
+    };
+
     // C++ wrapper for STEPCsg_Solid
     struct STEPCsg_Solid : STEPSolid_Model, ObjectHelper<STEPCsg_Solid,1> { STEPCsg_Solid() : Object("STEPCsg_Solid") {}
 		STEPCsg_Select::Out TreeRootExpression;
+    };
+
+    // C++ wrapper for STEPCurrency
+    struct STEPCurrency : STEPContext_Dependent_Unit, ObjectHelper<STEPCurrency,0> { STEPCurrency() : Object("STEPCurrency") {}
+
     };
 
     // C++ wrapper for STEPCurve_Bounded_Surface
@@ -2008,7 +2153,12 @@ namespace STEP {
     // C++ wrapper for STEPCurve_Replica
     struct STEPCurve_Replica : STEPCurve, ObjectHelper<STEPCurve_Replica,2> { STEPCurve_Replica() : Object("STEPCurve_Replica") {}
 		Lazy< STEPCurve > ParentCurve;
-		Lazy< NotImplemented > Transformation;
+		Lazy< STEPCartesian_Transformation_Operator > Transformation;
+    };
+
+    // C++ wrapper for STEPCurve_Swept_Solid_Shape_Representation
+    struct STEPCurve_Swept_Solid_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPCurve_Swept_Solid_Shape_Representation,0> { STEPCurve_Swept_Solid_Shape_Representation() : Object("STEPCurve_Swept_Solid_Shape_Representation") {}
+
     };
 
     // C++ wrapper for STEPCylindrical_Surface
@@ -2026,6 +2176,11 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPDefault_Tolerance_Table
+    struct STEPDefault_Tolerance_Table : STEPRepresentation, ObjectHelper<STEPDefault_Tolerance_Table,0> { STEPDefault_Tolerance_Table() : Object("STEPDefault_Tolerance_Table") {}
+
+    };
+
     // C++ wrapper for STEPDefault_Tolerance_Table_Cell
     struct STEPDefault_Tolerance_Table_Cell : STEPCompound_Representation_Item, ObjectHelper<STEPDefault_Tolerance_Table_Cell,0> { STEPDefault_Tolerance_Table_Cell() : Object("STEPDefault_Tolerance_Table_Cell") {}
 
@@ -2037,10 +2192,15 @@ namespace STEP {
 		Lazy< STEPSymbol_Target > Target;
     };
 
+    // C++ wrapper for STEPDefinitional_Representation
+    struct STEPDefinitional_Representation : STEPRepresentation, ObjectHelper<STEPDefinitional_Representation,0> { STEPDefinitional_Representation() : Object("STEPDefinitional_Representation") {}
+
+    };
+
     // C++ wrapper for STEPDegenerate_Pcurve
     struct STEPDegenerate_Pcurve : STEPPoint, ObjectHelper<STEPDegenerate_Pcurve,2> { STEPDegenerate_Pcurve() : Object("STEPDegenerate_Pcurve") {}
 		Lazy< STEPSurface > BasisSurface;
-		Lazy< NotImplemented > ReferenceToCurve;
+		Lazy< STEPDefinitional_Representation > ReferenceToCurve;
     };
 
     // C++ wrapper for STEPToroidal_Surface
@@ -2104,6 +2264,26 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPDraughting_Model
+    struct STEPDraughting_Model : STEPRepresentation, ObjectHelper<STEPDraughting_Model,0> { STEPDraughting_Model() : Object("STEPDraughting_Model") {}
+
+    };
+
+    // C++ wrapper for STEPPre_Defined_Item
+    struct STEPPre_Defined_Item :  ObjectHelper<STEPPre_Defined_Item,1> { STEPPre_Defined_Item() : Object("STEPPre_Defined_Item") {}
+		STEPLabel::Out Name;
+    };
+
+    // C++ wrapper for STEPDraughting_Subfigure_Representation
+    struct STEPDraughting_Subfigure_Representation : STEPSymbol_Representation, ObjectHelper<STEPDraughting_Subfigure_Representation,0> { STEPDraughting_Subfigure_Representation() : Object("STEPDraughting_Subfigure_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPDraughting_Symbol_Representation
+    struct STEPDraughting_Symbol_Representation : STEPSymbol_Representation, ObjectHelper<STEPDraughting_Symbol_Representation,0> { STEPDraughting_Symbol_Representation() : Object("STEPDraughting_Symbol_Representation") {}
+
+    };
+
     // C++ wrapper for STEPText_Literal
     struct STEPText_Literal : STEPGeometric_Representation_Item, ObjectHelper<STEPText_Literal,5> { STEPText_Literal() : Object("STEPText_Literal") {}
 		STEPPresentable_Text::Out Literal;
@@ -2123,6 +2303,21 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPPresentation_Representation
+    struct STEPPresentation_Representation : STEPRepresentation, ObjectHelper<STEPPresentation_Representation,0> { STEPPresentation_Representation() : Object("STEPPresentation_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPPresentation_Area
+    struct STEPPresentation_Area : STEPPresentation_Representation, ObjectHelper<STEPPresentation_Area,0> { STEPPresentation_Area() : Object("STEPPresentation_Area") {}
+
+    };
+
+    // C++ wrapper for STEPDrawing_Sheet_Revision
+    struct STEPDrawing_Sheet_Revision : STEPPresentation_Area, ObjectHelper<STEPDrawing_Sheet_Revision,1> { STEPDrawing_Sheet_Revision() : Object("STEPDrawing_Sheet_Revision") {}
+		STEPIdentifier::Out RevisionIdentifier;
+    };
+
     // C++ wrapper for STEPEdge
     struct STEPEdge : STEPTopological_Representation_Item, ObjectHelper<STEPEdge,2> { STEPEdge() : Object("STEPEdge") {}
 		Lazy< STEPVertex > EdgeStart;
@@ -2134,9 +2329,24 @@ namespace STEP {
 		ListOf< Lazy< STEPConnected_Edge_Set >, 1, 0 > EbwmBoundary;
     };
 
+    // C++ wrapper for STEPEdge_Based_Wireframe_Shape_Representation
+    struct STEPEdge_Based_Wireframe_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPEdge_Based_Wireframe_Shape_Representation,0> { STEPEdge_Based_Wireframe_Shape_Representation() : Object("STEPEdge_Based_Wireframe_Shape_Representation") {}
+
+    };
+
     // C++ wrapper for STEPEdge_Blended_Solid
     struct STEPEdge_Blended_Solid : STEPModified_Solid, ObjectHelper<STEPEdge_Blended_Solid,1> { STEPEdge_Blended_Solid() : Object("STEPEdge_Blended_Solid") {}
 		ListOf< Lazy< NotImplemented >, 1, 0 > BlendedEdges;
+    };
+
+    // C++ wrapper for STEPElectric_Current_Unit
+    struct STEPElectric_Current_Unit : STEPNamed_Unit, ObjectHelper<STEPElectric_Current_Unit,0> { STEPElectric_Current_Unit() : Object("STEPElectric_Current_Unit") {}
+
+    };
+
+    // C++ wrapper for STEPElementary_Brep_Shape_Representation
+    struct STEPElementary_Brep_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPElementary_Brep_Shape_Representation,0> { STEPElementary_Brep_Shape_Representation() : Object("STEPElementary_Brep_Shape_Representation") {}
+
     };
 
     // C++ wrapper for STEPEllipse
@@ -2233,6 +2443,23 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPFaceted_Brep_Shape_Representation
+    struct STEPFaceted_Brep_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPFaceted_Brep_Shape_Representation,0> { STEPFaceted_Brep_Shape_Representation() : Object("STEPFaceted_Brep_Shape_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPFill_Area_Style
+    struct STEPFill_Area_Style : STEPFounded_Item, ObjectHelper<STEPFill_Area_Style,2> { STEPFill_Area_Style() : Object("STEPFill_Area_Style") {}
+		STEPLabel::Out Name;
+		ListOf< STEPFill_Style_Select, 1, 0 >::Out FillStyles;
+    };
+
+    // C++ wrapper for STEPFill_Area_Style_Colour
+    struct STEPFill_Area_Style_Colour :  ObjectHelper<STEPFill_Area_Style_Colour,2> { STEPFill_Area_Style_Colour() : Object("STEPFill_Area_Style_Colour") {}
+		STEPLabel::Out Name;
+		Lazy< STEPColour > FillColour;
+    };
+
     // C++ wrapper for STEPFill_Area_Style_Hatching
     struct STEPFill_Area_Style_Hatching : STEPGeometric_Representation_Item, ObjectHelper<STEPFill_Area_Style_Hatching,5> { STEPFill_Area_Style_Hatching() : Object("STEPFill_Area_Style_Hatching") {}
 		Lazy< NotImplemented > HatchLineAppearance;
@@ -2245,7 +2472,7 @@ namespace STEP {
     // C++ wrapper for STEPFill_Area_Style_Tile_Coloured_Region
     struct STEPFill_Area_Style_Tile_Coloured_Region : STEPGeometric_Representation_Item, ObjectHelper<STEPFill_Area_Style_Tile_Coloured_Region,2> { STEPFill_Area_Style_Tile_Coloured_Region() : Object("STEPFill_Area_Style_Tile_Coloured_Region") {}
 		STEPCurve_Or_Annotation_Curve_Occurrence::Out ClosedCurve;
-		Lazy< NotImplemented > RegionColour;
+		Lazy< STEPColour > RegionColour;
     };
 
     // C++ wrapper for STEPFill_Area_Style_Tile_Curve_With_Style
@@ -2280,13 +2507,54 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPRepresentation_Context
+    struct STEPRepresentation_Context :  ObjectHelper<STEPRepresentation_Context,2> { STEPRepresentation_Context() : Object("STEPRepresentation_Context") {}
+		STEPIdentifier::Out ContextIdentifier;
+		STEPText::Out ContextType;
+    };
+
+    // C++ wrapper for STEPGeometric_Representation_Context
+    struct STEPGeometric_Representation_Context : STEPRepresentation_Context, ObjectHelper<STEPGeometric_Representation_Context,1> { STEPGeometric_Representation_Context() : Object("STEPGeometric_Representation_Context") {}
+		STEPDimension_Count::Out CoordinateSpaceDimension;
+    };
+
     // C++ wrapper for STEPGeometrical_Tolerance_Callout
     struct STEPGeometrical_Tolerance_Callout : STEPDraughting_Callout, ObjectHelper<STEPGeometrical_Tolerance_Callout,0> { STEPGeometrical_Tolerance_Callout() : Object("STEPGeometrical_Tolerance_Callout") {}
 
     };
 
+    // C++ wrapper for STEPGeometrically_Bounded_2d_Wireframe_Representation
+    struct STEPGeometrically_Bounded_2d_Wireframe_Representation : STEPShape_Representation, ObjectHelper<STEPGeometrically_Bounded_2d_Wireframe_Representation,0> { STEPGeometrically_Bounded_2d_Wireframe_Representation() : Object("STEPGeometrically_Bounded_2d_Wireframe_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPGeometrically_Bounded_Surface_Shape_Representation
+    struct STEPGeometrically_Bounded_Surface_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPGeometrically_Bounded_Surface_Shape_Representation,0> { STEPGeometrically_Bounded_Surface_Shape_Representation() : Object("STEPGeometrically_Bounded_Surface_Shape_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPGeometrically_Bounded_Wireframe_Shape_Representation
+    struct STEPGeometrically_Bounded_Wireframe_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPGeometrically_Bounded_Wireframe_Shape_Representation,0> { STEPGeometrically_Bounded_Wireframe_Shape_Representation() : Object("STEPGeometrically_Bounded_Wireframe_Shape_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPGlobal_Uncertainty_Assigned_Context
+    struct STEPGlobal_Uncertainty_Assigned_Context : STEPRepresentation_Context, ObjectHelper<STEPGlobal_Uncertainty_Assigned_Context,1> { STEPGlobal_Uncertainty_Assigned_Context() : Object("STEPGlobal_Uncertainty_Assigned_Context") {}
+		ListOf< Lazy< NotImplemented >, 1, 0 > Uncertainty;
+    };
+
+    // C++ wrapper for STEPGlobal_Unit_Assigned_Context
+    struct STEPGlobal_Unit_Assigned_Context : STEPRepresentation_Context, ObjectHelper<STEPGlobal_Unit_Assigned_Context,1> { STEPGlobal_Unit_Assigned_Context() : Object("STEPGlobal_Unit_Assigned_Context") {}
+		ListOf< STEPUnit, 1, 0 >::Out Units;
+    };
+
     // C++ wrapper for STEPGround_Fact
     struct STEPGround_Fact : STEPAtomic_Formula, ObjectHelper<STEPGround_Fact,0> { STEPGround_Fact() : Object("STEPGround_Fact") {}
+
+    };
+
+    // C++ wrapper for STEPHardness_Representation
+    struct STEPHardness_Representation : STEPRepresentation, ObjectHelper<STEPHardness_Representation,0> { STEPHardness_Representation() : Object("STEPHardness_Representation") {}
 
     };
 
@@ -2328,6 +2596,11 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPIso4217_Currency
+    struct STEPIso4217_Currency : STEPCurrency, ObjectHelper<STEPIso4217_Currency,0> { STEPIso4217_Currency() : Object("STEPIso4217_Currency") {}
+
+    };
+
     // C++ wrapper for STEPLeader_Curve
     struct STEPLeader_Curve : STEPAnnotation_Curve_Occurrence, ObjectHelper<STEPLeader_Curve,0> { STEPLeader_Curve() : Object("STEPLeader_Curve") {}
 
@@ -2348,9 +2621,14 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPLength_Unit
+    struct STEPLength_Unit : STEPNamed_Unit, ObjectHelper<STEPLength_Unit,0> { STEPLength_Unit() : Object("STEPLength_Unit") {}
+
+    };
+
     // C++ wrapper for STEPLight_Source
     struct STEPLight_Source : STEPGeometric_Representation_Item, ObjectHelper<STEPLight_Source,1> { STEPLight_Source() : Object("STEPLight_Source") {}
-		Lazy< NotImplemented > LightColour;
+		Lazy< STEPColour > LightColour;
     };
 
     // C++ wrapper for STEPLight_Source_Ambient
@@ -2411,9 +2689,75 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPLuminous_Flux_Unit
+    struct STEPLuminous_Flux_Unit : STEPNamed_Unit, ObjectHelper<STEPLuminous_Flux_Unit,0> { STEPLuminous_Flux_Unit() : Object("STEPLuminous_Flux_Unit") {}
+
+    };
+
+    // C++ wrapper for STEPLuminous_Intensity_Unit
+    struct STEPLuminous_Intensity_Unit : STEPNamed_Unit, ObjectHelper<STEPLuminous_Intensity_Unit,0> { STEPLuminous_Intensity_Unit() : Object("STEPLuminous_Intensity_Unit") {}
+
+    };
+
+    // C++ wrapper for STEPManifold_Subsurface_Shape_Representation
+    struct STEPManifold_Subsurface_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPManifold_Subsurface_Shape_Representation,0> { STEPManifold_Subsurface_Shape_Representation() : Object("STEPManifold_Subsurface_Shape_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPManifold_Surface_Shape_Representation
+    struct STEPManifold_Surface_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPManifold_Surface_Shape_Representation,0> { STEPManifold_Surface_Shape_Representation() : Object("STEPManifold_Surface_Shape_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPMass_Unit
+    struct STEPMass_Unit : STEPNamed_Unit, ObjectHelper<STEPMass_Unit,0> { STEPMass_Unit() : Object("STEPMass_Unit") {}
+
+    };
+
+    // C++ wrapper for STEPProperty_Definition_Representation
+    struct STEPProperty_Definition_Representation :  ObjectHelper<STEPProperty_Definition_Representation,2> { STEPProperty_Definition_Representation() : Object("STEPProperty_Definition_Representation") {}
+		STEPRepresented_Definition::Out Definition;
+		Lazy< STEPRepresentation > UsedRepresentation;
+    };
+
+    // C++ wrapper for STEPMechanical_Design_Geometric_Presentation_Area
+    struct STEPMechanical_Design_Geometric_Presentation_Area : STEPPresentation_Area, ObjectHelper<STEPMechanical_Design_Geometric_Presentation_Area,0> { STEPMechanical_Design_Geometric_Presentation_Area() : Object("STEPMechanical_Design_Geometric_Presentation_Area") {}
+
+    };
+
+    // C++ wrapper for STEPMechanical_Design_Geometric_Presentation_Representation
+    struct STEPMechanical_Design_Geometric_Presentation_Representation : STEPRepresentation, ObjectHelper<STEPMechanical_Design_Geometric_Presentation_Representation,0> { STEPMechanical_Design_Geometric_Presentation_Representation() : Object("STEPMechanical_Design_Geometric_Presentation_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPMechanical_Design_Presentation_Representation_With_Draughting
+    struct STEPMechanical_Design_Presentation_Representation_With_Draughting : STEPRepresentation, ObjectHelper<STEPMechanical_Design_Presentation_Representation_With_Draughting,0> { STEPMechanical_Design_Presentation_Representation_With_Draughting() : Object("STEPMechanical_Design_Presentation_Representation_With_Draughting") {}
+
+    };
+
+    // C++ wrapper for STEPMechanical_Design_Shaded_Presentation_Area
+    struct STEPMechanical_Design_Shaded_Presentation_Area : STEPPresentation_Area, ObjectHelper<STEPMechanical_Design_Shaded_Presentation_Area,0> { STEPMechanical_Design_Shaded_Presentation_Area() : Object("STEPMechanical_Design_Shaded_Presentation_Area") {}
+
+    };
+
+    // C++ wrapper for STEPMechanical_Design_Shaded_Presentation_Representation
+    struct STEPMechanical_Design_Shaded_Presentation_Representation : STEPRepresentation, ObjectHelper<STEPMechanical_Design_Shaded_Presentation_Representation,0> { STEPMechanical_Design_Shaded_Presentation_Representation() : Object("STEPMechanical_Design_Shaded_Presentation_Representation") {}
+
+    };
+
     // C++ wrapper for STEPModified_Solid_With_Placed_Configuration
     struct STEPModified_Solid_With_Placed_Configuration : STEPModified_Solid, ObjectHelper<STEPModified_Solid_With_Placed_Configuration,1> { STEPModified_Solid_With_Placed_Configuration() : Object("STEPModified_Solid_With_Placed_Configuration") {}
 		Lazy< STEPAxis2_Placement_3d > Placing;
+    };
+
+    // C++ wrapper for STEPMoments_Of_Inertia_Representation
+    struct STEPMoments_Of_Inertia_Representation : STEPRepresentation, ObjectHelper<STEPMoments_Of_Inertia_Representation,0> { STEPMoments_Of_Inertia_Representation() : Object("STEPMoments_Of_Inertia_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPNon_Manifold_Surface_Shape_Representation
+    struct STEPNon_Manifold_Surface_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPNon_Manifold_Surface_Shape_Representation,0> { STEPNon_Manifold_Surface_Shape_Representation() : Object("STEPNon_Manifold_Surface_Shape_Representation") {}
+
     };
 
     // C++ wrapper for STEPNull_Representation_Item
@@ -2513,10 +2857,25 @@ namespace STEP {
 		STEPLength_Measure::Out FocalDist;
     };
 
+    // C++ wrapper for STEPParametric_Representation_Context
+    struct STEPParametric_Representation_Context : STEPRepresentation_Context, ObjectHelper<STEPParametric_Representation_Context,0> { STEPParametric_Representation_Context() : Object("STEPParametric_Representation_Context") {}
+
+    };
+
     // C++ wrapper for STEPPcurve
     struct STEPPcurve : STEPCurve, ObjectHelper<STEPPcurve,2> { STEPPcurve() : Object("STEPPcurve") {}
 		Lazy< STEPSurface > BasisSurface;
-		Lazy< NotImplemented > ReferenceToCurve;
+		Lazy< STEPDefinitional_Representation > ReferenceToCurve;
+    };
+
+    // C++ wrapper for STEPPresentation_View
+    struct STEPPresentation_View : STEPPresentation_Representation, ObjectHelper<STEPPresentation_View,0> { STEPPresentation_View() : Object("STEPPresentation_View") {}
+
+    };
+
+    // C++ wrapper for STEPPicture_Representation
+    struct STEPPicture_Representation : STEPPresentation_View, ObjectHelper<STEPPicture_Representation,0> { STEPPicture_Representation() : Object("STEPPicture_Representation") {}
+
     };
 
     // C++ wrapper for STEPPlanar_Extent
@@ -2532,6 +2891,11 @@ namespace STEP {
 
     // C++ wrapper for STEPPlane
     struct STEPPlane : STEPElementary_Surface, ObjectHelper<STEPPlane,0> { STEPPlane() : Object("STEPPlane") {}
+
+    };
+
+    // C++ wrapper for STEPPlane_Angle_Unit
+    struct STEPPlane_Angle_Unit : STEPNamed_Unit, ObjectHelper<STEPPlane_Angle_Unit,0> { STEPPlane_Angle_Unit() : Object("STEPPlane_Angle_Unit") {}
 
     };
 
@@ -2551,7 +2915,7 @@ namespace STEP {
     // C++ wrapper for STEPPoint_Replica
     struct STEPPoint_Replica : STEPPoint, ObjectHelper<STEPPoint_Replica,2> { STEPPoint_Replica() : Object("STEPPoint_Replica") {}
 		Lazy< STEPPoint > ParentPt;
-		Lazy< NotImplemented > Transformation;
+		Lazy< STEPCartesian_Transformation_Operator > Transformation;
     };
 
     // C++ wrapper for STEPPoly_Loop
@@ -2570,6 +2934,11 @@ namespace STEP {
 		ListOf< Lazy< NotImplemented >, 0, 0 > AuxiliaryElements;
     };
 
+    // C++ wrapper for STEPPre_Defined_Surface_Side_Style
+    struct STEPPre_Defined_Surface_Side_Style : STEPPre_Defined_Item, ObjectHelper<STEPPre_Defined_Surface_Side_Style,0> { STEPPre_Defined_Surface_Side_Style() : Object("STEPPre_Defined_Surface_Side_Style") {}
+
+    };
+
     // C++ wrapper for STEPPredefined_Picture_Representation_Item
     struct STEPPredefined_Picture_Representation_Item : STEPPicture_Representation_Item, ObjectHelper<STEPPredefined_Picture_Representation_Item,0> { STEPPredefined_Picture_Representation_Item() : Object("STEPPredefined_Picture_Representation_Item") {}
 
@@ -2585,11 +2954,24 @@ namespace STEP {
 		STEPStyle_Context_Select::Out StyleContext;
     };
 
+    // C++ wrapper for STEPProcedural_Representation
+    struct STEPProcedural_Representation : STEPRepresentation, ObjectHelper<STEPProcedural_Representation,0> { STEPProcedural_Representation() : Object("STEPProcedural_Representation") {}
+
+    };
+
     // C++ wrapper for STEPProcedural_Representation_Sequence
     struct STEPProcedural_Representation_Sequence : STEPRepresentation_Item, ObjectHelper<STEPProcedural_Representation_Sequence,3> { STEPProcedural_Representation_Sequence() : Object("STEPProcedural_Representation_Sequence") {}
 		ListOf< Lazy< STEPRepresentation_Item >, 1, 0 > Elements;
 		ListOf< Lazy< STEPRepresentation_Item >, 0, 0 > SuppressedItems;
 		STEPText::Out Rationale;
+    };
+
+    // C++ wrapper for STEPProduct
+    struct STEPProduct :  ObjectHelper<STEPProduct,4> { STEPProduct() : Object("STEPProduct") {}
+		STEPIdentifier::Out Id;
+		STEPLabel::Out Name;
+		Maybe< STEPText::Out > Description;
+		ListOf< Lazy< NotImplemented >, 1, 0 > FrameOfReference;
     };
 
     // C++ wrapper for STEPProjection_Curve
@@ -2614,6 +2996,11 @@ namespace STEP {
 
     // C++ wrapper for STEPRadius_Dimension
     struct STEPRadius_Dimension : STEPDimension_Curve_Directed_Callout, ObjectHelper<STEPRadius_Dimension,0> { STEPRadius_Dimension() : Object("STEPRadius_Dimension") {}
+
+    };
+
+    // C++ wrapper for STEPRatio_Unit
+    struct STEPRatio_Unit : STEPNamed_Unit, ObjectHelper<STEPRatio_Unit,0> { STEPRatio_Unit() : Object("STEPRatio_Unit") {}
 
     };
 
@@ -2729,6 +3116,21 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPShape_Definition_Representation
+    struct STEPShape_Definition_Representation : STEPProperty_Definition_Representation, ObjectHelper<STEPShape_Definition_Representation,0> { STEPShape_Definition_Representation() : Object("STEPShape_Definition_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPShape_Dimension_Representation
+    struct STEPShape_Dimension_Representation : STEPShape_Representation, ObjectHelper<STEPShape_Dimension_Representation,0> { STEPShape_Dimension_Representation() : Object("STEPShape_Dimension_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPShape_Representation_With_Parameters
+    struct STEPShape_Representation_With_Parameters : STEPShape_Representation, ObjectHelper<STEPShape_Representation_With_Parameters,0> { STEPShape_Representation_With_Parameters() : Object("STEPShape_Representation_With_Parameters") {}
+
+    };
+
     // C++ wrapper for STEPShell_Based_Surface_Model
     struct STEPShell_Based_Surface_Model : STEPGeometric_Representation_Item, ObjectHelper<STEPShell_Based_Surface_Model,1> { STEPShell_Based_Surface_Model() : Object("STEPShell_Based_Surface_Model") {}
 		ListOf< STEPShell, 1, 0 >::Out SbsmBoundary;
@@ -2739,10 +3141,26 @@ namespace STEP {
 		ListOf< STEPShell, 1, 0 >::Out SbwmBoundary;
     };
 
+    // C++ wrapper for STEPShell_Based_Wireframe_Shape_Representation
+    struct STEPShell_Based_Wireframe_Shape_Representation : STEPShape_Representation, ObjectHelper<STEPShell_Based_Wireframe_Shape_Representation,0> { STEPShell_Based_Wireframe_Shape_Representation() : Object("STEPShell_Based_Wireframe_Shape_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPSi_Unit
+    struct STEPSi_Unit : STEPNamed_Unit, ObjectHelper<STEPSi_Unit,2> { STEPSi_Unit() : Object("STEPSi_Unit") {}
+		Maybe< STEPSi_Prefix::Out > Prefix;
+		STEPSi_Unit_Name::Out Name;
+    };
+
+    // C++ wrapper for STEPSolid_Angle_Unit
+    struct STEPSolid_Angle_Unit : STEPNamed_Unit, ObjectHelper<STEPSolid_Angle_Unit,0> { STEPSolid_Angle_Unit() : Object("STEPSolid_Angle_Unit") {}
+
+    };
+
     // C++ wrapper for STEPSolid_Replica
     struct STEPSolid_Replica : STEPSolid_Model, ObjectHelper<STEPSolid_Replica,2> { STEPSolid_Replica() : Object("STEPSolid_Replica") {}
 		Lazy< STEPSolid_Model > ParentSolid;
-		Lazy< NotImplemented > Transformation;
+		Lazy< STEPCartesian_Transformation_Operator_3d > Transformation;
     };
 
     // C++ wrapper for STEPSolid_With_Chamfered_Edges
@@ -2951,6 +3369,11 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPStructured_Text_Representation
+    struct STEPStructured_Text_Representation : STEPRepresentation, ObjectHelper<STEPStructured_Text_Representation,0> { STEPStructured_Text_Representation() : Object("STEPStructured_Text_Representation") {}
+
+    };
+
     // C++ wrapper for STEPSubedge
     struct STEPSubedge : STEPEdge, ObjectHelper<STEPSubedge,1> { STEPSubedge() : Object("STEPSubedge") {}
 		Lazy< STEPEdge > ParentEdge;
@@ -2984,18 +3407,29 @@ namespace STEP {
     // C++ wrapper for STEPSurface_Replica
     struct STEPSurface_Replica : STEPSurface, ObjectHelper<STEPSurface_Replica,2> { STEPSurface_Replica() : Object("STEPSurface_Replica") {}
 		Lazy< STEPSurface > ParentSurface;
-		Lazy< NotImplemented > Transformation;
+		Lazy< STEPCartesian_Transformation_Operator_3d > Transformation;
     };
 
-    // C++ wrapper for STEPSurface_Style_Rendering
-    struct STEPSurface_Style_Rendering :  ObjectHelper<STEPSurface_Style_Rendering,2> { STEPSurface_Style_Rendering() : Object("STEPSurface_Style_Rendering") {}
-		STEPShading_Surface_Method::Out RenderingMethod;
-		Lazy< NotImplemented > SurfaceColour;
+    // C++ wrapper for STEPSurface_Side_Style
+    struct STEPSurface_Side_Style : STEPFounded_Item, ObjectHelper<STEPSurface_Side_Style,2> { STEPSurface_Side_Style() : Object("STEPSurface_Side_Style") {}
+		STEPLabel::Out Name;
+		ListOf< STEPSurface_Style_Element_Select, 1, 7 >::Out Styles;
     };
 
-    // C++ wrapper for STEPSurface_Style_Rendering_With_Properties
-    struct STEPSurface_Style_Rendering_With_Properties : STEPSurface_Style_Rendering, ObjectHelper<STEPSurface_Style_Rendering_With_Properties,1> { STEPSurface_Style_Rendering_With_Properties() : Object("STEPSurface_Style_Rendering_With_Properties") {}
-		ListOf< STEPRendering_Properties_Select, 1, 2 >::Out Properties;
+    // C++ wrapper for STEPSurface_Style_Fill_Area
+    struct STEPSurface_Style_Fill_Area : STEPFounded_Item, ObjectHelper<STEPSurface_Style_Fill_Area,1> { STEPSurface_Style_Fill_Area() : Object("STEPSurface_Style_Fill_Area") {}
+		Lazy< STEPFill_Area_Style > FillArea;
+    };
+
+    // C++ wrapper for STEPSurface_Style_Usage
+    struct STEPSurface_Style_Usage : STEPFounded_Item, ObjectHelper<STEPSurface_Style_Usage,2> { STEPSurface_Style_Usage() : Object("STEPSurface_Style_Usage") {}
+		STEPSurface_Side::Out Side;
+		STEPSurface_Side_Style_Select::Out Style;
+    };
+
+    // C++ wrapper for STEPSurface_Texture_Representation
+    struct STEPSurface_Texture_Representation : STEPRepresentation, ObjectHelper<STEPSurface_Texture_Representation,0> { STEPSurface_Texture_Representation() : Object("STEPSurface_Texture_Representation") {}
+
     };
 
     // C++ wrapper for STEPSurfaced_Open_Shell
@@ -3017,6 +3451,11 @@ namespace STEP {
 
     };
 
+    // C++ wrapper for STEPSymbol_Representation_Map
+    struct STEPSymbol_Representation_Map : STEPRepresentation_Map, ObjectHelper<STEPSymbol_Representation_Map,0> { STEPSymbol_Representation_Map() : Object("STEPSymbol_Representation_Map") {}
+
+    };
+
     // C++ wrapper for STEPSymbol_Target
     struct STEPSymbol_Target : STEPGeometric_Representation_Item, ObjectHelper<STEPSymbol_Target,3> { STEPSymbol_Target() : Object("STEPSymbol_Target") {}
 		STEPAxis2_Placement::Out Placement;
@@ -3026,6 +3465,16 @@ namespace STEP {
 
     // C++ wrapper for STEPTable_Representation_Item
     struct STEPTable_Representation_Item : STEPCompound_Representation_Item, ObjectHelper<STEPTable_Representation_Item,0> { STEPTable_Representation_Item() : Object("STEPTable_Representation_Item") {}
+
+    };
+
+    // C++ wrapper for STEPTactile_Appearance_Representation
+    struct STEPTactile_Appearance_Representation : STEPRepresentation, ObjectHelper<STEPTactile_Appearance_Representation,0> { STEPTactile_Appearance_Representation() : Object("STEPTactile_Appearance_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPTagged_Text_Format
+    struct STEPTagged_Text_Format : STEPRepresentation_Context, ObjectHelper<STEPTagged_Text_Format,0> { STEPTagged_Text_Format() : Object("STEPTagged_Text_Format") {}
 
     };
 
@@ -3049,11 +3498,26 @@ namespace STEP {
 		Lazy< STEPPlanar_Extent > Extent;
     };
 
+    // C++ wrapper for STEPText_String_Representation
+    struct STEPText_String_Representation : STEPRepresentation, ObjectHelper<STEPText_String_Representation,0> { STEPText_String_Representation() : Object("STEPText_String_Representation") {}
+
+    };
+
+    // C++ wrapper for STEPThermodynamic_Temperature_Unit
+    struct STEPThermodynamic_Temperature_Unit : STEPNamed_Unit, ObjectHelper<STEPThermodynamic_Temperature_Unit,0> { STEPThermodynamic_Temperature_Unit() : Object("STEPThermodynamic_Temperature_Unit") {}
+
+    };
+
     // C++ wrapper for STEPThickened_Face_Solid
     struct STEPThickened_Face_Solid : STEPSolid_Model, ObjectHelper<STEPThickened_Face_Solid,3> { STEPThickened_Face_Solid() : Object("STEPThickened_Face_Solid") {}
 		STEPGeneralized_Surface_Select::Out BaseElement;
 		STEPLength_Measure::Out Offset1;
 		STEPLength_Measure::Out Offset2;
+    };
+
+    // C++ wrapper for STEPTime_Unit
+    struct STEPTime_Unit : STEPNamed_Unit, ObjectHelper<STEPTime_Unit,0> { STEPTime_Unit() : Object("STEPTime_Unit") {}
+
     };
 
     // C++ wrapper for STEPTorus
@@ -3085,6 +3549,11 @@ namespace STEP {
     // C++ wrapper for STEPTwo_Direction_Repeat_Factor
     struct STEPTwo_Direction_Repeat_Factor : STEPOne_Direction_Repeat_Factor, ObjectHelper<STEPTwo_Direction_Repeat_Factor,1> { STEPTwo_Direction_Repeat_Factor() : Object("STEPTwo_Direction_Repeat_Factor") {}
 		Lazy< STEPVector > SecondRepeatFactor;
+    };
+
+    // C++ wrapper for STEPUncertainty_Assigned_Representation
+    struct STEPUncertainty_Assigned_Representation : STEPRepresentation, ObjectHelper<STEPUncertainty_Assigned_Representation,1> { STEPUncertainty_Assigned_Representation() : Object("STEPUncertainty_Assigned_Representation") {}
+		ListOf< Lazy< NotImplemented >, 1, 0 > Uncertainty;
     };
 
     // C++ wrapper for STEPUniform_Curve
@@ -3143,6 +3612,11 @@ namespace STEP {
 		Lazy< STEPVertex_Loop > VertexShellExtent;
     };
 
+    // C++ wrapper for STEPVisual_Appearance_Representation
+    struct STEPVisual_Appearance_Representation : STEPRepresentation, ObjectHelper<STEPVisual_Appearance_Representation,0> { STEPVisual_Appearance_Representation() : Object("STEPVisual_Appearance_Representation") {}
+
+    };
+
     // C++ wrapper for STEPWire_Shell
     struct STEPWire_Shell : STEPTopological_Representation_Item, ObjectHelper<STEPWire_Shell,1> { STEPWire_Shell() : Object("STEPWire_Shell") {}
 		ListOf< Lazy< STEPLoop >, 1, 0 > WireShellExtent;
@@ -3159,6 +3633,11 @@ namespace STEP {
 	
 #define DECL_CONV_STUB(type) template <> size_t GenericFill<STEP::type>(const STEP::DB& db, const EXPRESS::LIST& params, STEP::type* in)
 	
+	DECL_CONV_STUB(STEPRepresentation);
+	DECL_CONV_STUB(STEPShape_Representation);
+	DECL_CONV_STUB(STEPAdvanced_Brep_Shape_Representation);
+	DECL_CONV_STUB(STEPNamed_Unit);
+	DECL_CONV_STUB(STEPAmount_Of_Substance_Unit);
 	DECL_CONV_STUB(STEPRepresentation_Item);
 	DECL_CONV_STUB(STEPGeometric_Representation_Item);
 	DECL_CONV_STUB(STEPDraughting_Callout);
@@ -3190,6 +3669,8 @@ namespace STEP {
 	DECL_CONV_STUB(STEPBounded_Surface);
 	DECL_CONV_STUB(STEPB_Spline_Surface);
 	DECL_CONV_STUB(STEPB_Spline_Surface_With_Knots);
+	DECL_CONV_STUB(STEPColour);
+	DECL_CONV_STUB(STEPBeveled_Sheet_Representation);
 	DECL_CONV_STUB(STEPBezier_Curve);
 	DECL_CONV_STUB(STEPBezier_Surface);
 	DECL_CONV_STUB(STEPBinary_Representation_Item);
@@ -3214,13 +3695,25 @@ namespace STEP {
 	DECL_CONV_STUB(STEPCamera_Model_D3_Multi_Clipping_Union);
 	DECL_CONV_STUB(STEPCamera_Model_D3_With_Hlhsr);
 	DECL_CONV_STUB(STEPCamera_Model_With_Light_Sources);
+	DECL_CONV_STUB(STEPRepresentation_Map);
+	DECL_CONV_STUB(STEPCamera_Usage);
 	DECL_CONV_STUB(STEPPoint);
 	DECL_CONV_STUB(STEPCartesian_Point);
+	DECL_CONV_STUB(STEPCartesian_Transformation_Operator);
+	DECL_CONV_STUB(STEPCartesian_Transformation_Operator_2d);
+	DECL_CONV_STUB(STEPCartesian_Transformation_Operator_3d);
+	DECL_CONV_STUB(STEPSymbol_Representation);
+	DECL_CONV_STUB(STEPGeneric_Character_Glyph_Symbol);
+	DECL_CONV_STUB(STEPCharacter_Glyph_Symbol);
+	DECL_CONV_STUB(STEPCharacter_Glyph_Symbol_Outline);
+	DECL_CONV_STUB(STEPCharacter_Glyph_Symbol_Stroke);
 	DECL_CONV_STUB(STEPConic);
 	DECL_CONV_STUB(STEPCircle);
 	DECL_CONV_STUB(STEPTopological_Representation_Item);
 	DECL_CONV_STUB(STEPConnected_Face_Set);
 	DECL_CONV_STUB(STEPClosed_Shell);
+	DECL_CONV_STUB(STEPColour_Specification);
+	DECL_CONV_STUB(STEPColour_Rgb);
 	DECL_CONV_STUB(STEPComplex_Clause);
 	DECL_CONV_STUB(STEPComplex_Conjunctive_Clause);
 	DECL_CONV_STUB(STEPComplex_Disjunctive_Clause);
@@ -3228,27 +3721,38 @@ namespace STEP {
 	DECL_CONV_STUB(STEPShelled_Solid);
 	DECL_CONV_STUB(STEPComplex_Shelled_Solid);
 	DECL_CONV_STUB(STEPComposite_Curve_Segment);
+	DECL_CONV_STUB(STEPComposite_Sheet_Representation);
 	DECL_CONV_STUB(STEPComposite_Text);
 	DECL_CONV_STUB(STEPComposite_Text_With_Associated_Curves);
 	DECL_CONV_STUB(STEPComposite_Text_With_Blanking_Box);
 	DECL_CONV_STUB(STEPComposite_Text_With_Delineation);
 	DECL_CONV_STUB(STEPComposite_Text_With_Extent);
+	DECL_CONV_STUB(STEPCompound_Shape_Representation);
 	DECL_CONV_STUB(STEPConical_Stepped_Hole_Transition);
 	DECL_CONV_STUB(STEPElementary_Surface);
 	DECL_CONV_STUB(STEPConical_Surface);
 	DECL_CONV_STUB(STEPConnected_Edge_Set);
 	DECL_CONV_STUB(STEPConnected_Face_Sub_Set);
+	DECL_CONV_STUB(STEPConstructive_Geometry_Representation);
+	DECL_CONV_STUB(STEPContact_Ratio_Representation);
 	DECL_CONV_STUB(STEPOver_Riding_Styled_Item);
 	DECL_CONV_STUB(STEPContext_Dependent_Over_Riding_Styled_Item);
+	DECL_CONV_STUB(STEPContext_Dependent_Unit);
+	DECL_CONV_STUB(STEPConversion_Based_Unit);
+	DECL_CONV_STUB(STEPCsg_Shape_Representation);
 	DECL_CONV_STUB(STEPCsg_Solid);
+	DECL_CONV_STUB(STEPCurrency);
 	DECL_CONV_STUB(STEPCurve_Bounded_Surface);
 	DECL_CONV_STUB(STEPCurve_Dimension);
 	DECL_CONV_STUB(STEPCurve_Replica);
+	DECL_CONV_STUB(STEPCurve_Swept_Solid_Shape_Representation);
 	DECL_CONV_STUB(STEPCylindrical_Surface);
 	DECL_CONV_STUB(STEPDatum_Feature_Callout);
 	DECL_CONV_STUB(STEPDatum_Target_Callout);
+	DECL_CONV_STUB(STEPDefault_Tolerance_Table);
 	DECL_CONV_STUB(STEPDefault_Tolerance_Table_Cell);
 	DECL_CONV_STUB(STEPDefined_Symbol);
+	DECL_CONV_STUB(STEPDefinitional_Representation);
 	DECL_CONV_STUB(STEPDegenerate_Pcurve);
 	DECL_CONV_STUB(STEPToroidal_Surface);
 	DECL_CONV_STUB(STEPDegenerate_Toroidal_Surface);
@@ -3262,12 +3766,22 @@ namespace STEP {
 	DECL_CONV_STUB(STEPDouble_Offset_Shelled_Solid);
 	DECL_CONV_STUB(STEPDraughting_Annotation_Occurrence);
 	DECL_CONV_STUB(STEPDraughting_Elements);
+	DECL_CONV_STUB(STEPDraughting_Model);
+	DECL_CONV_STUB(STEPPre_Defined_Item);
+	DECL_CONV_STUB(STEPDraughting_Subfigure_Representation);
+	DECL_CONV_STUB(STEPDraughting_Symbol_Representation);
 	DECL_CONV_STUB(STEPText_Literal);
 	DECL_CONV_STUB(STEPText_Literal_With_Delineation);
 	DECL_CONV_STUB(STEPDraughting_Text_Literal_With_Delineation);
+	DECL_CONV_STUB(STEPPresentation_Representation);
+	DECL_CONV_STUB(STEPPresentation_Area);
+	DECL_CONV_STUB(STEPDrawing_Sheet_Revision);
 	DECL_CONV_STUB(STEPEdge);
 	DECL_CONV_STUB(STEPEdge_Based_Wireframe_Model);
+	DECL_CONV_STUB(STEPEdge_Based_Wireframe_Shape_Representation);
 	DECL_CONV_STUB(STEPEdge_Blended_Solid);
+	DECL_CONV_STUB(STEPElectric_Current_Unit);
+	DECL_CONV_STUB(STEPElementary_Brep_Shape_Representation);
 	DECL_CONV_STUB(STEPEllipse);
 	DECL_CONV_STUB(STEPEnum_Reference_Prefix);
 	DECL_CONV_STUB(STEPEvaluated_Degenerate_Pcurve);
@@ -3285,6 +3799,9 @@ namespace STEP {
 	DECL_CONV_STUB(STEPFace_Bound);
 	DECL_CONV_STUB(STEPFace_Outer_Bound);
 	DECL_CONV_STUB(STEPFaceted_Brep);
+	DECL_CONV_STUB(STEPFaceted_Brep_Shape_Representation);
+	DECL_CONV_STUB(STEPFill_Area_Style);
+	DECL_CONV_STUB(STEPFill_Area_Style_Colour);
 	DECL_CONV_STUB(STEPFill_Area_Style_Hatching);
 	DECL_CONV_STUB(STEPFill_Area_Style_Tile_Coloured_Region);
 	DECL_CONV_STUB(STEPFill_Area_Style_Tile_Curve_With_Style);
@@ -3293,8 +3810,16 @@ namespace STEP {
 	DECL_CONV_STUB(STEPFunc);
 	DECL_CONV_STUB(STEPGeometric_Set);
 	DECL_CONV_STUB(STEPGeometric_Curve_Set);
+	DECL_CONV_STUB(STEPRepresentation_Context);
+	DECL_CONV_STUB(STEPGeometric_Representation_Context);
 	DECL_CONV_STUB(STEPGeometrical_Tolerance_Callout);
+	DECL_CONV_STUB(STEPGeometrically_Bounded_2d_Wireframe_Representation);
+	DECL_CONV_STUB(STEPGeometrically_Bounded_Surface_Shape_Representation);
+	DECL_CONV_STUB(STEPGeometrically_Bounded_Wireframe_Shape_Representation);
+	DECL_CONV_STUB(STEPGlobal_Uncertainty_Assigned_Context);
+	DECL_CONV_STUB(STEPGlobal_Unit_Assigned_Context);
 	DECL_CONV_STUB(STEPGround_Fact);
+	DECL_CONV_STUB(STEPHardness_Representation);
 	DECL_CONV_STUB(STEPHidden_Element_Over_Riding_Styled_Item);
 	DECL_CONV_STUB(STEPHyperbola);
 	DECL_CONV_STUB(STEPIncluded_Text_Block);
@@ -3302,10 +3827,12 @@ namespace STEP {
 	DECL_CONV_STUB(STEPIndirectly_Selected_Elements);
 	DECL_CONV_STUB(STEPSurface_Curve);
 	DECL_CONV_STUB(STEPIntersection_Curve);
+	DECL_CONV_STUB(STEPIso4217_Currency);
 	DECL_CONV_STUB(STEPLeader_Curve);
 	DECL_CONV_STUB(STEPLeader_Directed_Callout);
 	DECL_CONV_STUB(STEPLeader_Directed_Dimension);
 	DECL_CONV_STUB(STEPLeader_Terminator);
+	DECL_CONV_STUB(STEPLength_Unit);
 	DECL_CONV_STUB(STEPLight_Source);
 	DECL_CONV_STUB(STEPLight_Source_Ambient);
 	DECL_CONV_STUB(STEPLight_Source_Directional);
@@ -3317,7 +3844,20 @@ namespace STEP {
 	DECL_CONV_STUB(STEPLiteral_Conjunction);
 	DECL_CONV_STUB(STEPLiteral_Disjunction);
 	DECL_CONV_STUB(STEPLoop);
+	DECL_CONV_STUB(STEPLuminous_Flux_Unit);
+	DECL_CONV_STUB(STEPLuminous_Intensity_Unit);
+	DECL_CONV_STUB(STEPManifold_Subsurface_Shape_Representation);
+	DECL_CONV_STUB(STEPManifold_Surface_Shape_Representation);
+	DECL_CONV_STUB(STEPMass_Unit);
+	DECL_CONV_STUB(STEPProperty_Definition_Representation);
+	DECL_CONV_STUB(STEPMechanical_Design_Geometric_Presentation_Area);
+	DECL_CONV_STUB(STEPMechanical_Design_Geometric_Presentation_Representation);
+	DECL_CONV_STUB(STEPMechanical_Design_Presentation_Representation_With_Draughting);
+	DECL_CONV_STUB(STEPMechanical_Design_Shaded_Presentation_Area);
+	DECL_CONV_STUB(STEPMechanical_Design_Shaded_Presentation_Representation);
 	DECL_CONV_STUB(STEPModified_Solid_With_Placed_Configuration);
+	DECL_CONV_STUB(STEPMoments_Of_Inertia_Representation);
+	DECL_CONV_STUB(STEPNon_Manifold_Surface_Shape_Representation);
 	DECL_CONV_STUB(STEPNull_Representation_Item);
 	DECL_CONV_STUB(STEPOffset_Curve_2d);
 	DECL_CONV_STUB(STEPOffset_Curve_3d);
@@ -3335,25 +3875,33 @@ namespace STEP {
 	DECL_CONV_STUB(STEPOriented_Surface);
 	DECL_CONV_STUB(STEPOuter_Boundary_Curve);
 	DECL_CONV_STUB(STEPParabola);
+	DECL_CONV_STUB(STEPParametric_Representation_Context);
 	DECL_CONV_STUB(STEPPcurve);
+	DECL_CONV_STUB(STEPPresentation_View);
+	DECL_CONV_STUB(STEPPicture_Representation);
 	DECL_CONV_STUB(STEPPlanar_Extent);
 	DECL_CONV_STUB(STEPPlanar_Box);
 	DECL_CONV_STUB(STEPPlane);
+	DECL_CONV_STUB(STEPPlane_Angle_Unit);
 	DECL_CONV_STUB(STEPPoint_On_Curve);
 	DECL_CONV_STUB(STEPPoint_On_Surface);
 	DECL_CONV_STUB(STEPPoint_Replica);
 	DECL_CONV_STUB(STEPPoly_Loop);
 	DECL_CONV_STUB(STEPPolyline);
 	DECL_CONV_STUB(STEPPositioned_Sketch);
+	DECL_CONV_STUB(STEPPre_Defined_Surface_Side_Style);
 	DECL_CONV_STUB(STEPPredefined_Picture_Representation_Item);
 	DECL_CONV_STUB(STEPPresentation_Style_Assignment);
 	DECL_CONV_STUB(STEPPresentation_Style_By_Context);
+	DECL_CONV_STUB(STEPProcedural_Representation);
 	DECL_CONV_STUB(STEPProcedural_Representation_Sequence);
+	DECL_CONV_STUB(STEPProduct);
 	DECL_CONV_STUB(STEPProjection_Curve);
 	DECL_CONV_STUB(STEPQualified_Representation_Item);
 	DECL_CONV_STUB(STEPQuasi_Uniform_Curve);
 	DECL_CONV_STUB(STEPQuasi_Uniform_Surface);
 	DECL_CONV_STUB(STEPRadius_Dimension);
+	DECL_CONV_STUB(STEPRatio_Unit);
 	DECL_CONV_STUB(STEPRational_B_Spline_Curve);
 	DECL_CONV_STUB(STEPRational_B_Spline_Surface);
 	DECL_CONV_STUB(STEPRectangular_Composite_Surface);
@@ -3372,8 +3920,14 @@ namespace STEP {
 	DECL_CONV_STUB(STEPRuled_Surface_Swept_Area_Solid);
 	DECL_CONV_STUB(STEPSculptured_Solid);
 	DECL_CONV_STUB(STEPSeam_Curve);
+	DECL_CONV_STUB(STEPShape_Definition_Representation);
+	DECL_CONV_STUB(STEPShape_Dimension_Representation);
+	DECL_CONV_STUB(STEPShape_Representation_With_Parameters);
 	DECL_CONV_STUB(STEPShell_Based_Surface_Model);
 	DECL_CONV_STUB(STEPShell_Based_Wireframe_Model);
+	DECL_CONV_STUB(STEPShell_Based_Wireframe_Shape_Representation);
+	DECL_CONV_STUB(STEPSi_Unit);
+	DECL_CONV_STUB(STEPSolid_Angle_Unit);
 	DECL_CONV_STUB(STEPSolid_Replica);
 	DECL_CONV_STUB(STEPSolid_With_Chamfered_Edges);
 	DECL_CONV_STUB(STEPSolid_With_Angle_Based_Chamfer);
@@ -3411,6 +3965,7 @@ namespace STEP {
 	DECL_CONV_STUB(STEPSpherical_Surface);
 	DECL_CONV_STUB(STEPStructured_Dimension_Callout);
 	DECL_CONV_STUB(STEPStructured_Text_Composition);
+	DECL_CONV_STUB(STEPStructured_Text_Representation);
 	DECL_CONV_STUB(STEPSubedge);
 	DECL_CONV_STUB(STEPSubface);
 	DECL_CONV_STUB(STEPSurface_Condition_Callout);
@@ -3418,23 +3973,32 @@ namespace STEP {
 	DECL_CONV_STUB(STEPSurface_Of_Linear_Extrusion);
 	DECL_CONV_STUB(STEPSurface_Of_Revolution);
 	DECL_CONV_STUB(STEPSurface_Replica);
-	DECL_CONV_STUB(STEPSurface_Style_Rendering);
-	DECL_CONV_STUB(STEPSurface_Style_Rendering_With_Properties);
+	DECL_CONV_STUB(STEPSurface_Side_Style);
+	DECL_CONV_STUB(STEPSurface_Style_Fill_Area);
+	DECL_CONV_STUB(STEPSurface_Style_Usage);
+	DECL_CONV_STUB(STEPSurface_Texture_Representation);
 	DECL_CONV_STUB(STEPSurfaced_Open_Shell);
 	DECL_CONV_STUB(STEPSwept_Disk_Solid);
 	DECL_CONV_STUB(STEPSymbol);
+	DECL_CONV_STUB(STEPSymbol_Representation_Map);
 	DECL_CONV_STUB(STEPSymbol_Target);
 	DECL_CONV_STUB(STEPTable_Representation_Item);
+	DECL_CONV_STUB(STEPTactile_Appearance_Representation);
+	DECL_CONV_STUB(STEPTagged_Text_Format);
 	DECL_CONV_STUB(STEPTagged_Text_Item);
 	DECL_CONV_STUB(STEPText_Literal_With_Associated_Curves);
 	DECL_CONV_STUB(STEPText_Literal_With_Blanking_Box);
 	DECL_CONV_STUB(STEPText_Literal_With_Extent);
+	DECL_CONV_STUB(STEPText_String_Representation);
+	DECL_CONV_STUB(STEPThermodynamic_Temperature_Unit);
 	DECL_CONV_STUB(STEPThickened_Face_Solid);
+	DECL_CONV_STUB(STEPTime_Unit);
 	DECL_CONV_STUB(STEPTorus);
 	DECL_CONV_STUB(STEPTrack_Blended_Solid);
 	DECL_CONV_STUB(STEPTrack_Blended_Solid_With_End_Conditions);
 	DECL_CONV_STUB(STEPTrimmed_Curve);
 	DECL_CONV_STUB(STEPTwo_Direction_Repeat_Factor);
+	DECL_CONV_STUB(STEPUncertainty_Assigned_Representation);
 	DECL_CONV_STUB(STEPUniform_Curve);
 	DECL_CONV_STUB(STEPUniform_Resource_Identifier);
 	DECL_CONV_STUB(STEPUniform_Surface);
@@ -3446,6 +4010,7 @@ namespace STEP {
 	DECL_CONV_STUB(STEPVertex);
 	DECL_CONV_STUB(STEPVertex_Loop);
 	DECL_CONV_STUB(STEPVertex_Shell);
+	DECL_CONV_STUB(STEPVisual_Appearance_Representation);
 	DECL_CONV_STUB(STEPWire_Shell);
 
 

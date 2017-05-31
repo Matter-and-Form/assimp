@@ -515,11 +515,11 @@ STEPMatrix3 DerivePlaneCoordinateSpace(const TempMesh& curmesh, bool& ok, STEPVe
 
 // Extrudes the given polygon along the direction, converts it into an opening or applies all openings as necessary.
 void ProcessExtrudedArea(const STEPExtruded_Area_Solid& solid, const TempMesh& curve,
-    const STEPVector3& extrusionDir, TempMesh& result, ConversionData &conv, bool collect_openings)
+    const STEPVector3& extrusionDir, TempMesh& result)
 {
     // Outline: 'curve' is now a list of vertex points forming the underlying profile, extrude along the given axis,
     // forming new triangles.
-    const bool has_area = solid.SweptArea->ProfileType == "AREA" && curve.verts.size() > 2;
+    const bool has_area = curve.verts.size() > 2;
     if( solid.Depth < 1e-6 ) {
         if( has_area ) {
             result.Append(curve);
@@ -531,61 +531,9 @@ void ProcessExtrudedArea(const STEPExtruded_Area_Solid& solid, const TempMesh& c
     result.vertcnt.reserve(curve.verts.size() + 2);
     std::vector<STEPVector3> in = curve.verts;
 
-    // First step: transform all vertices into the target coordinate space
-    STEPMatrix4 trafo;
-    ConvertAxisPlacement(trafo, solid.Position);
-
-    STEPVector3 vmin, vmax;
-    MinMaxChooser<STEPVector3>()(vmin, vmax);
-    for(STEPVector3& v : in) {
-        v *= trafo;
-
-        vmin = std::min(vmin, v);
-        vmax = std::max(vmax, v);
-    }
-
-    vmax -= vmin;
-    const STEPFloat diag = vmax.Length();
-    STEPVector3 dir = STEPMatrix3(trafo) * extrusionDir;
-
-    // reverse profile polygon if it's winded in the wrong direction in relation to the extrusion direction
-    STEPVector3 profileNormal = TempMesh::ComputePolygonNormal(in.data(), in.size());
-    if( profileNormal * dir < 0.0 )
-        std::reverse(in.begin(), in.end());
-
-    std::vector<STEPVector3> nors;
-    const bool openings = !!conv.apply_openings && conv.apply_openings->size();
-
-    // Compute the normal vectors for all opening polygons as a prerequisite
-    // to TryAddOpenings_Poly2Tri()
-    // XXX this belongs into the aforementioned function
-    if( openings ) {
-
-        if( !conv.settings.useCustomTriangulation ) {
-            // it is essential to apply the openings in the correct spatial order. The direction
-            // doesn't matter, but we would screw up if we started with e.g. a door in between
-            // two windows.
-            std::sort(conv.apply_openings->begin(), conv.apply_openings->end(), TempOpening::DistanceSorter(in[0]));
-        }
-
-        nors.reserve(conv.apply_openings->size());
-        for(TempOpening& t : *conv.apply_openings) {
-            TempMesh& bounds = *t.profileMesh.get();
-
-            if( bounds.verts.size() <= 2 ) {
-                nors.push_back(STEPVector3());
-                continue;
-            }
-            nors.push_back(((bounds.verts[2] - bounds.verts[0]) ^ (bounds.verts[1] - bounds.verts[0])).Normalize());
-        }
-    }
-
-
-    TempMesh temp;
-    TempMesh& curmesh = openings ? temp : result;
+    TempMesh& curmesh = result;
     std::vector<STEPVector3>& out = curmesh.verts;
 
-    size_t sides_with_openings = 0;
     for( size_t i = 0; i < in.size(); ++i ) {
         const size_t next = (i + 1) % in.size();
 
@@ -593,35 +541,16 @@ void ProcessExtrudedArea(const STEPExtruded_Area_Solid& solid, const TempMesh& c
 
         out.push_back(in[i]);
         out.push_back(in[next]);
-        out.push_back(in[next] + dir);
-        out.push_back(in[i] + dir);
-
-        if( openings ) {
-            if( (in[i] - in[next]).Length() > diag * 0.1 && GenerateOpenings(*conv.apply_openings, nors, temp, true, true, dir) ) {
-                ++sides_with_openings;
-            }
-
-            result.Append(temp);
-            temp.Clear();
-        }
+        out.push_back(in[next] + extrusionDir);
+        out.push_back(in[i] + extrusionDir);
     }
 
-    if( openings ) {
-        for(TempOpening& opening : *conv.apply_openings) {
-            if( !opening.wallPoints.empty() ) {
-                STEPImporter::LogError("failed to generate all window caps");
-            }
-            opening.wallPoints.clear();
-        }
-    }
-
-    size_t sides_with_v_openings = 0;
     if( has_area ) {
 
         for( size_t n = 0; n < 2; ++n ) {
             if( n > 0 ) {
                 for( size_t i = 0; i < in.size(); ++i )
-                    out.push_back(in[i] + dir);
+                    out.push_back(in[i] + extrusionDir);
             }
             else {
                 for( size_t i = in.size(); i--; )
@@ -629,56 +558,22 @@ void ProcessExtrudedArea(const STEPExtruded_Area_Solid& solid, const TempMesh& c
             }
 
             curmesh.vertcnt.push_back(static_cast<unsigned int>(in.size()));
-            if( openings && in.size() > 2 ) {
-                if( GenerateOpenings(*conv.apply_openings, nors, temp, true, true, dir) ) {
-                    ++sides_with_v_openings;
-                }
-
-                result.Append(temp);
-                temp.Clear();
-            }
         }
     }
 
-    if( openings && ((sides_with_openings == 1 && sides_with_openings) || (sides_with_v_openings == 2 && sides_with_v_openings)) ) {
-        STEPImporter::LogWarn("failed to resolve all openings, presumably their topology is not supported by Assimp");
-    }
-
     STEPImporter::LogDebug("generate mesh procedurally by extrusion (STEPExtruded_Area_Solid)");
-
-    // If this is an opening element, store both the extruded mesh and the 2D profile mesh
-    // it was created from. Return an empty mesh to the caller.
-    if( collect_openings && !result.IsEmpty() ) {
-        ai_assert(conv.collect_openings);
-        std::shared_ptr<TempMesh> profile = std::shared_ptr<TempMesh>(new TempMesh());
-        profile->Swap(result);
-
-        std::shared_ptr<TempMesh> profile2D = std::shared_ptr<TempMesh>(new TempMesh());
-        profile2D->verts.insert(profile2D->verts.end(), in.begin(), in.end());
-        profile2D->vertcnt.push_back(static_cast<unsigned int>(in.size()));
-        conv.collect_openings->push_back(TempOpening(&solid, dir, profile, profile2D));
-
-        ai_assert(result.IsEmpty());
-    }
 }
 
 // ------------------------------------------------------------------------------------------------
-void ProcessExtrudedAreaSolid(const STEPExtruded_Area_Solid& solid, TempMesh& result,
-    ConversionData& conv, bool collect_openings)
+void ProcessExtrudedAreaSolid(const STEPExtruded_Area_Solid& solid, TempMesh& result)
 {
     TempMesh meshout;
-
-    // First read the profile description.
-    if(!ProcessProfile(*solid.SweptArea,meshout,conv) || meshout.verts.size()<=1) {
-        return;
-    }
 
     STEPVector3 dir;
     ConvertDirection(dir,solid.ExtrudedDirection);
     dir *= solid.Depth;
 
-    ProcessExtrudedArea(solid, meshout, dir, result, conv, collect_openings);
-    conv.apply_openings = oldApplyOpenings;
+    ProcessExtrudedArea(solid, meshout, dir, result);
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -686,10 +581,10 @@ void ProcessSweptAreaSolid(const STEPSwept_Area_Solid& swept, TempMesh& meshout,
     ConversionData& conv)
 {
     if(const STEPExtruded_Area_Solid* const solid = swept.ToPtr<STEPExtruded_Area_Solid>()) {
-        ProcessExtrudedAreaSolid(*solid,meshout,conv, !!conv.collect_openings);
+        ProcessExtrudedAreaSolid(*solid,meshout);
     }
     else if(const STEPRevolved_Area_Solid* const rev = swept.ToPtr<STEPRevolved_Area_Solid>()) {
-        ProcessRevolvedAreaSolid(*rev,meshout,conv);
+        ProcessRevolvedAreaSolid(*rev,meshout, conv);
     }
     else {
         STEPImporter::LogWarn("skipping unknown STEPSwept_Area_Solid entity, type is " + swept.GetClassName());
@@ -737,28 +632,13 @@ bool ProcessGeometricItem(const STEPRepresentation_Item& geo, unsigned int matid
         fix_orientation = true;
     }
     else  if(const STEPBoolean_Result* boolean = geo.ToPtr<STEPBoolean_Result>()) {
-        ProcessBoolean(*boolean,*meshtmp.get(),conv);
+        STEPImporter::LogWarn("skipping STEPBoolean_Result entity");
+        return false;
+        //ProcessBoolean(*boolean,*meshtmp.get(),conv);
     }
     else {
         STEPImporter::LogWarn("skipping unknown STEPGeometric_Representation_Item entity, type is " + geo.GetClassName());
         return false;
-    }
-
-    // Do we just collect openings for a parent element (i.e. a wall)?
-    // In such a case, we generate the polygonal mesh as usual,
-    // but attach it to a TempOpening instance which will later be applied
-    // to the wall it pertains to.
-
-    // Note: swep area solids are added in ProcessExtrudedAreaSolid(),
-    // which returns an empty mesh.
-    if(conv.collect_openings) {
-        if (!meshtmp->IsEmpty()) {
-            conv.collect_openings->push_back(TempOpening(geo.ToPtr<STEPSolid_Model>(),
-                STEPVector3(0,0,0),
-                meshtmp,
-                std::shared_ptr<TempMesh>()));
-        }
-        return true;
     }
 
     if (meshtmp->IsEmpty()) {

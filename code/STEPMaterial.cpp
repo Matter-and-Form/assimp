@@ -69,65 +69,27 @@ int ConvertShadingMode(const std::string& name)
 }
 
 // ------------------------------------------------------------------------------------------------
-void FillMaterial(aiMaterial* mat,const STEP::STEPSurface_Style* surf,ConversionData& conv)
+void FillMaterial(aiMaterial* mat, const STEP::STEPSurface_Side_Style* style, ConversionData& conv)
 {
     aiString name;
-    name.Set((surf->Name? surf->Name.Get() : "STEPSurfaceStyle_Unnamed"));
+    name.Set((style->Name.empty() ? "STEPSurfaceStyle_Unnamed" : style->Name));
     mat->AddProperty(&name,AI_MATKEY_NAME);
 
-    // now see which kinds of surface information are present
-    for(std::shared_ptr< const STEP::STEPSurface_Style_Element_Select > sel2 : surf->Styles) {
-        if (const STEP::STEPSurface_Style_Shading* shade = sel2->ResolveSelectPtr<STEP::STEPSurface_Style_Shading>(conv.db)) {
-            aiColor4D col_base,col;
-
-            ConvertColor(col_base, shade->SurfaceColour);
-            mat->AddProperty(&col_base,1, AI_MATKEY_COLOR_DIFFUSE);
-
-            if (const STEP::STEPSurface_Style_Rendering* ren = shade->ToPtr<STEP::STEPSurface_Style_Rendering>()) {
-
-                if (ren->Transparency) {
-                    const float t = 1.f-static_cast<float>(ren->Transparency.Get());
-                    mat->AddProperty(&t,1, AI_MATKEY_OPACITY);
-                }
-
-                if (ren->DiffuseColour) {
-                    ConvertColor(col, *ren->DiffuseColour.Get(),conv,&col_base);
-                    mat->AddProperty(&col,1, AI_MATKEY_COLOR_DIFFUSE);
-                }
-
-                if (ren->SpecularColour) {
-                    ConvertColor(col, *ren->SpecularColour.Get(),conv,&col_base);
-                    mat->AddProperty(&col,1, AI_MATKEY_COLOR_SPECULAR);
-                }
-
-                if (ren->TransmissionColour) {
-                    ConvertColor(col, *ren->TransmissionColour.Get(),conv,&col_base);
-                    mat->AddProperty(&col,1, AI_MATKEY_COLOR_TRANSPARENT);
-                }
-
-                if (ren->ReflectionColour) {
-                    ConvertColor(col, *ren->ReflectionColour.Get(),conv,&col_base);
-                    mat->AddProperty(&col,1, AI_MATKEY_COLOR_REFLECTIVE);
-                }
-
-                const int shading = (ren->SpecularHighlight && ren->SpecularColour)?ConvertShadingMode(ren->ReflectanceMethod):static_cast<int>(aiShadingMode_Gouraud);
-                mat->AddProperty(&shading,1, AI_MATKEY_SHADING_MODEL);
-
-                if (ren->SpecularHighlight) {
-                    if(const EXPRESS::REAL* rt = ren->SpecularHighlight.Get()->ToPtr<EXPRESS::REAL>()) {
-                        // at this point we don't distinguish between the two distinct ways of
-                        // specifying highlight intensities. leave this to the user.
-                        const float e = static_cast<float>(*rt);
-                        mat->AddProperty(&e,1,AI_MATKEY_SHININESS);
-                    }
-                    else {
-                        STEPImporter::LogWarn("unexpected type error, SpecularHighlight should be a REAL");
+    for(std::shared_ptr< const STEP::STEPSurface_Style_Element_Select > el : style->Styles) {
+        if (auto surfFill = el->ResolveSelectPtr<STEP::STEPSurface_Style_Fill_Area>(conv.db)) {
+            const STEP::STEPFill_Area_Style* const fillAreaStyle = surfFill->FillArea;
+            for (std::shared_ptr<const STEP::STEPFill_Style_Select> styleSel : fillAreaStyle->FillStyles) {
+                if (auto fillStyleColour = styleSel->ResolveSelectPtr<STEP::STEPFill_Area_Style_Colour>(conv.db)) {
+                    aiColor4D colour;
+                    auto fillColour = fillStyleColour->FillColour->ToPtr<STEP::STEPColour_Rgb>();
+                    if (fillColour) {
+                        ConvertColor(colour, *fillColour);
+                        mat->AddProperty(&colour, 1, AI_MATKEY_COLOR_DIFFUSE);
                     }
                 }
             }
         }
     }
-
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -139,29 +101,36 @@ unsigned int ProcessMaterials(uint64_t id, unsigned int prevMatId, ConversionDat
             for(const STEP::STEPPresentation_Style_Assignment& as : styled->Styles) {
                 for(std::shared_ptr<const STEP::STEPPresentation_Style_Select> sel : as.Styles) {
 
-                    if( const STEP::STEPSurface_Style* const surf = sel->ResolveSelectPtr<STEP::STEPSurface_Style>(conv.db) ) {
-                        // try to satisfy from cache
-                        ConversionData::MaterialCache::iterator mit = conv.cached_materials.find(surf);
-                        if( mit != conv.cached_materials.end() )
-                            return mit->second;
+                    if (const STEP::STEPSurface_Style_Usage* const usage = sel->ResolveSelectPtr<STEP::STEPSurface_Style_Usage>(conv.db)) {
+                        // Create new material
+                        const std::string side = static_cast<std::string>(usage->Side);
+                        if (side != "BOTH")
+                            STEPImporter::LogWarn("Ignoring surface side marker on surface_style_usage: " + side);
 
-                        // not found, create new material
-                        const std::string side = static_cast<std::string>(surf->Side);
-                        if( side != "BOTH" ) {
-                            STEPImporter::LogWarn("ignoring surface side marker on STEP::STEPSurface_Style: " + side);
+                        auto sideStyleSel = usage->Style;
+                        if (auto predefined = sideStyleSel->ResolveSelectPtr<STEP::STEPPre_Defined_Surface_Side_Style>(conv.db)) {
+                            STEPImporter::LogWarn("Ignoring predefined surface side style: " + predefined->Name.empty() ? "Unnamed" : predefined->Name);
+                            return std::numeric_limits<uint32_t>::max();
                         }
+
+                        const STEP::STEPSurface_Side_Style* const style = sideStyleSel->ResolveSelectPtr<STEP::STEPSurface_Side_Style>(conv.db);
+
+                        ConversionData::MaterialCache::iterator mit = conv.cached_materials.find(style);
+                        if (mit != conv.cached_materials.end())
+                            return mit->second;
 
                         std::unique_ptr<aiMaterial> mat(new aiMaterial());
 
-                        FillMaterial(mat.get(), surf, conv);
+                        FillMaterial(mat.get(), style, conv);
 
                         conv.materials.push_back(mat.release());
-                        unsigned int matindex = static_cast<unsigned int>(conv.materials.size() - 1);
-                        conv.cached_materials[surf] = matindex;
-                        return matindex;
+
+                        unsigned int idx = static_cast<unsigned int>(conv.materials.size() - 1);
+                        conv.cached_materials[style] = idx;
+                        return idx;
+                    }
+                }
             }
-        }
-    }
         }
     }
 

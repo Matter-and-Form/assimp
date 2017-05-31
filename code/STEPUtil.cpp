@@ -570,7 +570,7 @@ void AssignMatrixAxes(STEPMatrix4& out, const STEPVector3& x, const STEPVector3&
 }
 
 // ------------------------------------------------------------------------------------------------
-void ConvertAxisPlacement(STEPMatrix4& out, const STEPAxis2_Placement_3D& in)
+void ConvertAxisPlacement(STEPMatrix4& out, const STEPAxis2_Placement_3d& in)
 {
     STEPVector3 loc;
     ConvertCartesianPoint(loc,in.Location);
@@ -595,7 +595,7 @@ void ConvertAxisPlacement(STEPMatrix4& out, const STEPAxis2_Placement_3D& in)
 }
 
 // ------------------------------------------------------------------------------------------------
-void ConvertAxisPlacement(STEPMatrix4& out, const STEPAxis2_Placement_2D& in)
+void ConvertAxisPlacement(STEPMatrix4& out, const STEPAxis2_Placement_2d& in)
 {
     STEPVector3 loc;
     ConvertCartesianPoint(loc,in.Location);
@@ -626,10 +626,10 @@ void ConvertAxisPlacement(STEPVector3& axis, STEPVector3& pos, const STEPAxis1_P
 // ------------------------------------------------------------------------------------------------
 void ConvertAxisPlacement(STEPMatrix4& out, const STEPAxis2_Placement& in, ConversionData& conv)
 {
-    if(const STEPAxis2_Placement_3D* pl3 = in.ResolveSelectPtr<STEPAxis2_Placement_3D>(conv.db)) {
+    if(const STEPAxis2_Placement_3d* pl3 = in.ResolveSelectPtr<STEPAxis2_Placement_3d>(conv.db)) {
         ConvertAxisPlacement(out,*pl3);
     }
-    else if(const STEPAxis2_Placement_2D* pl2 = in.ResolveSelectPtr<STEPAxis2_Placement_2D>(conv.db)) {
+    else if(const STEPAxis2_Placement_2d* pl2 = in.ResolveSelectPtr<STEPAxis2_Placement_2d>(conv.db)) {
         ConvertAxisPlacement(out,*pl2);
     }
     else {
@@ -650,7 +650,7 @@ void ConvertTransformOperator(STEPMatrix4& out, const STEPCartesian_Transformati
     if (op.Axis2) {
         ConvertDirection(y,*op.Axis2.Get());
     }
-    if (const STEPCartesian_Transformation_Operator3D* op2 = op.ToPtr<STEPCartesian_Transformation_Operator3D>()) {
+    if (const STEPCartesian_Transformation_Operator_3d* op2 = op.ToPtr<STEPCartesian_Transformation_Operator_3d>()) {
         if(op2->Axis3) {
             ConvertDirection(z,*op2->Axis3.Get());
         }
@@ -660,17 +660,8 @@ void ConvertTransformOperator(STEPMatrix4& out, const STEPCartesian_Transformati
     STEPMatrix4::Translation(loc,locm);
     AssignMatrixAxes(out,x,y,z);
 
-
-    STEPVector3 vscale;
-    if (const STEPCartesian_Transformation_Operator3DnonUniform* nuni = op.ToPtr<STEPCartesian_Transformation_Operator3DnonUniform>()) {
-        vscale.x = nuni->Scale?op.Scale.Get():1.f;
-        vscale.y = nuni->Scale2?nuni->Scale2.Get():1.f;
-        vscale.z = nuni->Scale3?nuni->Scale3.Get():1.f;
-    }
-    else {
-        const STEPFloat sc = op.Scale?op.Scale.Get():1.f;
-        vscale = STEPVector3(sc,sc,sc);
-    }
+    const STEPFloat sc = op.Scale ? op.Scale.Get() : 1.f;
+    STEPVector3 vscale(sc,sc,sc);
 
     STEPMatrix4 s;
     STEPMatrix4::Scaling(vscale,s);
