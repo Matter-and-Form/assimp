@@ -292,59 +292,64 @@ namespace {
 ,		SchemaEntry("week_in_year_number",NULL )
 ,		SchemaEntry("work_item",NULL )
 ,		SchemaEntry("year_number",NULL )
-,		SchemaEntry("STEPMeasure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAbsorbed_Dose_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDerived_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAbsorbed_Dose_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAbstract_Variable",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAcceleration_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAcceleration_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Directive",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Method",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Method_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Method_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Method_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Property",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Property_Representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Request_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Request_Solution",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Request_Status",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAction_Status",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAddress",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("absorbed_dose_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("derived_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("absorbed_dose_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("representation_item",&STEP::ObjectHelper<STEPRepresentation_Item,1>::Construct )
 ,		SchemaEntry("representation",&STEP::ObjectHelper<STEPRepresentation,3>::Construct )
+,		SchemaEntry("property_definition_representation",&STEP::ObjectHelper<STEPProperty_Definition_Representation,2>::Construct )
+,		SchemaEntry("property_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("abstract_variable",&STEP::ObjectHelper<STEPAbstract_Variable,0>::Construct )
+,		SchemaEntry("acceleration_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("acceleration_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_directive",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_method",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_method_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_method_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_method_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_property",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_property_representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_request_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_request_solution",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_request_status",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("action_status",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("address",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("shape_representation",&STEP::ObjectHelper<STEPShape_Representation,0>::Construct )
 ,		SchemaEntry("advanced_brep_shape_representation",&STEP::ObjectHelper<STEPAdvanced_Brep_Shape_Representation,0>::Construct )
-,		SchemaEntry("STEPFace_Surface",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAdvanced_Face",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAlternate_Product_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAmount_Of_Substance_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("topological_representation_item",&STEP::ObjectHelper<STEPTopological_Representation_Item,0>::Construct )
+,		SchemaEntry("geometric_representation_item",&STEP::ObjectHelper<STEPGeometric_Representation_Item,0>::Construct )
+,		SchemaEntry("face",&STEP::ObjectHelper<STEPFace,1>::Construct )
+,		SchemaEntry("face_surface",&STEP::ObjectHelper<STEPFace_Surface,2>::Construct )
+,		SchemaEntry("advanced_face",&STEP::ObjectHelper<STEPAdvanced_Face,0>::Construct )
+,		SchemaEntry("alternate_product_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("amount_of_substance_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("named_unit",&STEP::ObjectHelper<STEPNamed_Unit,1>::Construct )
 ,		SchemaEntry("amount_of_substance_unit",&STEP::ObjectHelper<STEPAmount_Of_Substance_Unit,0>::Construct )
-,		SchemaEntry("STEPAngle_Direction_Reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("representation_item",&STEP::ObjectHelper<STEPRepresentation_Item,1>::Construct )
-,		SchemaEntry("geometric_representation_item",&STEP::ObjectHelper<STEPGeometric_Representation_Item,0>::Construct )
+,		SchemaEntry("representation_item_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("angle_direction_reference",&STEP::ObjectHelper<STEPAngle_Direction_Reference,0>::Construct )
 ,		SchemaEntry("draughting_callout",&STEP::ObjectHelper<STEPDraughting_Callout,1>::Construct )
 ,		SchemaEntry("dimension_curve_directed_callout",&STEP::ObjectHelper<STEPDimension_Curve_Directed_Callout,0>::Construct )
 ,		SchemaEntry("angular_dimension",&STEP::ObjectHelper<STEPAngular_Dimension,0>::Construct )
-,		SchemaEntry("STEPShape_Aspect_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimensional_Location",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAngular_Location",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimensional_Size",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAngular_Size",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeometric_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeometric_Tolerance_With_Datum_Reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAngularity_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("shape_aspect_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dimensional_location",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("angular_location",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dimensional_size",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("angular_size",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("geometric_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("geometric_tolerance_with_datum_reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("angularity_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("styled_item",&STEP::ObjectHelper<STEPStyled_Item,2>::Construct )
 ,		SchemaEntry("annotation_occurrence",&STEP::ObjectHelper<STEPAnnotation_Occurrence,0>::Construct )
 ,		SchemaEntry("annotation_curve_occurrence",&STEP::ObjectHelper<STEPAnnotation_Curve_Occurrence,0>::Construct )
 ,		SchemaEntry("annotation_fill_area",&STEP::ObjectHelper<STEPAnnotation_Fill_Area,1>::Construct )
 ,		SchemaEntry("annotation_fill_area_occurrence",&STEP::ObjectHelper<STEPAnnotation_Fill_Area_Occurrence,1>::Construct )
-,		SchemaEntry("STEPAnnotation_Occurrence_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAnnotation_Occurrence_Associativity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAnnotation_Plane",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("annotation_occurrence_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("annotation_occurrence_associativity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("annotation_plane",&STEP::ObjectHelper<STEPAnnotation_Plane,1>::Construct )
 ,		SchemaEntry("annotation_symbol_occurrence",&STEP::ObjectHelper<STEPAnnotation_Symbol_Occurrence,0>::Construct )
 ,		SchemaEntry("annotation_subfigure_occurrence",&STEP::ObjectHelper<STEPAnnotation_Subfigure_Occurrence,0>::Construct )
 ,		SchemaEntry("mapped_item",&STEP::ObjectHelper<STEPMapped_Item,2>::Construct )
@@ -352,79 +357,81 @@ namespace {
 ,		SchemaEntry("annotation_text",&STEP::ObjectHelper<STEPAnnotation_Text,0>::Construct )
 ,		SchemaEntry("annotation_text_character",&STEP::ObjectHelper<STEPAnnotation_Text_Character,1>::Construct )
 ,		SchemaEntry("annotation_text_occurrence",&STEP::ObjectHelper<STEPAnnotation_Text_Occurrence,0>::Construct )
-,		SchemaEntry("STEPShape_Aspect",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDerived_Shape_Aspect",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApex",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplication_Context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplication_Context_Element",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplication_Protocol_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Action_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Action_Method_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Action_Request_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApproval_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Approval_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAttribute_Classification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Attribute_Classification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCertification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Certification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPClassification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Classification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPContract_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Contract_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDate_And_Time_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Date_And_Time_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDate_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Date_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Document_Reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Usage_Constraint_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Document_Usage_Constraint_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEffectivity_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Effectivity_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEvent_Occurrence_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Event_Occurrence_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPIdentification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternal_Identification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_External_Identification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGroup_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Group_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Identification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPName_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Name_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPOrganization_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Organization_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPOrganizational_Project_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Organizational_Project_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPerson_And_Organization_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Person_And_Organization_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPresented_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Presented_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSecurity_Classification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Security_Classification_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTime_Interval_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Time_Interval_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApplied_Usage_Right",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApproval",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApproval_Date_Time",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApproval_Person_Organization",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApproval_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApproval_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPApproval_Status",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPArea_In_Set",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPArea_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPArea_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAssembly_Component_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAssembly_Component_Usage_Substitute",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAssigned_Requirement",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("shape_aspect",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("derived_shape_aspect",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("apex",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("application_context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("application_context_element",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("application_protocol_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_action_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_action_method_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_action_request_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("approval_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_approval_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("attribute_classification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_attribute_classification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("certification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_certification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("classification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_classification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("contract_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_contract_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("date_and_time_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_date_and_time_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("date_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_date_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_document_reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_usage_constraint_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_document_usage_constraint_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("effectivity_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_effectivity_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("event_occurrence_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_event_occurrence_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("identification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("external_identification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_external_identification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("group_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_group_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_identification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("name_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_name_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("organization_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_organization_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("organizational_project_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_organizational_project_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("person_and_organization_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_person_and_organization_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("presented_item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_presented_item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("security_classification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_security_classification_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("time_interval_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_time_interval_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("applied_usage_right",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("approval",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("approval_date_time",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("approval_person_organization",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("approval_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("approval_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("approval_status",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("area_in_set",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("area_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("area_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("assembly_component_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("assembly_component_usage_substitute",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("assigned_requirement",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("compound_representation_item",&STEP::ObjectHelper<STEPCompound_Representation_Item,1>::Construct )
 ,		SchemaEntry("atomic_formula",&STEP::ObjectHelper<STEPAtomic_Formula,0>::Construct )
-,		SchemaEntry("STEPAttribute_Assertion",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAttribute_Language_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAttribute_Value_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAttribute_Value_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPAuxiliary_Geometric_Representation_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("fact_type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("attribute_assertion",&STEP::ObjectHelper<STEPAttribute_Assertion,0>::Construct )
+,		SchemaEntry("attribute_language_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("attribute_value_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("attribute_value_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("variational_representation_item",&STEP::ObjectHelper<STEPVariational_Representation_Item,0>::Construct )
+,		SchemaEntry("auxiliary_geometric_representation_item",&STEP::ObjectHelper<STEPAuxiliary_Geometric_Representation_Item,0>::Construct )
 ,		SchemaEntry("placement",&STEP::ObjectHelper<STEPPlacement,1>::Construct )
 ,		SchemaEntry("axis1_placement",&STEP::ObjectHelper<STEPAxis1_Placement,1>::Construct )
 ,		SchemaEntry("axis2_placement_2d",&STEP::ObjectHelper<STEPAxis2_Placement_2d,1>::Construct )
@@ -437,46 +444,55 @@ namespace {
 ,		SchemaEntry("bounded_surface",&STEP::ObjectHelper<STEPBounded_Surface,0>::Construct )
 ,		SchemaEntry("b_spline_surface",&STEP::ObjectHelper<STEPB_Spline_Surface,6>::Construct )
 ,		SchemaEntry("b_spline_surface_with_knots",&STEP::ObjectHelper<STEPB_Spline_Surface_With_Knots,5>::Construct )
-,		SchemaEntry("STEPProduct_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRule_Software_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRule_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBack_Chaining_Rule",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBack_Chaining_Rule_Body",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("rule_software_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("rule_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("back_chaining_rule",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("back_chaining_rule_body",&STEP::ObjectHelper<STEPBack_Chaining_Rule_Body,0>::Construct )
 ,		SchemaEntry("colour",&STEP::ObjectHelper<STEPColour,0>::Construct )
-,		SchemaEntry("STEPBackground_Colour",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("background_colour",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("beveled_sheet_representation",&STEP::ObjectHelper<STEPBeveled_Sheet_Representation,0>::Construct )
 ,		SchemaEntry("bezier_curve",&STEP::ObjectHelper<STEPBezier_Curve,0>::Construct )
 ,		SchemaEntry("bezier_surface",&STEP::ObjectHelper<STEPBezier_Surface,0>::Construct )
-,		SchemaEntry("STEPGeneric_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBinary_Generic_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBinary_Numeric_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("generic_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("binary_generic_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("numeric_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("binary_numeric_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("binary_representation_item",&STEP::ObjectHelper<STEPBinary_Representation_Item,1>::Construct )
 ,		SchemaEntry("block",&STEP::ObjectHelper<STEPBlock,4>::Construct )
-,		SchemaEntry("STEPExpression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBoolean_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBoolean_Literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBoolean_Representation_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("boolean_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("simple_generic_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("generic_literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("simple_boolean_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("boolean_literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("boolean_representation_item",&STEP::ObjectHelper<STEPBoolean_Representation_Item,0>::Construct )
 ,		SchemaEntry("boolean_result",&STEP::ObjectHelper<STEPBoolean_Result,3>::Construct )
 ,		SchemaEntry("composite_curve",&STEP::ObjectHelper<STEPComposite_Curve,2>::Construct )
 ,		SchemaEntry("composite_curve_on_surface",&STEP::ObjectHelper<STEPComposite_Curve_On_Surface,0>::Construct )
 ,		SchemaEntry("boundary_curve",&STEP::ObjectHelper<STEPBoundary_Curve,0>::Construct )
-,		SchemaEntry("STEPBounded_Pcurve",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBounded_Surface_Curve",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pcurve",&STEP::ObjectHelper<STEPPcurve,2>::Construct )
+,		SchemaEntry("bounded_pcurve",&STEP::ObjectHelper<STEPBounded_Pcurve,0>::Construct )
+,		SchemaEntry("surface_curve",&STEP::ObjectHelper<STEPSurface_Curve,3>::Construct )
+,		SchemaEntry("bounded_surface_curve",&STEP::ObjectHelper<STEPBounded_Surface_Curve,0>::Construct )
 ,		SchemaEntry("founded_item",&STEP::ObjectHelper<STEPFounded_Item,0>::Construct )
-,		SchemaEntry("STEPBox_Domain",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("box_domain",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("half_space_solid",&STEP::ObjectHelper<STEPHalf_Space_Solid,2>::Construct )
 ,		SchemaEntry("boxed_half_space",&STEP::ObjectHelper<STEPBoxed_Half_Space,1>::Construct )
-,		SchemaEntry("STEPBreakdown_Context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBreakdown_Element_Group_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBreakdown_Element_Realization",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBreakdown_Element_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPBreakdown_Of",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("breakdown_context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("breakdown_element_group_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("group",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_element_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("characterized_object",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("breakdown_element_realization",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("breakdown_element_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("breakdown_of",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("solid_model",&STEP::ObjectHelper<STEPSolid_Model,0>::Construct )
 ,		SchemaEntry("manifold_solid_brep",&STEP::ObjectHelper<STEPManifold_Solid_Brep,1>::Construct )
 ,		SchemaEntry("brep_with_voids",&STEP::ObjectHelper<STEPBrep_With_Voids,1>::Construct )
 ,		SchemaEntry("bytes_representation_item",&STEP::ObjectHelper<STEPBytes_Representation_Item,0>::Construct )
-,		SchemaEntry("STEPDate",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCalendar_Date",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("date",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("calendar_date",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("camera_image",&STEP::ObjectHelper<STEPCamera_Image,0>::Construct )
 ,		SchemaEntry("camera_image_3d_with_scale",&STEP::ObjectHelper<STEPCamera_Image_3d_With_Scale,0>::Construct )
 ,		SchemaEntry("camera_model",&STEP::ObjectHelper<STEPCamera_Model,0>::Construct )
@@ -488,77 +504,76 @@ namespace {
 ,		SchemaEntry("camera_model_with_light_sources",&STEP::ObjectHelper<STEPCamera_Model_With_Light_Sources,1>::Construct )
 ,		SchemaEntry("representation_map",&STEP::ObjectHelper<STEPRepresentation_Map,2>::Construct )
 ,		SchemaEntry("camera_usage",&STEP::ObjectHelper<STEPCamera_Usage,0>::Construct )
-,		SchemaEntry("STEPCapacitance_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCapacitance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("capacitance_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("capacitance_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("point",&STEP::ObjectHelper<STEPPoint,0>::Construct )
 ,		SchemaEntry("cartesian_point",&STEP::ObjectHelper<STEPCartesian_Point,1>::Construct )
+,		SchemaEntry("functionally_defined_transformation",&STEP::ObjectHelper<STEPFunctionally_Defined_Transformation,2>::Construct )
 ,		SchemaEntry("cartesian_transformation_operator",&STEP::ObjectHelper<STEPCartesian_Transformation_Operator,4>::Construct )
 ,		SchemaEntry("cartesian_transformation_operator_2d",&STEP::ObjectHelper<STEPCartesian_Transformation_Operator_2d,0>::Construct )
 ,		SchemaEntry("cartesian_transformation_operator_3d",&STEP::ObjectHelper<STEPCartesian_Transformation_Operator_3d,1>::Construct )
-,		SchemaEntry("STEPCc_Design_Approval",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCc_Design_Certification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCc_Design_Contract",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCc_Design_Date_And_Time_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCc_Design_Person_And_Organization_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCc_Design_Security_Classification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCc_Design_Specification_Reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCelsius_Temperature_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCentre_Of_Symmetry",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCertification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCertification_Type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPChange",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPChange_Request",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCharacter_Glyph_Font_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCharacter_Glyph_Style_Outline",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCharacter_Glyph_Style_Stroke",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("cc_design_approval",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("cc_design_certification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("cc_design_contract",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("cc_design_date_and_time_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("cc_design_person_and_organization_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("cc_design_security_classification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("cc_design_specification_reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("celsius_temperature_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("centre_of_symmetry",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("certification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("certification_type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("change",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("change_request",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("character_glyph_font_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("character_glyph_style_outline",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("character_glyph_style_stroke",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("symbol_representation",&STEP::ObjectHelper<STEPSymbol_Representation,0>::Construct )
 ,		SchemaEntry("generic_character_glyph_symbol",&STEP::ObjectHelper<STEPGeneric_Character_Glyph_Symbol,0>::Construct )
 ,		SchemaEntry("character_glyph_symbol",&STEP::ObjectHelper<STEPCharacter_Glyph_Symbol,2>::Construct )
 ,		SchemaEntry("character_glyph_symbol_outline",&STEP::ObjectHelper<STEPCharacter_Glyph_Symbol_Outline,1>::Construct )
 ,		SchemaEntry("character_glyph_symbol_stroke",&STEP::ObjectHelper<STEPCharacter_Glyph_Symbol_Stroke,1>::Construct )
-,		SchemaEntry("STEPGeneral_Property",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCharacteristic_Data_Column_Header",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeneral_Property_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCharacteristic_Data_Column_Header_Link",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCharacteristic_Data_Table_Header",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCharacteristic_Data_Table_Header_Decomposition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGroup",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCharacteristic_Type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCharacterized_Class",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCharacterized_Object",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("general_property",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("characteristic_data_column_header",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("general_property_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("characteristic_data_column_header_link",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("characteristic_data_table_header",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("characteristic_data_table_header_decomposition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("characteristic_type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("class",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("characterized_class",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("conic",&STEP::ObjectHelper<STEPConic,1>::Construct )
 ,		SchemaEntry("circle",&STEP::ObjectHelper<STEPCircle,1>::Construct )
-,		SchemaEntry("STEPCircular_Runout_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPClass",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPClass_By_Extension",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPClass_By_Intension",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPClass_System",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEffectivity_Context_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPClass_Usage_Effectivity_Context_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPClassification_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("topological_representation_item",&STEP::ObjectHelper<STEPTopological_Representation_Item,0>::Construct )
+,		SchemaEntry("circular_runout_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("class_by_extension",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("class_by_intension",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("class_system",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("effectivity_context_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("class_usage_effectivity_context_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("classification_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("connected_face_set",&STEP::ObjectHelper<STEPConnected_Face_Set,1>::Construct )
 ,		SchemaEntry("closed_shell",&STEP::ObjectHelper<STEPClosed_Shell,0>::Construct )
-,		SchemaEntry("STEPCoaxiality_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("coaxiality_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("colour_specification",&STEP::ObjectHelper<STEPColour_Specification,1>::Construct )
 ,		SchemaEntry("colour_rgb",&STEP::ObjectHelper<STEPColour_Rgb,3>::Construct )
-,		SchemaEntry("STEPCommon_Datum",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPComparison_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("datum",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("composite_shape_aspect",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("common_datum",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("comparison_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("complex_clause",&STEP::ObjectHelper<STEPComplex_Clause,0>::Construct )
 ,		SchemaEntry("complex_conjunctive_clause",&STEP::ObjectHelper<STEPComplex_Conjunctive_Clause,0>::Construct )
 ,		SchemaEntry("complex_disjunctive_clause",&STEP::ObjectHelper<STEPComplex_Disjunctive_Clause,0>::Construct )
 ,		SchemaEntry("modified_solid",&STEP::ObjectHelper<STEPModified_Solid,2>::Construct )
 ,		SchemaEntry("shelled_solid",&STEP::ObjectHelper<STEPShelled_Solid,2>::Construct )
 ,		SchemaEntry("complex_shelled_solid",&STEP::ObjectHelper<STEPComplex_Shelled_Solid,1>::Construct )
-,		SchemaEntry("STEPComposite_Assembly_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPComposite_Assembly_Sequence_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPLaminate_Table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPart_Laminate_Table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPComposite_Assembly_Table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("composite_assembly_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("composite_assembly_sequence_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("laminate_table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("part_laminate_table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("composite_assembly_table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("composite_curve_segment",&STEP::ObjectHelper<STEPComposite_Curve_Segment,3>::Construct )
-,		SchemaEntry("STEPMaterial_Designation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPComposite_Material_Designation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPComposite_Shape_Aspect",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("material_designation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("composite_material_designation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("composite_sheet_representation",&STEP::ObjectHelper<STEPComposite_Sheet_Representation,0>::Construct )
 ,		SchemaEntry("composite_text",&STEP::ObjectHelper<STEPComposite_Text,1>::Construct )
 ,		SchemaEntry("composite_text_with_associated_curves",&STEP::ObjectHelper<STEPComposite_Text_With_Associated_Curves,1>::Construct )
@@ -566,220 +581,220 @@ namespace {
 ,		SchemaEntry("composite_text_with_delineation",&STEP::ObjectHelper<STEPComposite_Text_With_Delineation,1>::Construct )
 ,		SchemaEntry("composite_text_with_extent",&STEP::ObjectHelper<STEPComposite_Text_With_Extent,1>::Construct )
 ,		SchemaEntry("compound_shape_representation",&STEP::ObjectHelper<STEPCompound_Shape_Representation,0>::Construct )
-,		SchemaEntry("STEPConcentricity_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConcept_Feature_Operator",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConcept_Feature_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConcept_Feature_Relationship_With_Condition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Concept_Feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConditional_Concept_Feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConductance_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConductance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConfiguration_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConfigurable_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConfiguration_Design",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEffectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConfiguration_Effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConfiguration_Item_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConfiguration_Item_Hierarchical_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConfiguration_Item_Revision_Sequence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConfigured_Effectivity_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConfigured_Effectivity_Context_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("concentricity_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("concept_feature_operator",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("concept_feature_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("concept_feature_relationship_with_condition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_concept_feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("conditional_concept_feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("conductance_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("conductance_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("configuration_item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("configurable_item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("configuration_design",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("configuration_effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("configuration_item_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("configuration_item_hierarchical_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("configuration_item_revision_sequence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("configured_effectivity_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("configured_effectivity_context_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("conical_stepped_hole_transition",&STEP::ObjectHelper<STEPConical_Stepped_Hole_Transition,3>::Construct )
 ,		SchemaEntry("elementary_surface",&STEP::ObjectHelper<STEPElementary_Surface,1>::Construct )
 ,		SchemaEntry("conical_surface",&STEP::ObjectHelper<STEPConical_Surface,2>::Construct )
 ,		SchemaEntry("connected_edge_set",&STEP::ObjectHelper<STEPConnected_Edge_Set,1>::Construct )
 ,		SchemaEntry("connected_face_sub_set",&STEP::ObjectHelper<STEPConnected_Face_Sub_Set,1>::Construct )
 ,		SchemaEntry("constructive_geometry_representation",&STEP::ObjectHelper<STEPConstructive_Geometry_Representation,0>::Construct )
-,		SchemaEntry("STEPRepresentation_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPConstructive_Geometry_Representation_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("representation_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("constructive_geometry_representation_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("contact_ratio_representation",&STEP::ObjectHelper<STEPContact_Ratio_Representation,0>::Construct )
-,		SchemaEntry("STEPInvisibility",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPContext_Dependent_Invisibility",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("invisibility",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("context_dependent_invisibility",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("over_riding_styled_item",&STEP::ObjectHelper<STEPOver_Riding_Styled_Item,1>::Construct )
 ,		SchemaEntry("context_dependent_over_riding_styled_item",&STEP::ObjectHelper<STEPContext_Dependent_Over_Riding_Styled_Item,1>::Construct )
-,		SchemaEntry("STEPContext_Dependent_Shape_Representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("context_dependent_shape_representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("context_dependent_unit",&STEP::ObjectHelper<STEPContext_Dependent_Unit,1>::Construct )
-,		SchemaEntry("STEPContract",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPContract_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPContract_Type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("contract",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("contract_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("contract_type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("conversion_based_unit",&STEP::ObjectHelper<STEPConversion_Based_Unit,2>::Construct )
-,		SchemaEntry("STEPCoordinated_Universal_Time_Offset",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("coordinated_universal_time_offset",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("csg_shape_representation",&STEP::ObjectHelper<STEPCsg_Shape_Representation,0>::Construct )
 ,		SchemaEntry("csg_solid",&STEP::ObjectHelper<STEPCsg_Solid,1>::Construct )
 ,		SchemaEntry("currency",&STEP::ObjectHelper<STEPCurrency,0>::Construct )
-,		SchemaEntry("STEPCurrency_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("currency_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("curve_bounded_surface",&STEP::ObjectHelper<STEPCurve_Bounded_Surface,3>::Construct )
 ,		SchemaEntry("curve_dimension",&STEP::ObjectHelper<STEPCurve_Dimension,0>::Construct )
 ,		SchemaEntry("curve_replica",&STEP::ObjectHelper<STEPCurve_Replica,2>::Construct )
-,		SchemaEntry("STEPCurve_Style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCurve_Style_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCurve_Style_Font_And_Scaling",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCurve_Style_Font_Pattern",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPCurve_Style_Rendering",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("curve_style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("curve_style_font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("curve_style_font_and_scaling",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("curve_style_font_pattern",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("curve_style_rendering",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("curve_swept_solid_shape_representation",&STEP::ObjectHelper<STEPCurve_Swept_Solid_Shape_Representation,0>::Construct )
 ,		SchemaEntry("cylindrical_surface",&STEP::ObjectHelper<STEPCylindrical_Surface,1>::Construct )
-,		SchemaEntry("STEPCylindricity_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPData_Environment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDate_And_Time",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDate_Representation_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDate_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDate_Time_Representation_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDate_Time_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDated_Effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDatum",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDatum_Feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("cylindricity_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("data_environment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("date_and_time",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("date_representation_item",&STEP::ObjectHelper<STEPDate_Representation_Item,0>::Construct )
+,		SchemaEntry("date_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("date_time_representation_item",&STEP::ObjectHelper<STEPDate_Time_Representation_Item,0>::Construct )
+,		SchemaEntry("date_time_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dated_effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("datum_feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("datum_feature_callout",&STEP::ObjectHelper<STEPDatum_Feature_Callout,0>::Construct )
-,		SchemaEntry("STEPDatum_Reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDatum_Target",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("datum_reference",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("datum_target",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("datum_target_callout",&STEP::ObjectHelper<STEPDatum_Target_Callout,0>::Construct )
 ,		SchemaEntry("default_tolerance_table",&STEP::ObjectHelper<STEPDefault_Tolerance_Table,0>::Construct )
 ,		SchemaEntry("default_tolerance_table_cell",&STEP::ObjectHelper<STEPDefault_Tolerance_Table_Cell,0>::Construct )
 ,		SchemaEntry("defined_symbol",&STEP::ObjectHelper<STEPDefined_Symbol,2>::Construct )
 ,		SchemaEntry("definitional_representation",&STEP::ObjectHelper<STEPDefinitional_Representation,0>::Construct )
-,		SchemaEntry("STEPDefinitional_Representation_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDefinitional_Representation_Relationship_With_Same_Context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("definitional_representation_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("definitional_representation_relationship_with_same_context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("degenerate_pcurve",&STEP::ObjectHelper<STEPDegenerate_Pcurve,2>::Construct )
 ,		SchemaEntry("toroidal_surface",&STEP::ObjectHelper<STEPToroidal_Surface,2>::Construct )
 ,		SchemaEntry("degenerate_toroidal_surface",&STEP::ObjectHelper<STEPDegenerate_Toroidal_Surface,1>::Construct )
-,		SchemaEntry("STEPDerived_Unit_Element",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDescription_Attribute",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("derived_unit_element",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("description_attribute",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("descriptive_representation_item",&STEP::ObjectHelper<STEPDescriptive_Representation_Item,1>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDesign_Context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDesign_Make_From_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("design_context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("design_make_from_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("diameter_dimension",&STEP::ObjectHelper<STEPDiameter_Dimension,0>::Construct )
-,		SchemaEntry("STEPRatio_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDielectric_Constant_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("ratio_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dielectric_constant_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("dimension_callout",&STEP::ObjectHelper<STEPDimension_Callout,0>::Construct )
-,		SchemaEntry("STEPDraughting_Callout_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimension_Callout_Component_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimension_Callout_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("draughting_callout_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dimension_callout_component_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dimension_callout_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("dimension_curve",&STEP::ObjectHelper<STEPDimension_Curve,0>::Construct )
 ,		SchemaEntry("terminator_symbol",&STEP::ObjectHelper<STEPTerminator_Symbol,1>::Construct )
 ,		SchemaEntry("dimension_curve_terminator",&STEP::ObjectHelper<STEPDimension_Curve_Terminator,1>::Construct )
-,		SchemaEntry("STEPDimension_Curve_Terminator_To_Projection_Curve_Associativity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimension_Pair",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimension_Related_Tolerance_Zone_Element",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimension_Text_Associativity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimensional_Characteristic_Representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimensional_Exponents",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimensional_Location_With_Path",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDimensional_Size_With_Path",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExecuted_Action",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDirected_Action",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDirected_Dimensional_Location",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dimension_curve_terminator_to_projection_curve_associativity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dimension_pair",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dimension_related_tolerance_zone_element",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("text_literal",&STEP::ObjectHelper<STEPText_Literal,5>::Construct )
+,		SchemaEntry("dimension_text_associativity",&STEP::ObjectHelper<STEPDimension_Text_Associativity,0>::Construct )
+,		SchemaEntry("dimensional_characteristic_representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dimensional_exponents",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dimensional_location_with_path",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dimensional_size_with_path",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("executed_action",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("directed_action",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("directed_dimensional_location",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("direction",&STEP::ObjectHelper<STEPDirection,1>::Construct )
-,		SchemaEntry("STEPDocument",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_File",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Identifier",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Identifier_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Product_Association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Product_Equivalence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Representation_Type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Usage_Constraint",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDocument_Usage_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDose_Equivalent_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDose_Equivalent_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_file",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_identifier",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_identifier_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_product_association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_product_equivalence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_representation_type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_usage_constraint",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("document_usage_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dose_equivalent_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("dose_equivalent_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("double_offset_shelled_solid",&STEP::ObjectHelper<STEPDouble_Offset_Shelled_Solid,1>::Construct )
-,		SchemaEntry("STEPItem_Defined_Transformation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTransformation_With_Derived_Angle",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDraped_Defined_Transformation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("item_defined_transformation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("transformation_with_derived_angle",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("draped_defined_transformation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("draughting_annotation_occurrence",&STEP::ObjectHelper<STEPDraughting_Annotation_Occurrence,0>::Construct )
 ,		SchemaEntry("draughting_elements",&STEP::ObjectHelper<STEPDraughting_Elements,0>::Construct )
 ,		SchemaEntry("draughting_model",&STEP::ObjectHelper<STEPDraughting_Model,0>::Construct )
-,		SchemaEntry("STEPItem_Identified_Representation_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDraughting_Model_Item_Association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPre_Defined_Colour",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDraughting_Pre_Defined_Colour",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("item_identified_representation_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("draughting_model_item_association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("pre_defined_item",&STEP::ObjectHelper<STEPPre_Defined_Item,1>::Construct )
-,		SchemaEntry("STEPPre_Defined_Curve_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDraughting_Pre_Defined_Curve_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPre_Defined_Text_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDraughting_Pre_Defined_Text_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_colour",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("draughting_pre_defined_colour",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_curve_font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("draughting_pre_defined_curve_font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_text_font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("draughting_pre_defined_text_font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("draughting_subfigure_representation",&STEP::ObjectHelper<STEPDraughting_Subfigure_Representation,0>::Construct )
 ,		SchemaEntry("draughting_symbol_representation",&STEP::ObjectHelper<STEPDraughting_Symbol_Representation,0>::Construct )
-,		SchemaEntry("text_literal",&STEP::ObjectHelper<STEPText_Literal,5>::Construct )
 ,		SchemaEntry("text_literal_with_delineation",&STEP::ObjectHelper<STEPText_Literal_With_Delineation,1>::Construct )
 ,		SchemaEntry("draughting_text_literal_with_delineation",&STEP::ObjectHelper<STEPDraughting_Text_Literal_With_Delineation,0>::Construct )
-,		SchemaEntry("STEPDraughting_Title",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDrawing_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPresentation_Set",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDrawing_Revision",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDrawing_Revision_Sequence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("draughting_title",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("drawing_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("presentation_set",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("drawing_revision",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("drawing_revision_sequence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("presentation_representation",&STEP::ObjectHelper<STEPPresentation_Representation,0>::Construct )
 ,		SchemaEntry("presentation_area",&STEP::ObjectHelper<STEPPresentation_Area,0>::Construct )
 ,		SchemaEntry("drawing_sheet_revision",&STEP::ObjectHelper<STEPDrawing_Sheet_Revision,1>::Construct )
-,		SchemaEntry("STEPDrawing_Sheet_Revision_Sequence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPDrawing_Sheet_Revision_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("drawing_sheet_revision_sequence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("drawing_sheet_revision_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("edge",&STEP::ObjectHelper<STEPEdge,2>::Construct )
 ,		SchemaEntry("edge_based_wireframe_model",&STEP::ObjectHelper<STEPEdge_Based_Wireframe_Model,1>::Construct )
 ,		SchemaEntry("edge_based_wireframe_shape_representation",&STEP::ObjectHelper<STEPEdge_Based_Wireframe_Shape_Representation,0>::Construct )
 ,		SchemaEntry("edge_blended_solid",&STEP::ObjectHelper<STEPEdge_Blended_Solid,1>::Construct )
-,		SchemaEntry("STEPEdge_Curve",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEdge_Loop",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEffectivity_Context_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEffectivity_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPElectric_Charge_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPElectric_Charge_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPElectric_Current_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("edge_curve",&STEP::ObjectHelper<STEPEdge_Curve,2>::Construct )
+,		SchemaEntry("path",&STEP::ObjectHelper<STEPPath,1>::Construct )
+,		SchemaEntry("loop",&STEP::ObjectHelper<STEPLoop,0>::Construct )
+,		SchemaEntry("edge_loop",&STEP::ObjectHelper<STEPEdge_Loop,0>::Construct )
+,		SchemaEntry("effectivity_context_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("effectivity_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("electric_charge_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("electric_charge_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("electric_current_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("electric_current_unit",&STEP::ObjectHelper<STEPElectric_Current_Unit,0>::Construct )
-,		SchemaEntry("STEPElectric_Potential_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPElectric_Potential_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("electric_potential_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("electric_potential_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("elementary_brep_shape_representation",&STEP::ObjectHelper<STEPElementary_Brep_Shape_Representation,0>::Construct )
 ,		SchemaEntry("ellipse",&STEP::ObjectHelper<STEPEllipse,2>::Construct )
-,		SchemaEntry("STEPEnergy_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEnergy_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProperty_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPFact_Type",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEntity_Assertion",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("energy_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("energy_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("entity_assertion",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("enum_reference_prefix",&STEP::ObjectHelper<STEPEnum_Reference_Prefix,0>::Construct )
-,		SchemaEntry("STEPEnvironment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEvaluated_Characteristic",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("environment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("evaluated_characteristic",&STEP::ObjectHelper<STEPEvaluated_Characteristic,0>::Construct )
 ,		SchemaEntry("evaluated_degenerate_pcurve",&STEP::ObjectHelper<STEPEvaluated_Degenerate_Pcurve,1>::Construct )
-,		SchemaEntry("STEPEvaluation_Product_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEvent_Occurrence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEvent_Occurrence_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPEvent_Occurrence_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Concept_Feature_Category",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExclusive_Product_Concept_Feature_Category",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPUncertainty_Qualifier",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPStandard_Uncertainty",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExpanded_Uncertainty",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRepresentation_Item_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExplicit_Procedural_Representation_Item_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExplicit_Procedural_Geometric_Representation_Item_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExplicit_Procedural_Representation_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExplicit_Procedural_Shape_Representation_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExpression_Conversion_Based_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExtension",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExtent",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternal_Source",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternal_Class_Library",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternal_Source_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Class",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Colour",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Context_Dependent_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Conversion_Based_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Currency",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Curve_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Dimension_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_General_Property",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Hatch_Style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Item_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Marker",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("evaluation_product_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("event_occurrence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("event_occurrence_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("event_occurrence_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_concept_feature_category",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("exclusive_product_concept_feature_category",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("uncertainty_qualifier",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("standard_uncertainty",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("expanded_uncertainty",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("explicit_procedural_representation_item_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("explicit_procedural_geometric_representation_item_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("explicit_procedural_representation_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("explicit_procedural_shape_representation_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("variable_semantics",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("expression_conversion_based_unit",&STEP::ObjectHelper<STEPExpression_Conversion_Based_Unit,0>::Construct )
+,		SchemaEntry("extension",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("extent",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("external_source",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("external_class_library",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("external_source_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_class",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_colour",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_context_dependent_unit",&STEP::ObjectHelper<STEPExternally_Defined_Context_Dependent_Unit,0>::Construct )
+,		SchemaEntry("externally_defined_conversion_based_unit",&STEP::ObjectHelper<STEPExternally_Defined_Conversion_Based_Unit,0>::Construct )
+,		SchemaEntry("externally_defined_currency",&STEP::ObjectHelper<STEPExternally_Defined_Currency,0>::Construct )
+,		SchemaEntry("externally_defined_curve_font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_dimension_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_general_property",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_hatch_style",&STEP::ObjectHelper<STEPExternally_Defined_Hatch_Style,0>::Construct )
+,		SchemaEntry("externally_defined_item_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_marker",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_marker",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("picture_representation_item",&STEP::ObjectHelper<STEPPicture_Representation_Item,0>::Construct )
 ,		SchemaEntry("externally_defined_picture_representation_item",&STEP::ObjectHelper<STEPExternally_Defined_Picture_Representation_Item,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Representation_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_String",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Terminator_Symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Text_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Tile",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPExternally_Defined_Tile_Style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_representation_item",&STEP::ObjectHelper<STEPExternally_Defined_Representation_Item,0>::Construct )
+,		SchemaEntry("externally_defined_string",&STEP::ObjectHelper<STEPExternally_Defined_String,0>::Construct )
+,		SchemaEntry("externally_defined_terminator_symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_text_font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_tile",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("externally_defined_tile_style",&STEP::ObjectHelper<STEPExternally_Defined_Tile_Style,0>::Construct )
 ,		SchemaEntry("swept_area_solid",&STEP::ObjectHelper<STEPSwept_Area_Solid,1>::Construct )
 ,		SchemaEntry("extruded_area_solid",&STEP::ObjectHelper<STEPExtruded_Area_Solid,2>::Construct )
 ,		SchemaEntry("swept_face_solid",&STEP::ObjectHelper<STEPSwept_Face_Solid,1>::Construct )
@@ -787,7 +802,6 @@ namespace {
 ,		SchemaEntry("extruded_face_solid_with_trim_conditions",&STEP::ObjectHelper<STEPExtruded_Face_Solid_With_Trim_Conditions,6>::Construct )
 ,		SchemaEntry("extruded_face_solid_with_draft_angle",&STEP::ObjectHelper<STEPExtruded_Face_Solid_With_Draft_Angle,1>::Construct )
 ,		SchemaEntry("extruded_face_solid_with_multiple_draft_angles",&STEP::ObjectHelper<STEPExtruded_Face_Solid_With_Multiple_Draft_Angles,1>::Construct )
-,		SchemaEntry("face",&STEP::ObjectHelper<STEPFace,1>::Construct )
 ,		SchemaEntry("face_based_surface_model",&STEP::ObjectHelper<STEPFace_Based_Surface_Model,1>::Construct )
 ,		SchemaEntry("face_bound",&STEP::ObjectHelper<STEPFace_Bound,2>::Construct )
 ,		SchemaEntry("face_outer_bound",&STEP::ObjectHelper<STEPFace_Outer_Bound,0>::Construct )
@@ -800,350 +814,339 @@ namespace {
 ,		SchemaEntry("fill_area_style_tile_curve_with_style",&STEP::ObjectHelper<STEPFill_Area_Style_Tile_Curve_With_Style,1>::Construct )
 ,		SchemaEntry("fill_area_style_tile_symbol_with_style",&STEP::ObjectHelper<STEPFill_Area_Style_Tile_Symbol_With_Style,1>::Construct )
 ,		SchemaEntry("fill_area_style_tiles",&STEP::ObjectHelper<STEPFill_Area_Style_Tiles,3>::Construct )
-,		SchemaEntry("STEPShape_Representation_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPFlat_Pattern_Ply_Representation_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPFlatness_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPForce_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPForce_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPForward_Chaining_Rule",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPForward_Chaining_Rule_Premise",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPFrequency_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPFrequency_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("shape_representation_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("flat_pattern_ply_representation_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("flatness_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("force_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("force_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("forward_chaining_rule",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("forward_chaining_rule_premise",&STEP::ObjectHelper<STEPForward_Chaining_Rule_Premise,0>::Construct )
+,		SchemaEntry("frequency_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("frequency_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("func",&STEP::ObjectHelper<STEPFunc,0>::Construct )
-,		SchemaEntry("STEPFunctional_Breakdown_Context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPFunctional_Element_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPFunctionally_Defined_Transformation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeneral_Material_Property",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeneral_Property_Association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSimple_Generic_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeneric_Literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeneric_Variable",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeometric_Alignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("functional_breakdown_context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("functional_element_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("general_material_property",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("general_property_association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("generic_variable",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("geometric_alignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("geometric_set",&STEP::ObjectHelper<STEPGeometric_Set,1>::Construct )
 ,		SchemaEntry("geometric_curve_set",&STEP::ObjectHelper<STEPGeometric_Curve_Set,0>::Construct )
-,		SchemaEntry("STEPGeometric_Intersection",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeometric_Item_Specific_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeometric_Model_Element_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("geometric_intersection",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("geometric_item_specific_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("geometric_model_element_relationship",&STEP::ObjectHelper<STEPGeometric_Model_Element_Relationship,0>::Construct )
 ,		SchemaEntry("representation_context",&STEP::ObjectHelper<STEPRepresentation_Context,2>::Construct )
 ,		SchemaEntry("geometric_representation_context",&STEP::ObjectHelper<STEPGeometric_Representation_Context,1>::Construct )
-,		SchemaEntry("STEPGeometric_Tolerance_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPGeometric_Tolerance_With_Defined_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("geometric_tolerance_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("geometric_tolerance_with_defined_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("geometrical_tolerance_callout",&STEP::ObjectHelper<STEPGeometrical_Tolerance_Callout,0>::Construct )
 ,		SchemaEntry("geometrically_bounded_2d_wireframe_representation",&STEP::ObjectHelper<STEPGeometrically_Bounded_2d_Wireframe_Representation,0>::Construct )
 ,		SchemaEntry("geometrically_bounded_surface_shape_representation",&STEP::ObjectHelper<STEPGeometrically_Bounded_Surface_Shape_Representation,0>::Construct )
 ,		SchemaEntry("geometrically_bounded_wireframe_shape_representation",&STEP::ObjectHelper<STEPGeometrically_Bounded_Wireframe_Shape_Representation,0>::Construct )
-,		SchemaEntry("STEPGlobal_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("global_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("global_uncertainty_assigned_context",&STEP::ObjectHelper<STEPGlobal_Uncertainty_Assigned_Context,1>::Construct )
 ,		SchemaEntry("global_unit_assigned_context",&STEP::ObjectHelper<STEPGlobal_Unit_Assigned_Context,1>::Construct )
 ,		SchemaEntry("ground_fact",&STEP::ObjectHelper<STEPGround_Fact,0>::Construct )
-,		SchemaEntry("STEPGroup_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("group_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("hardness_representation",&STEP::ObjectHelper<STEPHardness_Representation,0>::Construct )
 ,		SchemaEntry("hidden_element_over_riding_styled_item",&STEP::ObjectHelper<STEPHidden_Element_Over_Riding_Styled_Item,0>::Construct )
 ,		SchemaEntry("hyperbola",&STEP::ObjectHelper<STEPHyperbola,2>::Construct )
-,		SchemaEntry("STEPId_Attribute",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPIdentification_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPIlluminance_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPIlluminance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("id_attribute",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("identification_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("illuminance_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("illuminance_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("included_text_block",&STEP::ObjectHelper<STEPIncluded_Text_Block,0>::Construct )
-,		SchemaEntry("STEPInclusion_Product_Concept_Feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("inclusion_product_concept_feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("user_selected_elements",&STEP::ObjectHelper<STEPUser_Selected_Elements,1>::Construct )
 ,		SchemaEntry("indirectly_selected_elements",&STEP::ObjectHelper<STEPIndirectly_Selected_Elements,1>::Construct )
-,		SchemaEntry("STEPIndirectly_Selected_Shape_Elements",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPInductance_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPInductance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPInformation_Right",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPInformation_Usage_Right",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPInstance_Usage_Context_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPInstanced_Feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPLiteral_Number",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPInt_Literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPInteger_Representation_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("surface_curve",&STEP::ObjectHelper<STEPSurface_Curve,3>::Construct )
+,		SchemaEntry("user_selected_shape_elements",&STEP::ObjectHelper<STEPUser_Selected_Shape_Elements,0>::Construct )
+,		SchemaEntry("indirectly_selected_shape_elements",&STEP::ObjectHelper<STEPIndirectly_Selected_Shape_Elements,0>::Construct )
+,		SchemaEntry("inductance_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("inductance_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("information_right",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("information_usage_right",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("instance_usage_context_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("shape_feature_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("instanced_feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("simple_numeric_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("literal_number",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("int_literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("integer_representation_item",&STEP::ObjectHelper<STEPInteger_Representation_Item,0>::Construct )
 ,		SchemaEntry("intersection_curve",&STEP::ObjectHelper<STEPIntersection_Curve,0>::Construct )
-,		SchemaEntry("STEPInterval_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("multiple_arity_generic_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("interval_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("iso4217_currency",&STEP::ObjectHelper<STEPIso4217_Currency,0>::Construct )
-,		SchemaEntry("STEPKnown_Source",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPLaid_Defined_Transformation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPLanguage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("known_source",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("laid_defined_transformation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("language",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("leader_curve",&STEP::ObjectHelper<STEPLeader_Curve,0>::Construct )
 ,		SchemaEntry("leader_directed_callout",&STEP::ObjectHelper<STEPLeader_Directed_Callout,0>::Construct )
 ,		SchemaEntry("leader_directed_dimension",&STEP::ObjectHelper<STEPLeader_Directed_Dimension,0>::Construct )
 ,		SchemaEntry("leader_terminator",&STEP::ObjectHelper<STEPLeader_Terminator,0>::Construct )
-,		SchemaEntry("STEPLength_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("length_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("length_unit",&STEP::ObjectHelper<STEPLength_Unit,0>::Construct )
 ,		SchemaEntry("light_source",&STEP::ObjectHelper<STEPLight_Source,1>::Construct )
 ,		SchemaEntry("light_source_ambient",&STEP::ObjectHelper<STEPLight_Source_Ambient,0>::Construct )
 ,		SchemaEntry("light_source_directional",&STEP::ObjectHelper<STEPLight_Source_Directional,1>::Construct )
 ,		SchemaEntry("light_source_positional",&STEP::ObjectHelper<STEPLight_Source_Positional,3>::Construct )
 ,		SchemaEntry("light_source_spot",&STEP::ObjectHelper<STEPLight_Source_Spot,6>::Construct )
-,		SchemaEntry("STEPLimits_And_Fits",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("limits_and_fits",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("line",&STEP::ObjectHelper<STEPLine,2>::Construct )
-,		SchemaEntry("STEPLine_Profile_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("line_profile_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("linear_dimension",&STEP::ObjectHelper<STEPLinear_Dimension,0>::Construct )
 ,		SchemaEntry("simple_clause",&STEP::ObjectHelper<STEPSimple_Clause,0>::Construct )
 ,		SchemaEntry("literal_conjunction",&STEP::ObjectHelper<STEPLiteral_Conjunction,0>::Construct )
 ,		SchemaEntry("literal_disjunction",&STEP::ObjectHelper<STEPLiteral_Disjunction,0>::Construct )
-,		SchemaEntry("STEPLocal_Time",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPLogical_Literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPLogical_Representation_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("loop",&STEP::ObjectHelper<STEPLoop,0>::Construct )
-,		SchemaEntry("STEPLoss_Tangent_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPLot_Effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPLuminous_Flux_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("local_time",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("logical_literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("logical_representation_item",&STEP::ObjectHelper<STEPLogical_Representation_Item,0>::Construct )
+,		SchemaEntry("loss_tangent_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("lot_effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("luminous_flux_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("luminous_flux_unit",&STEP::ObjectHelper<STEPLuminous_Flux_Unit,0>::Construct )
-,		SchemaEntry("STEPLuminous_Intensity_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("luminous_intensity_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("luminous_intensity_unit",&STEP::ObjectHelper<STEPLuminous_Intensity_Unit,0>::Construct )
-,		SchemaEntry("STEPMagnetic_Flux_Density_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMagnetic_Flux_Density_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMagnetic_Flux_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMagnetic_Flux_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMake_From_Usage_Option",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("magnetic_flux_density_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("magnetic_flux_density_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("magnetic_flux_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("magnetic_flux_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("make_from_usage_option",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("manifold_subsurface_shape_representation",&STEP::ObjectHelper<STEPManifold_Subsurface_Shape_Representation,0>::Construct )
 ,		SchemaEntry("manifold_surface_shape_representation",&STEP::ObjectHelper<STEPManifold_Surface_Shape_Representation,0>::Construct )
-,		SchemaEntry("STEPMass_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("mass_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("mass_unit",&STEP::ObjectHelper<STEPMass_Unit,0>::Construct )
-,		SchemaEntry("STEPMaterial_Designation_Characterization",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMaterial_Property",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("property_definition_representation",&STEP::ObjectHelper<STEPProperty_Definition_Representation,2>::Construct )
-,		SchemaEntry("STEPMaterial_Property_Representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMeasure_Qualification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMeasure_Representation_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMechanical_Context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMechanical_Design_And_Draughting_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("material_designation_characterization",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("material_property",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("material_property_representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("measure_qualification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("measure_representation_item",&STEP::ObjectHelper<STEPMeasure_Representation_Item,0>::Construct )
+,		SchemaEntry("product_context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("mechanical_context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("mechanical_design_and_draughting_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("mechanical_design_geometric_presentation_area",&STEP::ObjectHelper<STEPMechanical_Design_Geometric_Presentation_Area,0>::Construct )
 ,		SchemaEntry("mechanical_design_geometric_presentation_representation",&STEP::ObjectHelper<STEPMechanical_Design_Geometric_Presentation_Representation,0>::Construct )
 ,		SchemaEntry("mechanical_design_presentation_representation_with_draughting",&STEP::ObjectHelper<STEPMechanical_Design_Presentation_Representation_With_Draughting,0>::Construct )
 ,		SchemaEntry("mechanical_design_shaded_presentation_area",&STEP::ObjectHelper<STEPMechanical_Design_Shaded_Presentation_Area,0>::Construct )
 ,		SchemaEntry("mechanical_design_shaded_presentation_representation",&STEP::ObjectHelper<STEPMechanical_Design_Shaded_Presentation_Representation,0>::Construct )
-,		SchemaEntry("STEPMin_And_Major_Ply_Orientation_Basis",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPModified_Geometric_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("min_and_major_ply_orientation_basis",&STEP::ObjectHelper<STEPMin_And_Major_Ply_Orientation_Basis,0>::Construct )
+,		SchemaEntry("modified_geometric_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("modified_solid_with_placed_configuration",&STEP::ObjectHelper<STEPModified_Solid_With_Placed_Configuration,1>::Construct )
 ,		SchemaEntry("moments_of_inertia_representation",&STEP::ObjectHelper<STEPMoments_Of_Inertia_Representation,0>::Construct )
-,		SchemaEntry("STEPMulti_Language_Attribute_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMultiple_Arity_Boolean_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMultiple_Arity_Generic_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPMultiple_Arity_Numeric_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPName_Attribute",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPNext_Assembly_Usage_Occurrence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("multi_language_attribute_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("multiple_arity_boolean_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("multiple_arity_numeric_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("name_attribute",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("next_assembly_usage_occurrence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("non_manifold_surface_shape_representation",&STEP::ObjectHelper<STEPNon_Manifold_Surface_Shape_Representation,0>::Construct )
 ,		SchemaEntry("null_representation_item",&STEP::ObjectHelper<STEPNull_Representation_Item,0>::Construct )
-,		SchemaEntry("STEPNumeric_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPObject_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("object_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("offset_curve_2d",&STEP::ObjectHelper<STEPOffset_Curve_2d,3>::Construct )
 ,		SchemaEntry("offset_curve_3d",&STEP::ObjectHelper<STEPOffset_Curve_3d,4>::Construct )
 ,		SchemaEntry("offset_surface",&STEP::ObjectHelper<STEPOffset_Surface,3>::Construct )
 ,		SchemaEntry("one_direction_repeat_factor",&STEP::ObjectHelper<STEPOne_Direction_Repeat_Factor,1>::Construct )
 ,		SchemaEntry("open_shell",&STEP::ObjectHelper<STEPOpen_Shell,0>::Construct )
-,		SchemaEntry("STEPOrdinal_Date",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("ordinal_date",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("projection_directed_callout",&STEP::ObjectHelper<STEPProjection_Directed_Callout,0>::Construct )
 ,		SchemaEntry("ordinate_dimension",&STEP::ObjectHelper<STEPOrdinate_Dimension,0>::Construct )
-,		SchemaEntry("STEPOrganization",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPOrganization_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPOrganization_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPOrganizational_Address",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPOrganizational_Project",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPOrganizational_Project_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPOrganizational_Project_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("organization",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("organization_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("organization_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("organizational_address",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("organizational_project",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("organizational_project_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("organizational_project_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("oriented_closed_shell",&STEP::ObjectHelper<STEPOriented_Closed_Shell,2>::Construct )
 ,		SchemaEntry("oriented_edge",&STEP::ObjectHelper<STEPOriented_Edge,2>::Construct )
 ,		SchemaEntry("oriented_face",&STEP::ObjectHelper<STEPOriented_Face,2>::Construct )
 ,		SchemaEntry("oriented_open_shell",&STEP::ObjectHelper<STEPOriented_Open_Shell,2>::Construct )
-,		SchemaEntry("path",&STEP::ObjectHelper<STEPPath,1>::Construct )
 ,		SchemaEntry("oriented_path",&STEP::ObjectHelper<STEPOriented_Path,2>::Construct )
 ,		SchemaEntry("oriented_surface",&STEP::ObjectHelper<STEPOriented_Surface,1>::Construct )
 ,		SchemaEntry("outer_boundary_curve",&STEP::ObjectHelper<STEPOuter_Boundary_Curve,0>::Construct )
-,		SchemaEntry("STEPPackage_Product_Concept_Feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("package_product_concept_feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("parabola",&STEP::ObjectHelper<STEPParabola,1>::Construct )
-,		SchemaEntry("STEPParallel_Offset",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPParallelism_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("parallel_offset",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("parallelism_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("parametric_representation_context",&STEP::ObjectHelper<STEPParametric_Representation_Context,0>::Construct )
-,		SchemaEntry("STEPPartial_Document_With_Structured_Text_Representation_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("pcurve",&STEP::ObjectHelper<STEPPcurve,2>::Construct )
-,		SchemaEntry("STEPPercentage_Laminate_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPZone_Structural_Makeup",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPercentage_Laminate_Table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPercentage_Ply_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPerpendicular_To",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPerpendicularity_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPerson",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPerson_And_Organization",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPerson_And_Organization_Address",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPerson_And_Organization_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPersonal_Address",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPhysical_Breakdown_Context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPhysical_Element_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("partial_document_with_structured_text_representation_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("percentage_laminate_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("zone_structural_makeup",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("percentage_laminate_table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("percentage_ply_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("perpendicular_to",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("perpendicularity_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("person",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("person_and_organization",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("personal_address",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("person_and_organization_address",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("person_and_organization_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("physical_breakdown_context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("physical_element_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("presentation_view",&STEP::ObjectHelper<STEPPresentation_View,0>::Construct )
 ,		SchemaEntry("picture_representation",&STEP::ObjectHelper<STEPPicture_Representation,0>::Construct )
-,		SchemaEntry("STEPPlaced_Datum_Target_Feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPlaced_Feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("placed_datum_target_feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("placed_feature",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("planar_extent",&STEP::ObjectHelper<STEPPlanar_Extent,2>::Construct )
 ,		SchemaEntry("planar_box",&STEP::ObjectHelper<STEPPlanar_Box,1>::Construct )
 ,		SchemaEntry("plane",&STEP::ObjectHelper<STEPPlane,0>::Construct )
-,		SchemaEntry("STEPPlane_Angle_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("plane_angle_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("plane_angle_unit",&STEP::ObjectHelper<STEPPlane_Angle_Unit,0>::Construct )
-,		SchemaEntry("STEPPlus_Minus_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPly_Laminate_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPly_Laminate_Sequence_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPly_Laminate_Table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPoint_And_Vector",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("plus_minus_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("ply_laminate_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("ply_laminate_sequence_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("ply_laminate_table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("point_and_vector",&STEP::ObjectHelper<STEPPoint_And_Vector,0>::Construct )
 ,		SchemaEntry("point_on_curve",&STEP::ObjectHelper<STEPPoint_On_Curve,2>::Construct )
 ,		SchemaEntry("point_on_surface",&STEP::ObjectHelper<STEPPoint_On_Surface,3>::Construct )
-,		SchemaEntry("STEPPoint_Path",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("point_path",&STEP::ObjectHelper<STEPPoint_Path,0>::Construct )
 ,		SchemaEntry("point_replica",&STEP::ObjectHelper<STEPPoint_Replica,2>::Construct )
-,		SchemaEntry("STEPPoint_Style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPolar_Complex_Number_Literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("point_style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("polar_complex_number_literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("poly_loop",&STEP::ObjectHelper<STEPPoly_Loop,1>::Construct )
 ,		SchemaEntry("polyline",&STEP::ObjectHelper<STEPPolyline,1>::Construct )
-,		SchemaEntry("STEPPosition_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("position_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("positioned_sketch",&STEP::ObjectHelper<STEPPositioned_Sketch,2>::Construct )
-,		SchemaEntry("STEPPower_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPower_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPre_Defined_Symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPre_Defined_Dimension_Symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPre_Defined_Geometrical_Tolerance_Symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPre_Defined_Marker",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPre_Defined_Point_Marker_Symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPre_Defined_Surface_Condition_Symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("power_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("power_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_dimension_symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_geometrical_tolerance_symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_point_marker_symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_surface_condition_symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("pre_defined_surface_side_style",&STEP::ObjectHelper<STEPPre_Defined_Surface_Side_Style,0>::Construct )
-,		SchemaEntry("STEPPre_Defined_Terminator_Symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPre_Defined_Tile",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPrecision_Qualifier",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_terminator_symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pre_defined_tile",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("precision_qualifier",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("predefined_picture_representation_item",&STEP::ObjectHelper<STEPPredefined_Picture_Representation_Item,0>::Construct )
-,		SchemaEntry("STEPPresentation_Layer_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPresentation_Size",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("presentation_layer_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("presentation_size",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("presentation_style_assignment",&STEP::ObjectHelper<STEPPresentation_Style_Assignment,1>::Construct )
 ,		SchemaEntry("presentation_style_by_context",&STEP::ObjectHelper<STEPPresentation_Style_By_Context,1>::Construct )
-,		SchemaEntry("STEPPresented_Item_Representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPressure_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPPressure_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("presented_item_representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pressure_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("pressure_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("procedural_representation",&STEP::ObjectHelper<STEPProcedural_Representation,0>::Construct )
 ,		SchemaEntry("procedural_representation_sequence",&STEP::ObjectHelper<STEPProcedural_Representation_Sequence,3>::Construct )
-,		SchemaEntry("STEPProcedural_Shape_Representation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProcedural_Shape_Representation_Sequence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("product",&STEP::ObjectHelper<STEPProduct,4>::Construct )
-,		SchemaEntry("STEPProduct_Category",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Class",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Concept",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Concept_Context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Concept_Feature_Association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Concept_Feature_Category_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Concept_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Context_Association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Context_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Element_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Formation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Formation_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Formation_With_Specified_Source",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Group_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Occurrence_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Shape",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_Substitute",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Definition_With_Associated_Documents",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Identification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Material_Composition_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Related_Product_Category",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProduct_Specification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTolerance_Zone_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProjected_Zone_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("procedural_shape_representation",&STEP::ObjectHelper<STEPProcedural_Shape_Representation,0>::Construct )
+,		SchemaEntry("procedural_shape_representation_sequence",&STEP::ObjectHelper<STEPProcedural_Shape_Representation_Sequence,0>::Construct )
+,		SchemaEntry("product",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_category",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_concept",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_class",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_concept_context",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_concept_feature_association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_concept_feature_category_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_concept_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_context_association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_context_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_formation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_formation_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_formation_with_specified_source",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_group_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_occurrence_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_shape",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_substitute",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_definition_with_associated_documents",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_identification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_material_composition_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_related_product_category",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("product_specification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("tolerance_zone_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("projected_zone_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("projection_curve",&STEP::ObjectHelper<STEPProjection_Curve,0>::Construct )
-,		SchemaEntry("STEPPromissory_Usage_Occurrence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPProperty_Definition_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("promissory_usage_occurrence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("property_definition_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("qualified_representation_item",&STEP::ObjectHelper<STEPQualified_Representation_Item,1>::Construct )
-,		SchemaEntry("STEPQualitative_Uncertainty",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPQuantified_Assembly_Component_Usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("qualitative_uncertainty",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("quantified_assembly_component_usage",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("quasi_uniform_curve",&STEP::ObjectHelper<STEPQuasi_Uniform_Curve,0>::Construct )
 ,		SchemaEntry("quasi_uniform_surface",&STEP::ObjectHelper<STEPQuasi_Uniform_Surface,0>::Construct )
-,		SchemaEntry("STEPRadioactivity_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRadioactivity_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("radioactivity_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("radioactivity_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("radius_dimension",&STEP::ObjectHelper<STEPRadius_Dimension,0>::Construct )
-,		SchemaEntry("STEPRange_Characteristic",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("range_characteristic",&STEP::ObjectHelper<STEPRange_Characteristic,0>::Construct )
 ,		SchemaEntry("ratio_unit",&STEP::ObjectHelper<STEPRatio_Unit,0>::Construct )
 ,		SchemaEntry("rational_b_spline_curve",&STEP::ObjectHelper<STEPRational_B_Spline_Curve,1>::Construct )
 ,		SchemaEntry("rational_b_spline_surface",&STEP::ObjectHelper<STEPRational_B_Spline_Surface,0>::Construct )
-,		SchemaEntry("STEPRational_Representation_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPReal_Literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPReal_Representation_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("slash_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("rational_representation_item",&STEP::ObjectHelper<STEPRational_Representation_Item,0>::Construct )
+,		SchemaEntry("real_literal",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("real_representation_item",&STEP::ObjectHelper<STEPReal_Representation_Item,0>::Construct )
 ,		SchemaEntry("rectangular_composite_surface",&STEP::ObjectHelper<STEPRectangular_Composite_Surface,0>::Construct )
 ,		SchemaEntry("rectangular_trimmed_surface",&STEP::ObjectHelper<STEPRectangular_Trimmed_Surface,7>::Construct )
-,		SchemaEntry("STEPReferenced_Modified_Datum",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRelative_Event_Occurrence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRep_Item_Group",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("referenced_modified_datum",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("relative_event_occurrence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("rep_item_group",&STEP::ObjectHelper<STEPRep_Item_Group,0>::Construct )
 ,		SchemaEntry("reparametrised_composite_curve_segment",&STEP::ObjectHelper<STEPReparametrised_Composite_Curve_Segment,1>::Construct )
-,		SchemaEntry("STEPRepresentation_Relationship_With_Transformation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRequirement_Assigned_Object",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRequirement_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRequirement_Source",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRequirement_View_Definition_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPResistance_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPResistance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("representation_relationship_with_transformation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("requirement_assigned_object",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("requirement_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("requirement_source",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("requirement_view_definition_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("resistance_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("resistance_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("revolved_area_solid",&STEP::ObjectHelper<STEPRevolved_Area_Solid,2>::Construct )
 ,		SchemaEntry("revolved_face_solid",&STEP::ObjectHelper<STEPRevolved_Face_Solid,2>::Construct )
 ,		SchemaEntry("revolved_face_solid_with_trim_conditions",&STEP::ObjectHelper<STEPRevolved_Face_Solid_With_Trim_Conditions,2>::Construct )
 ,		SchemaEntry("right_angular_wedge",&STEP::ObjectHelper<STEPRight_Angular_Wedge,5>::Construct )
 ,		SchemaEntry("right_circular_cone",&STEP::ObjectHelper<STEPRight_Circular_Cone,4>::Construct )
 ,		SchemaEntry("right_circular_cylinder",&STEP::ObjectHelper<STEPRight_Circular_Cylinder,3>::Construct )
-,		SchemaEntry("STEPRight_To_Usage_Association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRole_Association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRoundness_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("right_to_usage_association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("role_association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("roundness_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("row_representation_item",&STEP::ObjectHelper<STEPRow_Representation_Item,0>::Construct )
 ,		SchemaEntry("row_value",&STEP::ObjectHelper<STEPRow_Value,0>::Construct )
-,		SchemaEntry("STEPRow_Variable",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRule_Action",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("row_variable",&STEP::ObjectHelper<STEPRow_Variable,0>::Construct )
+,		SchemaEntry("rule_action",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("rule_condition",&STEP::ObjectHelper<STEPRule_Condition,0>::Construct )
-,		SchemaEntry("STEPRule_Set",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRule_Set_Group",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRule_Superseded_Assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRule_Supersedence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("rule_set",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("rule_set_group",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("rule_superseded_assignment",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("rule_supersedence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("surface_curve_swept_area_solid",&STEP::ObjectHelper<STEPSurface_Curve_Swept_Area_Solid,4>::Construct )
 ,		SchemaEntry("ruled_surface_swept_area_solid",&STEP::ObjectHelper<STEPRuled_Surface_Swept_Area_Solid,0>::Construct )
-,		SchemaEntry("STEPRunout_Zone_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRunout_Zone_Orientation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPRunout_Zone_Orientation_Reference_Direction",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSatisfied_Requirement",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSatisfies_Requirement",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSatisfying_Item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPScalar_Variable",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPScattering_Parameter",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("runout_zone_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("runout_zone_orientation",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("runout_zone_orientation_reference_direction",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("satisfied_requirement",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("satisfies_requirement",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("satisfying_item",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("scalar_variable",&STEP::ObjectHelper<STEPScalar_Variable,0>::Construct )
+,		SchemaEntry("scattering_parameter",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("sculptured_solid",&STEP::ObjectHelper<STEPSculptured_Solid,2>::Construct )
 ,		SchemaEntry("seam_curve",&STEP::ObjectHelper<STEPSeam_Curve,0>::Construct )
-,		SchemaEntry("STEPSecurity_Classification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSecurity_Classification_Level",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSerial_Numbered_Effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPShape_Aspect_Associativity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPShape_Aspect_Deriving_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("security_classification",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("security_classification_level",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("serial_numbered_effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("shape_aspect_associativity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("shape_aspect_deriving_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("shape_definition_representation",&STEP::ObjectHelper<STEPShape_Definition_Representation,0>::Construct )
 ,		SchemaEntry("shape_dimension_representation",&STEP::ObjectHelper<STEPShape_Dimension_Representation,0>::Construct )
-,		SchemaEntry("STEPShape_Feature_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("shape_representation_with_parameters",&STEP::ObjectHelper<STEPShape_Representation_With_Parameters,0>::Construct )
 ,		SchemaEntry("shell_based_surface_model",&STEP::ObjectHelper<STEPShell_Based_Surface_Model,1>::Construct )
 ,		SchemaEntry("shell_based_wireframe_model",&STEP::ObjectHelper<STEPShell_Based_Wireframe_Model,1>::Construct )
 ,		SchemaEntry("shell_based_wireframe_shape_representation",&STEP::ObjectHelper<STEPShell_Based_Wireframe_Shape_Representation,0>::Construct )
-,		SchemaEntry("STEPSi_Absorbed_Dose_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Capacitance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Conductance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Dose_Equivalent_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Electric_Charge_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Electric_Potential_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Energy_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Force_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Frequency_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Illuminance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Inductance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Magnetic_Flux_Density_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Magnetic_Flux_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Power_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Pressure_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Radioactivity_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSi_Resistance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("si_unit",&STEP::ObjectHelper<STEPSi_Unit,2>::Construct )
-,		SchemaEntry("STEPSimple_Boolean_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSimple_Numeric_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSlash_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSmeared_Material_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSolid_Angle_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("si_absorbed_dose_unit",&STEP::ObjectHelper<STEPSi_Absorbed_Dose_Unit,0>::Construct )
+,		SchemaEntry("si_capacitance_unit",&STEP::ObjectHelper<STEPSi_Capacitance_Unit,0>::Construct )
+,		SchemaEntry("si_conductance_unit",&STEP::ObjectHelper<STEPSi_Conductance_Unit,0>::Construct )
+,		SchemaEntry("si_dose_equivalent_unit",&STEP::ObjectHelper<STEPSi_Dose_Equivalent_Unit,0>::Construct )
+,		SchemaEntry("si_electric_charge_unit",&STEP::ObjectHelper<STEPSi_Electric_Charge_Unit,0>::Construct )
+,		SchemaEntry("si_electric_potential_unit",&STEP::ObjectHelper<STEPSi_Electric_Potential_Unit,0>::Construct )
+,		SchemaEntry("si_energy_unit",&STEP::ObjectHelper<STEPSi_Energy_Unit,0>::Construct )
+,		SchemaEntry("si_force_unit",&STEP::ObjectHelper<STEPSi_Force_Unit,0>::Construct )
+,		SchemaEntry("si_frequency_unit",&STEP::ObjectHelper<STEPSi_Frequency_Unit,0>::Construct )
+,		SchemaEntry("si_illuminance_unit",&STEP::ObjectHelper<STEPSi_Illuminance_Unit,0>::Construct )
+,		SchemaEntry("si_inductance_unit",&STEP::ObjectHelper<STEPSi_Inductance_Unit,0>::Construct )
+,		SchemaEntry("si_magnetic_flux_density_unit",&STEP::ObjectHelper<STEPSi_Magnetic_Flux_Density_Unit,0>::Construct )
+,		SchemaEntry("si_magnetic_flux_unit",&STEP::ObjectHelper<STEPSi_Magnetic_Flux_Unit,0>::Construct )
+,		SchemaEntry("si_power_unit",&STEP::ObjectHelper<STEPSi_Power_Unit,0>::Construct )
+,		SchemaEntry("si_pressure_unit",&STEP::ObjectHelper<STEPSi_Pressure_Unit,0>::Construct )
+,		SchemaEntry("si_radioactivity_unit",&STEP::ObjectHelper<STEPSi_Radioactivity_Unit,0>::Construct )
+,		SchemaEntry("si_resistance_unit",&STEP::ObjectHelper<STEPSi_Resistance_Unit,0>::Construct )
+,		SchemaEntry("smeared_material_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("solid_angle_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("solid_angle_unit",&STEP::ObjectHelper<STEPSolid_Angle_Unit,0>::Construct )
-,		SchemaEntry("STEPSolid_Curve_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("solid_curve_font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("solid_replica",&STEP::ObjectHelper<STEPSolid_Replica,2>::Construct )
 ,		SchemaEntry("solid_with_chamfered_edges",&STEP::ObjectHelper<STEPSolid_With_Chamfered_Edges,0>::Construct )
 ,		SchemaEntry("solid_with_angle_based_chamfer",&STEP::ObjectHelper<STEPSolid_With_Angle_Based_Chamfer,3>::Construct )
@@ -1177,127 +1180,124 @@ namespace {
 ,		SchemaEntry("solid_with_tee_section_slot",&STEP::ObjectHelper<STEPSolid_With_Tee_Section_Slot,2>::Construct )
 ,		SchemaEntry("solid_with_through_depression",&STEP::ObjectHelper<STEPSolid_With_Through_Depression,1>::Construct )
 ,		SchemaEntry("solid_with_trapezoidal_section_slot",&STEP::ObjectHelper<STEPSolid_With_Trapezoidal_Section_Slot,2>::Construct )
-,		SchemaEntry("STEPSolid_With_Variable_Radius_Edge_Blend",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSource_For_Requirement",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSourced_Requirement",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSpecification_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSpecified_Higher_Usage_Occurrence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("track_blended_solid",&STEP::ObjectHelper<STEPTrack_Blended_Solid,0>::Construct )
+,		SchemaEntry("solid_with_variable_radius_edge_blend",&STEP::ObjectHelper<STEPSolid_With_Variable_Radius_Edge_Blend,3>::Construct )
+,		SchemaEntry("source_for_requirement",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("sourced_requirement",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("specification_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("specified_higher_usage_occurrence",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("sphere",&STEP::ObjectHelper<STEPSphere,2>::Construct )
 ,		SchemaEntry("spherical_surface",&STEP::ObjectHelper<STEPSpherical_Surface,1>::Construct )
-,		SchemaEntry("STEPStart_Request",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPStart_Work",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPStraightness_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("start_request",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("start_work",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("straightness_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("structured_dimension_callout",&STEP::ObjectHelper<STEPStructured_Dimension_Callout,0>::Construct )
 ,		SchemaEntry("structured_text_composition",&STEP::ObjectHelper<STEPStructured_Text_Composition,0>::Construct )
 ,		SchemaEntry("structured_text_representation",&STEP::ObjectHelper<STEPStructured_Text_Representation,0>::Construct )
 ,		SchemaEntry("subedge",&STEP::ObjectHelper<STEPSubedge,1>::Construct )
 ,		SchemaEntry("subface",&STEP::ObjectHelper<STEPSubface,1>::Construct )
-,		SchemaEntry("STEPSupplied_Part_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("supplied_part_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("surface_condition_callout",&STEP::ObjectHelper<STEPSurface_Condition_Callout,0>::Construct )
 ,		SchemaEntry("swept_surface",&STEP::ObjectHelper<STEPSwept_Surface,1>::Construct )
 ,		SchemaEntry("surface_of_linear_extrusion",&STEP::ObjectHelper<STEPSurface_Of_Linear_Extrusion,1>::Construct )
 ,		SchemaEntry("surface_of_revolution",&STEP::ObjectHelper<STEPSurface_Of_Revolution,1>::Construct )
-,		SchemaEntry("STEPSurface_Patch",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Profile_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Rendering_Properties",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_patch",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_profile_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_rendering_properties",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("surface_replica",&STEP::ObjectHelper<STEPSurface_Replica,2>::Construct )
 ,		SchemaEntry("surface_side_style",&STEP::ObjectHelper<STEPSurface_Side_Style,2>::Construct )
-,		SchemaEntry("STEPSurface_Style_Boundary",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Style_Control_Grid",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_boundary",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_control_grid",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("surface_style_fill_area",&STEP::ObjectHelper<STEPSurface_Style_Fill_Area,1>::Construct )
-,		SchemaEntry("STEPSurface_Style_Parameter_Line",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Style_Reflectance_Ambient",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Style_Reflectance_Ambient_Diffuse",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Style_Reflectance_Ambient_Diffuse_Specular",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Style_Rendering",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Style_Rendering_With_Properties",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Style_Segmentation_Curve",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Style_Silhouette",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSurface_Style_Transparent",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_parameter_line",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_reflectance_ambient",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_reflectance_ambient_diffuse",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_reflectance_ambient_diffuse_specular",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_rendering",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_rendering_with_properties",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_segmentation_curve",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_silhouette",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("surface_style_transparent",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("surface_style_usage",&STEP::ObjectHelper<STEPSurface_Style_Usage,2>::Construct )
 ,		SchemaEntry("surface_texture_representation",&STEP::ObjectHelper<STEPSurface_Texture_Representation,0>::Construct )
 ,		SchemaEntry("surfaced_open_shell",&STEP::ObjectHelper<STEPSurfaced_Open_Shell,0>::Construct )
 ,		SchemaEntry("swept_disk_solid",&STEP::ObjectHelper<STEPSwept_Disk_Solid,5>::Construct )
 ,		SchemaEntry("symbol",&STEP::ObjectHelper<STEPSymbol,0>::Construct )
-,		SchemaEntry("STEPSymbol_Colour",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("symbol_colour",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("symbol_representation_map",&STEP::ObjectHelper<STEPSymbol_Representation_Map,0>::Construct )
-,		SchemaEntry("STEPSymbol_Style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("symbol_style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("symbol_target",&STEP::ObjectHelper<STEPSymbol_Target,3>::Construct )
-,		SchemaEntry("STEPSymmetric_Shape_Aspect",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPSymmetry_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("symmetric_shape_aspect",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("symmetry_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("table_representation_item",&STEP::ObjectHelper<STEPTable_Representation_Item,0>::Construct )
 ,		SchemaEntry("tactile_appearance_representation",&STEP::ObjectHelper<STEPTactile_Appearance_Representation,0>::Construct )
 ,		SchemaEntry("tagged_text_format",&STEP::ObjectHelper<STEPTagged_Text_Format,0>::Construct )
 ,		SchemaEntry("tagged_text_item",&STEP::ObjectHelper<STEPTagged_Text_Item,0>::Construct )
-,		SchemaEntry("STEPTangent",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPText_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPText_Font_Family",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPText_Font_In_Family",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("tangent",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("text_font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("text_font_family",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("text_font_in_family",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("text_literal_with_associated_curves",&STEP::ObjectHelper<STEPText_Literal_With_Associated_Curves,1>::Construct )
 ,		SchemaEntry("text_literal_with_blanking_box",&STEP::ObjectHelper<STEPText_Literal_With_Blanking_Box,1>::Construct )
 ,		SchemaEntry("text_literal_with_extent",&STEP::ObjectHelper<STEPText_Literal_With_Extent,1>::Construct )
 ,		SchemaEntry("text_string_representation",&STEP::ObjectHelper<STEPText_String_Representation,0>::Construct )
-,		SchemaEntry("STEPText_Style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPText_Style_For_Defined_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPText_Style_With_Box_Characteristics",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPText_Style_With_Mirror",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPText_Style_With_Spacing",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPThermal_Resistance_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPThermal_Resistance_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPThermodynamic_Temperature_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("text_style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("text_style_for_defined_font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("text_style_with_box_characteristics",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("text_style_with_mirror",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("text_style_with_spacing",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("thermal_resistance_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("thermal_resistance_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("thermodynamic_temperature_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("thermodynamic_temperature_unit",&STEP::ObjectHelper<STEPThermodynamic_Temperature_Unit,0>::Construct )
 ,		SchemaEntry("thickened_face_solid",&STEP::ObjectHelper<STEPThickened_Face_Solid,3>::Construct )
-,		SchemaEntry("STEPThickness_Laminate_Definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPThickness_Laminate_Table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTime_Interval",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTime_Interval_Based_Effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTime_Interval_Relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTime_Interval_Role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTime_Interval_With_Bounds",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTime_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("thickness_laminate_definition",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("thickness_laminate_table",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("time_interval",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("time_interval_based_effectivity",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("time_interval_relationship",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("time_interval_role",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("time_interval_with_bounds",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("time_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("time_unit",&STEP::ObjectHelper<STEPTime_Unit,0>::Construct )
-,		SchemaEntry("STEPTolerance_Value",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTolerance_Zone",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPTolerance_Zone_Form",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("tolerance_value",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("tolerance_zone",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("tolerance_zone_form",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("torus",&STEP::ObjectHelper<STEPTorus,3>::Construct )
-,		SchemaEntry("STEPTotal_Runout_Tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("track_blended_solid",&STEP::ObjectHelper<STEPTrack_Blended_Solid,0>::Construct )
+,		SchemaEntry("total_runout_tolerance",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("track_blended_solid_with_end_conditions",&STEP::ObjectHelper<STEPTrack_Blended_Solid_With_End_Conditions,1>::Construct )
 ,		SchemaEntry("trimmed_curve",&STEP::ObjectHelper<STEPTrimmed_Curve,5>::Construct )
 ,		SchemaEntry("two_direction_repeat_factor",&STEP::ObjectHelper<STEPTwo_Direction_Repeat_Factor,1>::Construct )
-,		SchemaEntry("STEPType_Qualifier",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPUnary_Generic_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPUnary_Numeric_Expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("type_qualifier",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("unary_generic_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("unary_numeric_expression",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("uncertainty_assigned_representation",&STEP::ObjectHelper<STEPUncertainty_Assigned_Representation,1>::Construct )
-,		SchemaEntry("STEPUncertainty_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("uncertainty_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("uniform_curve",&STEP::ObjectHelper<STEPUniform_Curve,0>::Construct )
 ,		SchemaEntry("uniform_resource_identifier",&STEP::ObjectHelper<STEPUniform_Resource_Identifier,0>::Construct )
 ,		SchemaEntry("uniform_surface",&STEP::ObjectHelper<STEPUniform_Surface,0>::Construct )
-,		SchemaEntry("STEPUsage_Association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPUser_Defined_Curve_Font",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPUser_Defined_Marker",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPUser_Defined_Terminator_Symbol",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("user_selected_shape_elements",&STEP::ObjectHelper<STEPUser_Selected_Shape_Elements,0>::Construct )
+,		SchemaEntry("usage_association",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("user_defined_curve_font",&STEP::ObjectHelper<STEPUser_Defined_Curve_Font,0>::Construct )
+,		SchemaEntry("user_defined_marker",&STEP::ObjectHelper<STEPUser_Defined_Marker,0>::Construct )
+,		SchemaEntry("user_defined_terminator_symbol",&STEP::ObjectHelper<STEPUser_Defined_Terminator_Symbol,0>::Construct )
 ,		SchemaEntry("value_range",&STEP::ObjectHelper<STEPValue_Range,0>::Construct )
 ,		SchemaEntry("value_representation_item",&STEP::ObjectHelper<STEPValue_Representation_Item,1>::Construct )
-,		SchemaEntry("STEPVariable_Semantics",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("variational_representation_item",&STEP::ObjectHelper<STEPVariational_Representation_Item,0>::Construct )
 ,		SchemaEntry("vector",&STEP::ObjectHelper<STEPVector,2>::Construct )
-,		SchemaEntry("STEPVector_Style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPVelocity_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPVelocity_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPVersioned_Action_Request",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("vector_style",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("velocity_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("velocity_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("versioned_action_request",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("vertex",&STEP::ObjectHelper<STEPVertex,0>::Construct )
 ,		SchemaEntry("vertex_loop",&STEP::ObjectHelper<STEPVertex_Loop,1>::Construct )
-,		SchemaEntry("STEPVertex_Point",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("vertex_point",&STEP::ObjectHelper<STEPVertex_Point,1>::Construct )
 ,		SchemaEntry("vertex_shell",&STEP::ObjectHelper<STEPVertex_Shell,1>::Construct )
-,		SchemaEntry("STEPView_Volume",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("view_volume",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("visual_appearance_representation",&STEP::ObjectHelper<STEPVisual_Appearance_Representation,0>::Construct )
-,		SchemaEntry("STEPVolume_Measure_With_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPVolume_Unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
-,		SchemaEntry("STEPWeek_Of_Year_And_Day_Date",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("volume_measure_with_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("volume_unit",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("week_of_year_and_day_date",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 ,		SchemaEntry("wire_shell",&STEP::ObjectHelper<STEPWire_Shell,1>::Construct )
-,		SchemaEntry("STEPYear_Month",&STEP::ObjectHelper<NotImplemented,0>::Construct )
+,		SchemaEntry("year_month",&STEP::ObjectHelper<NotImplemented,0>::Construct )
 
 	};
 }
@@ -1318,6 +1318,18 @@ template <> size_t GenericFill<NotImplemented>(const STEP::DB& db, const LIST& p
 
 
 
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPRepresentation_Item>(const DB& db, const LIST& params, STEPRepresentation_Item* in)
+{
+	size_t base = 0;
+	if (params.GetSize() < 1) { throw STEP::TypeError("expected 1 arguments to STEPRepresentation_Item"); }    do { // convert the 'STEPName' argument
+        std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPRepresentation_Item,1>::aux_is_derived[0]=true; break; }
+        try { GenericConvert( in->Name, arg, db ); break; } 
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 0 to STEPRepresentation_Item to be a `label`")); }
+    } while(0);
+	return base;
+}
 // -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPRepresentation>(const DB& db, const LIST& params, STEPRepresentation* in)
 {
@@ -1343,6 +1355,31 @@ template <> size_t GenericFill<STEPRepresentation>(const DB& db, const LIST& par
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPProperty_Definition_Representation>(const DB& db, const LIST& params, STEPProperty_Definition_Representation* in)
+{
+	size_t base = 0;
+	if (params.GetSize() < 2) { throw STEP::TypeError("expected 2 arguments to STEPProperty_Definition_Representation"); }    do { // convert the 'STEPDefinition' argument
+        std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPProperty_Definition_Representation,2>::aux_is_derived[0]=true; break; }
+        try { GenericConvert( in->Definition, arg, db ); break; } 
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 0 to STEPProperty_Definition_Representation to be a `represented_definition`")); }
+    } while(0);
+    do { // convert the 'STEPUsed_Representation' argument
+        std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPProperty_Definition_Representation,2>::aux_is_derived[1]=true; break; }
+        try { GenericConvert( in->UsedRepresentation, arg, db ); break; } 
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPProperty_Definition_Representation to be a `representation`")); }
+    } while(0);
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPAbstract_Variable>(const DB& db, const LIST& params, STEPAbstract_Variable* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPProperty_Definition*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPShape_Representation>(const DB& db, const LIST& params, STEPShape_Representation* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPRepresentation*>(in));
@@ -1355,6 +1392,54 @@ template <> size_t GenericFill<STEPAdvanced_Brep_Shape_Representation>(const DB&
 	size_t base = GenericFill(db,params,static_cast<STEPShape_Representation*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPTopological_Representation_Item>(const DB& db, const LIST& params, STEPTopological_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
+	if (params.GetSize() < 1) { throw STEP::TypeError("expected 1 arguments to STEPTopological_Representation_Item"); }	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPGeometric_Representation_Item>(const DB& db, const LIST& params, STEPGeometric_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
+	if (params.GetSize() < 1) { throw STEP::TypeError("expected 1 arguments to STEPGeometric_Representation_Item"); }	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPFace>(const DB& db, const LIST& params, STEPFace* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPTopological_Representation_Item*>(in));
+	if (params.GetSize() < 2) { throw STEP::TypeError("expected 2 arguments to STEPFace"); }    do { // convert the 'STEPBounds' argument
+        std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPFace,1>::aux_is_derived[0]=true; break; }
+        try { GenericConvert( in->Bounds, arg, db ); break; } 
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPFace to be a `SET [1:?] OF face_bound`")); }
+    } while(0);
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPFace_Surface>(const DB& db, const LIST& params, STEPFace_Surface* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPFace*>(in));
+	if (params.GetSize() < 4) { throw STEP::TypeError("expected 4 arguments to STEPFace_Surface"); }    do { // convert the 'STEPFace_Geometry' argument
+        std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPFace_Surface,2>::aux_is_derived[0]=true; break; }
+        try { GenericConvert( in->FaceGeometry, arg, db ); break; } 
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 2 to STEPFace_Surface to be a `surface`")); }
+    } while(0);
+    do { // convert the 'STEPSame_Sense' argument
+        std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPFace_Surface,2>::aux_is_derived[1]=true; break; }
+        try { GenericConvert( in->SameSense, arg, db ); break; } 
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 3 to STEPFace_Surface to be a `BOOLEAN`")); }
+    } while(0);
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPAdvanced_Face>(const DB& db, const LIST& params, STEPAdvanced_Face* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPFace_Surface*>(in));
+	if (params.GetSize() < 4) { throw STEP::TypeError("expected 4 arguments to STEPAdvanced_Face"); }	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPNamed_Unit>(const DB& db, const LIST& params, STEPNamed_Unit* in)
@@ -1376,22 +1461,11 @@ template <> size_t GenericFill<STEPAmount_Of_Substance_Unit>(const DB& db, const
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPRepresentation_Item>(const DB& db, const LIST& params, STEPRepresentation_Item* in)
+template <> size_t GenericFill<STEPAngle_Direction_Reference>(const DB& db, const LIST& params, STEPAngle_Direction_Reference* in)
 {
-	size_t base = 0;
-	if (params.GetSize() < 1) { throw STEP::TypeError("expected 1 arguments to STEPRepresentation_Item"); }    do { // convert the 'STEPName' argument
-        std::shared_ptr<const DataType> arg = params[base++];
-        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPRepresentation_Item,1>::aux_is_derived[0]=true; break; }
-        try { GenericConvert( in->Name, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 0 to STEPRepresentation_Item to be a `label`")); }
-    } while(0);
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item_Relationship*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
 	return base;
-}
-// -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPGeometric_Representation_Item>(const DB& db, const LIST& params, STEPGeometric_Representation_Item* in)
-{
-	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
-	if (params.GetSize() < 1) { throw STEP::TypeError("expected 1 arguments to STEPGeometric_Representation_Item"); }	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPDraughting_Callout>(const DB& db, const LIST& params, STEPDraughting_Callout* in)
@@ -1455,6 +1529,13 @@ template <> size_t GenericFill<STEPAnnotation_Fill_Area>(const DB& db, const LIS
 }
 // -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPAnnotation_Fill_Area_Occurrence>(const DB& db, const LIST& params, STEPAnnotation_Fill_Area_Occurrence* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPAnnotation_Occurrence*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPAnnotation_Plane>(const DB& db, const LIST& params, STEPAnnotation_Plane* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPAnnotation_Occurrence*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
@@ -1531,6 +1612,27 @@ template <> size_t GenericFill<STEPCompound_Representation_Item>(const DB& db, c
 template <> size_t GenericFill<STEPAtomic_Formula>(const DB& db, const LIST& params, STEPAtomic_Formula* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPCompound_Representation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPAttribute_Assertion>(const DB& db, const LIST& params, STEPAttribute_Assertion* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPFact_Type*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPVariational_Representation_Item>(const DB& db, const LIST& params, STEPVariational_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPAuxiliary_Geometric_Representation_Item>(const DB& db, const LIST& params, STEPAuxiliary_Geometric_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPGeometric_Representation_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -1617,6 +1719,13 @@ template <> size_t GenericFill<STEPB_Spline_Surface_With_Knots>(const DB& db, co
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPBack_Chaining_Rule_Body>(const DB& db, const LIST& params, STEPBack_Chaining_Rule_Body* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPProperty_Definition*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPColour>(const DB& db, const LIST& params, STEPColour* in)
 {
 	size_t base = 0;
@@ -1654,6 +1763,13 @@ template <> size_t GenericFill<STEPBinary_Representation_Item>(const DB& db, con
 template <> size_t GenericFill<STEPBlock>(const DB& db, const LIST& params, STEPBlock* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPGeometric_Representation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPBoolean_Representation_Item>(const DB& db, const LIST& params, STEPBoolean_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -1707,6 +1823,34 @@ template <> size_t GenericFill<STEPComposite_Curve_On_Surface>(const DB& db, con
 template <> size_t GenericFill<STEPBoundary_Curve>(const DB& db, const LIST& params, STEPBoundary_Curve* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPComposite_Curve_On_Surface*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPPcurve>(const DB& db, const LIST& params, STEPPcurve* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPCurve*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPBounded_Pcurve>(const DB& db, const LIST& params, STEPBounded_Pcurve* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPPcurve*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSurface_Curve>(const DB& db, const LIST& params, STEPSurface_Curve* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPCurve*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPBounded_Surface_Curve>(const DB& db, const LIST& params, STEPBounded_Surface_Curve* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPSurface_Curve*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -1868,35 +2012,54 @@ template <> size_t GenericFill<STEPCartesian_Point>(const DB& db, const LIST& pa
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPCartesian_Transformation_Operator>(const DB& db, const LIST& params, STEPCartesian_Transformation_Operator* in)
+template <> size_t GenericFill<STEPFunctionally_Defined_Transformation>(const DB& db, const LIST& params, STEPFunctionally_Defined_Transformation* in)
 {
 	size_t base = 0;
-	if (params.GetSize() < 4) { throw STEP::TypeError("expected 4 arguments to STEPCartesian_Transformation_Operator"); }    do { // convert the 'STEPAxis1' argument
+	if (params.GetSize() < 2) { throw STEP::TypeError("expected 2 arguments to STEPFunctionally_Defined_Transformation"); }    do { // convert the 'STEPName' argument
+        std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPFunctionally_Defined_Transformation,2>::aux_is_derived[0]=true; break; }
+        try { GenericConvert( in->Name, arg, db ); break; } 
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 0 to STEPFunctionally_Defined_Transformation to be a `label`")); }
+    } while(0);
+    do { // convert the 'STEPDescription' argument
+        std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPFunctionally_Defined_Transformation,2>::aux_is_derived[1]=true; break; }
+        if (dynamic_cast<const UNSET*>(&*arg)) break;
+        try { GenericConvert( in->Description, arg, db ); break; } 
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPFunctionally_Defined_Transformation to be a `text`")); }
+    } while(0);
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPCartesian_Transformation_Operator>(const DB& db, const LIST& params, STEPCartesian_Transformation_Operator* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPGeometric_Representation_Item*>(in));
+	if (params.GetSize() < 7) { throw STEP::TypeError("expected 7 arguments to STEPCartesian_Transformation_Operator"); }    do { // convert the 'STEPAxis1' argument
         std::shared_ptr<const DataType> arg = params[base++];
         if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPCartesian_Transformation_Operator,4>::aux_is_derived[0]=true; break; }
         if (dynamic_cast<const UNSET*>(&*arg)) break;
         try { GenericConvert( in->Axis1, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 0 to STEPCartesian_Transformation_Operator to be a `direction`")); }
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 3 to STEPCartesian_Transformation_Operator to be a `direction`")); }
     } while(0);
     do { // convert the 'STEPAxis2' argument
         std::shared_ptr<const DataType> arg = params[base++];
         if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPCartesian_Transformation_Operator,4>::aux_is_derived[1]=true; break; }
         if (dynamic_cast<const UNSET*>(&*arg)) break;
         try { GenericConvert( in->Axis2, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPCartesian_Transformation_Operator to be a `direction`")); }
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 4 to STEPCartesian_Transformation_Operator to be a `direction`")); }
     } while(0);
     do { // convert the 'STEPLocal_Origin' argument
         std::shared_ptr<const DataType> arg = params[base++];
         if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPCartesian_Transformation_Operator,4>::aux_is_derived[2]=true; break; }
         try { GenericConvert( in->LocalOrigin, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 2 to STEPCartesian_Transformation_Operator to be a `cartesian_point`")); }
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 5 to STEPCartesian_Transformation_Operator to be a `cartesian_point`")); }
     } while(0);
     do { // convert the 'STEPScale' argument
         std::shared_ptr<const DataType> arg = params[base++];
         if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPCartesian_Transformation_Operator,4>::aux_is_derived[3]=true; break; }
         if (dynamic_cast<const UNSET*>(&*arg)) break;
         try { GenericConvert( in->Scale, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 3 to STEPCartesian_Transformation_Operator to be a `REAL`")); }
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 6 to STEPCartesian_Transformation_Operator to be a `REAL`")); }
     } while(0);
 	return base;
 }
@@ -1971,12 +2134,6 @@ template <> size_t GenericFill<STEPCircle>(const DB& db, const LIST& params, STE
         catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 2 to STEPCircle to be a `positive_length_measure`")); }
     } while(0);
 	return base;
-}
-// -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPTopological_Representation_Item>(const DB& db, const LIST& params, STEPTopological_Representation_Item* in)
-{
-	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
-	if (params.GetSize() < 1) { throw STEP::TypeError("expected 1 arguments to STEPTopological_Representation_Item"); }	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPConnected_Face_Set>(const DB& db, const LIST& params, STEPConnected_Face_Set* in)
@@ -2221,11 +2378,13 @@ template <> size_t GenericFill<STEPConversion_Based_Unit>(const DB& db, const LI
 	size_t base = GenericFill(db,params,static_cast<STEPNamed_Unit*>(in));
 	if (params.GetSize() < 3) { throw STEP::TypeError("expected 3 arguments to STEPConversion_Based_Unit"); }    do { // convert the 'STEPName' argument
         std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPConversion_Based_Unit,2>::aux_is_derived[0]=true; break; }
         try { GenericConvert( in->Name, arg, db ); break; } 
         catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPConversion_Based_Unit to be a `label`")); }
     } while(0);
     do { // convert the 'STEPConversion_Factor' argument
         std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPConversion_Based_Unit,2>::aux_is_derived[1]=true; break; }
         try { GenericConvert( in->ConversionFactor, arg, db ); break; } 
         catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 2 to STEPConversion_Based_Unit to be a `measure_with_unit`")); }
     } while(0);
@@ -2284,6 +2443,20 @@ template <> size_t GenericFill<STEPCurve_Swept_Solid_Shape_Representation>(const
 template <> size_t GenericFill<STEPCylindrical_Surface>(const DB& db, const LIST& params, STEPCylindrical_Surface* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPElementary_Surface*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPDate_Representation_Item>(const DB& db, const LIST& params, STEPDate_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPDate_Time_Representation_Item>(const DB& db, const LIST& params, STEPDate_Time_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -2393,6 +2566,20 @@ template <> size_t GenericFill<STEPDimension_Curve_Terminator>(const DB& db, con
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPText_Literal>(const DB& db, const LIST& params, STEPText_Literal* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPGeometric_Representation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPDimension_Text_Associativity>(const DB& db, const LIST& params, STEPDimension_Text_Associativity* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPText_Literal*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPDirection>(const DB& db, const LIST& params, STEPDirection* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPGeometric_Representation_Item*>(in));
@@ -2454,13 +2641,6 @@ template <> size_t GenericFill<STEPDraughting_Subfigure_Representation>(const DB
 template <> size_t GenericFill<STEPDraughting_Symbol_Representation>(const DB& db, const LIST& params, STEPDraughting_Symbol_Representation* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPSymbol_Representation*>(in));
-// this data structure is not used yet, so there is no code generated to fill its members
-	return base;
-}
-// -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPText_Literal>(const DB& db, const LIST& params, STEPText_Literal* in)
-{
-	size_t base = GenericFill(db,params,static_cast<STEPGeometric_Representation_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -2528,6 +2708,33 @@ template <> size_t GenericFill<STEPEdge_Blended_Solid>(const DB& db, const LIST&
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPEdge_Curve>(const DB& db, const LIST& params, STEPEdge_Curve* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPEdge*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPPath>(const DB& db, const LIST& params, STEPPath* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPTopological_Representation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPLoop>(const DB& db, const LIST& params, STEPLoop* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPTopological_Representation_Item*>(in));
+	if (params.GetSize() < 1) { throw STEP::TypeError("expected 1 arguments to STEPLoop"); }	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPEdge_Loop>(const DB& db, const LIST& params, STEPEdge_Loop* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPLoop*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPElectric_Current_Unit>(const DB& db, const LIST& params, STEPElectric_Current_Unit* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPNamed_Unit*>(in));
@@ -2565,9 +2772,51 @@ template <> size_t GenericFill<STEPEnum_Reference_Prefix>(const DB& db, const LI
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPEvaluated_Characteristic>(const DB& db, const LIST& params, STEPEvaluated_Characteristic* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPEvaluated_Degenerate_Pcurve>(const DB& db, const LIST& params, STEPEvaluated_Degenerate_Pcurve* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPDegenerate_Pcurve*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPExpression_Conversion_Based_Unit>(const DB& db, const LIST& params, STEPExpression_Conversion_Based_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPContext_Dependent_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPExternally_Defined_Context_Dependent_Unit>(const DB& db, const LIST& params, STEPExternally_Defined_Context_Dependent_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPContext_Dependent_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPExternally_Defined_Conversion_Based_Unit>(const DB& db, const LIST& params, STEPExternally_Defined_Conversion_Based_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPConversion_Based_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPExternally_Defined_Currency>(const DB& db, const LIST& params, STEPExternally_Defined_Currency* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPCurrency*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPExternally_Defined_Hatch_Style>(const DB& db, const LIST& params, STEPExternally_Defined_Hatch_Style* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPExternally_Defined_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -2582,6 +2831,27 @@ template <> size_t GenericFill<STEPPicture_Representation_Item>(const DB& db, co
 template <> size_t GenericFill<STEPExternally_Defined_Picture_Representation_Item>(const DB& db, const LIST& params, STEPExternally_Defined_Picture_Representation_Item* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPPicture_Representation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPExternally_Defined_Representation_Item>(const DB& db, const LIST& params, STEPExternally_Defined_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPExternally_Defined_String>(const DB& db, const LIST& params, STEPExternally_Defined_String* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPExternally_Defined_Representation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPExternally_Defined_Tile_Style>(const DB& db, const LIST& params, STEPExternally_Defined_Tile_Style* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPExternally_Defined_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -2646,18 +2916,6 @@ template <> size_t GenericFill<STEPExtruded_Face_Solid_With_Multiple_Draft_Angle
 {
 	size_t base = GenericFill(db,params,static_cast<STEPExtruded_Face_Solid_With_Trim_Conditions*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
-	return base;
-}
-// -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPFace>(const DB& db, const LIST& params, STEPFace* in)
-{
-	size_t base = GenericFill(db,params,static_cast<STEPTopological_Representation_Item*>(in));
-	if (params.GetSize() < 2) { throw STEP::TypeError("expected 2 arguments to STEPFace"); }    do { // convert the 'STEPBounds' argument
-        std::shared_ptr<const DataType> arg = params[base++];
-        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPFace,1>::aux_is_derived[0]=true; break; }
-        try { GenericConvert( in->Bounds, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPFace to be a `SET [1:?] OF face_bound`")); }
-    } while(0);
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
@@ -2777,6 +3035,13 @@ template <> size_t GenericFill<STEPFill_Area_Style_Tiles>(const DB& db, const LI
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPForward_Chaining_Rule_Premise>(const DB& db, const LIST& params, STEPForward_Chaining_Rule_Premise* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPProperty_Definition*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPFunc>(const DB& db, const LIST& params, STEPFunc* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPCompound_Representation_Item*>(in));
@@ -2794,6 +3059,13 @@ template <> size_t GenericFill<STEPGeometric_Set>(const DB& db, const LIST& para
 template <> size_t GenericFill<STEPGeometric_Curve_Set>(const DB& db, const LIST& params, STEPGeometric_Curve_Set* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPGeometric_Set*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPGeometric_Model_Element_Relationship>(const DB& db, const LIST& params, STEPGeometric_Model_Element_Relationship* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPGeometric_Representation_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -2918,9 +3190,23 @@ template <> size_t GenericFill<STEPIndirectly_Selected_Elements>(const DB& db, c
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPSurface_Curve>(const DB& db, const LIST& params, STEPSurface_Curve* in)
+template <> size_t GenericFill<STEPUser_Selected_Shape_Elements>(const DB& db, const LIST& params, STEPUser_Selected_Shape_Elements* in)
 {
-	size_t base = GenericFill(db,params,static_cast<STEPCurve*>(in));
+	size_t base = GenericFill(db,params,static_cast<STEPUser_Selected_Elements*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPIndirectly_Selected_Shape_Elements>(const DB& db, const LIST& params, STEPIndirectly_Selected_Shape_Elements* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPIndirectly_Selected_Elements*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPInteger_Representation_Item>(const DB& db, const LIST& params, STEPInteger_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -3053,9 +3339,9 @@ template <> size_t GenericFill<STEPLiteral_Disjunction>(const DB& db, const LIST
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPLoop>(const DB& db, const LIST& params, STEPLoop* in)
+template <> size_t GenericFill<STEPLogical_Representation_Item>(const DB& db, const LIST& params, STEPLogical_Representation_Item* in)
 {
-	size_t base = GenericFill(db,params,static_cast<STEPTopological_Representation_Item*>(in));
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -3095,21 +3381,10 @@ template <> size_t GenericFill<STEPMass_Unit>(const DB& db, const LIST& params, 
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPProperty_Definition_Representation>(const DB& db, const LIST& params, STEPProperty_Definition_Representation* in)
+template <> size_t GenericFill<STEPMeasure_Representation_Item>(const DB& db, const LIST& params, STEPMeasure_Representation_Item* in)
 {
-	size_t base = 0;
-	if (params.GetSize() < 2) { throw STEP::TypeError("expected 2 arguments to STEPProperty_Definition_Representation"); }    do { // convert the 'STEPDefinition' argument
-        std::shared_ptr<const DataType> arg = params[base++];
-        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPProperty_Definition_Representation,2>::aux_is_derived[0]=true; break; }
-        try { GenericConvert( in->Definition, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 0 to STEPProperty_Definition_Representation to be a `represented_definition`")); }
-    } while(0);
-    do { // convert the 'STEPUsed_Representation' argument
-        std::shared_ptr<const DataType> arg = params[base++];
-        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPProperty_Definition_Representation,2>::aux_is_derived[1]=true; break; }
-        try { GenericConvert( in->UsedRepresentation, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPProperty_Definition_Representation to be a `representation`")); }
-    } while(0);
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
@@ -3144,6 +3419,13 @@ template <> size_t GenericFill<STEPMechanical_Design_Shaded_Presentation_Area>(c
 template <> size_t GenericFill<STEPMechanical_Design_Shaded_Presentation_Representation>(const DB& db, const LIST& params, STEPMechanical_Design_Shaded_Presentation_Representation* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPRepresentation*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPMin_And_Major_Ply_Orientation_Basis>(const DB& db, const LIST& params, STEPMin_And_Major_Ply_Orientation_Basis* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item_Relationship*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -3253,13 +3535,6 @@ template <> size_t GenericFill<STEPOriented_Open_Shell>(const DB& db, const LIST
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPPath>(const DB& db, const LIST& params, STEPPath* in)
-{
-	size_t base = GenericFill(db,params,static_cast<STEPTopological_Representation_Item*>(in));
-// this data structure is not used yet, so there is no code generated to fill its members
-	return base;
-}
-// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPOriented_Path>(const DB& db, const LIST& params, STEPOriented_Path* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPPath*>(in));
@@ -3291,13 +3566,6 @@ template <> size_t GenericFill<STEPParabola>(const DB& db, const LIST& params, S
 template <> size_t GenericFill<STEPParametric_Representation_Context>(const DB& db, const LIST& params, STEPParametric_Representation_Context* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Context*>(in));
-// this data structure is not used yet, so there is no code generated to fill its members
-	return base;
-}
-// -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPPcurve>(const DB& db, const LIST& params, STEPPcurve* in)
-{
-	size_t base = GenericFill(db,params,static_cast<STEPCurve*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -3344,6 +3612,13 @@ template <> size_t GenericFill<STEPPlane_Angle_Unit>(const DB& db, const LIST& p
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPPoint_And_Vector>(const DB& db, const LIST& params, STEPPoint_And_Vector* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPCompound_Representation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPPoint_On_Curve>(const DB& db, const LIST& params, STEPPoint_On_Curve* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPPoint*>(in));
@@ -3358,6 +3633,13 @@ template <> size_t GenericFill<STEPPoint_On_Surface>(const DB& db, const LIST& p
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPPoint_Path>(const DB& db, const LIST& params, STEPPoint_Path* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPCompound_Representation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPPoint_Replica>(const DB& db, const LIST& params, STEPPoint_Replica* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPPoint*>(in));
@@ -3367,11 +3649,11 @@ template <> size_t GenericFill<STEPPoint_Replica>(const DB& db, const LIST& para
 // -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPPoly_Loop>(const DB& db, const LIST& params, STEPPoly_Loop* in)
 {
-	size_t base = 0;
-	if (params.GetSize() < 1) { throw STEP::TypeError("expected 1 arguments to STEPPoly_Loop"); }    do { // convert the 'STEPPolygon' argument
+	size_t base = GenericFill(db,params,static_cast<STEPLoop*>(in));
+	if (params.GetSize() < 2) { throw STEP::TypeError("expected 2 arguments to STEPPoly_Loop"); }    do { // convert the 'STEPPolygon' argument
         std::shared_ptr<const DataType> arg = params[base++];
         try { GenericConvert( in->Polygon, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 0 to STEPPoly_Loop to be a `LIST [3:?] OF cartesian_point`")); }
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPPoly_Loop to be a `LIST [3:?] OF cartesian_point`")); }
     } while(0);
 	return base;
 }
@@ -3440,30 +3722,17 @@ template <> size_t GenericFill<STEPProcedural_Representation_Sequence>(const DB&
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPProduct>(const DB& db, const LIST& params, STEPProduct* in)
+template <> size_t GenericFill<STEPProcedural_Shape_Representation>(const DB& db, const LIST& params, STEPProcedural_Shape_Representation* in)
 {
-	size_t base = 0;
-	if (params.GetSize() < 4) { throw STEP::TypeError("expected 4 arguments to STEPProduct"); }    do { // convert the 'STEPId' argument
-        std::shared_ptr<const DataType> arg = params[base++];
-        try { GenericConvert( in->Id, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 0 to STEPProduct to be a `identifier`")); }
-    } while(0);
-    do { // convert the 'STEPName' argument
-        std::shared_ptr<const DataType> arg = params[base++];
-        try { GenericConvert( in->Name, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPProduct to be a `label`")); }
-    } while(0);
-    do { // convert the 'STEPDescription' argument
-        std::shared_ptr<const DataType> arg = params[base++];
-        if (dynamic_cast<const UNSET*>(&*arg)) break;
-        try { GenericConvert( in->Description, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 2 to STEPProduct to be a `text`")); }
-    } while(0);
-    do { // convert the 'STEPFrame_Of_Reference' argument
-        std::shared_ptr<const DataType> arg = params[base++];
-        try { GenericConvert( in->FrameOfReference, arg, db ); break; } 
-        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 3 to STEPProduct to be a `SET [1:?] OF product_context`")); }
-    } while(0);
+	size_t base = GenericFill(db,params,static_cast<STEPProcedural_Representation*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPProcedural_Shape_Representation_Sequence>(const DB& db, const LIST& params, STEPProcedural_Shape_Representation_Sequence* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPGeometric_Representation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
@@ -3502,6 +3771,13 @@ template <> size_t GenericFill<STEPRadius_Dimension>(const DB& db, const LIST& p
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPRange_Characteristic>(const DB& db, const LIST& params, STEPRange_Characteristic* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPRatio_Unit>(const DB& db, const LIST& params, STEPRatio_Unit* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPNamed_Unit*>(in));
@@ -3523,6 +3799,20 @@ template <> size_t GenericFill<STEPRational_B_Spline_Surface>(const DB& db, cons
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPRational_Representation_Item>(const DB& db, const LIST& params, STEPRational_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPReal_Representation_Item>(const DB& db, const LIST& params, STEPReal_Representation_Item* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPRectangular_Composite_Surface>(const DB& db, const LIST& params, STEPRectangular_Composite_Surface* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPBounded_Surface*>(in));
@@ -3533,6 +3823,13 @@ template <> size_t GenericFill<STEPRectangular_Composite_Surface>(const DB& db, 
 template <> size_t GenericFill<STEPRectangular_Trimmed_Surface>(const DB& db, const LIST& params, STEPRectangular_Trimmed_Surface* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPBounded_Surface*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPRep_Item_Group>(const DB& db, const LIST& params, STEPRep_Item_Group* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPGroup*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -3609,6 +3906,13 @@ template <> size_t GenericFill<STEPRow_Value>(const DB& db, const LIST& params, 
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPRow_Variable>(const DB& db, const LIST& params, STEPRow_Variable* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPAbstract_Variable*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPRule_Condition>(const DB& db, const LIST& params, STEPRule_Condition* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPAtomic_Formula*>(in));
@@ -3626,6 +3930,13 @@ template <> size_t GenericFill<STEPSurface_Curve_Swept_Area_Solid>(const DB& db,
 template <> size_t GenericFill<STEPRuled_Surface_Swept_Area_Solid>(const DB& db, const LIST& params, STEPRuled_Surface_Swept_Area_Solid* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPSurface_Curve_Swept_Area_Solid*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPScalar_Variable>(const DB& db, const LIST& params, STEPScalar_Variable* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPAbstract_Variable*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -3694,15 +4005,136 @@ template <> size_t GenericFill<STEPSi_Unit>(const DB& db, const LIST& params, ST
 	size_t base = GenericFill(db,params,static_cast<STEPNamed_Unit*>(in));
 	if (params.GetSize() < 3) { throw STEP::TypeError("expected 3 arguments to STEPSi_Unit"); }    do { // convert the 'STEPPrefix' argument
         std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPSi_Unit,2>::aux_is_derived[0]=true; break; }
         if (dynamic_cast<const UNSET*>(&*arg)) break;
         try { GenericConvert( in->Prefix, arg, db ); break; } 
         catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPSi_Unit to be a `si_prefix`")); }
     } while(0);
     do { // convert the 'STEPName' argument
         std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPSi_Unit,2>::aux_is_derived[1]=true; break; }
         try { GenericConvert( in->Name, arg, db ); break; } 
         catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 2 to STEPSi_Unit to be a `si_unit_name`")); }
     } while(0);
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Absorbed_Dose_Unit>(const DB& db, const LIST& params, STEPSi_Absorbed_Dose_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPAbsorbed_Dose_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Capacitance_Unit>(const DB& db, const LIST& params, STEPSi_Capacitance_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPCapacitance_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Conductance_Unit>(const DB& db, const LIST& params, STEPSi_Conductance_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPConductance_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Dose_Equivalent_Unit>(const DB& db, const LIST& params, STEPSi_Dose_Equivalent_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPDose_Equivalent_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Electric_Charge_Unit>(const DB& db, const LIST& params, STEPSi_Electric_Charge_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPElectric_Charge_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Electric_Potential_Unit>(const DB& db, const LIST& params, STEPSi_Electric_Potential_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPElectric_Potential_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Energy_Unit>(const DB& db, const LIST& params, STEPSi_Energy_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPEnergy_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Force_Unit>(const DB& db, const LIST& params, STEPSi_Force_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPForce_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Frequency_Unit>(const DB& db, const LIST& params, STEPSi_Frequency_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPFrequency_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Illuminance_Unit>(const DB& db, const LIST& params, STEPSi_Illuminance_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPIlluminance_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Inductance_Unit>(const DB& db, const LIST& params, STEPSi_Inductance_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPInductance_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Magnetic_Flux_Density_Unit>(const DB& db, const LIST& params, STEPSi_Magnetic_Flux_Density_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPMagnetic_Flux_Density_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Magnetic_Flux_Unit>(const DB& db, const LIST& params, STEPSi_Magnetic_Flux_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPMagnetic_Flux_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Power_Unit>(const DB& db, const LIST& params, STEPSi_Power_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPPower_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Pressure_Unit>(const DB& db, const LIST& params, STEPSi_Pressure_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPPressure_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Radioactivity_Unit>(const DB& db, const LIST& params, STEPSi_Radioactivity_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPRadioactivity_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSi_Resistance_Unit>(const DB& db, const LIST& params, STEPSi_Resistance_Unit* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPResistance_Unit*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
@@ -3940,6 +4372,20 @@ template <> size_t GenericFill<STEPSolid_With_Through_Depression>(const DB& db, 
 template <> size_t GenericFill<STEPSolid_With_Trapezoidal_Section_Slot>(const DB& db, const LIST& params, STEPSolid_With_Trapezoidal_Section_Slot* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPSolid_With_Slot*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPTrack_Blended_Solid>(const DB& db, const LIST& params, STEPTrack_Blended_Solid* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPEdge_Blended_Solid*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPSolid_With_Variable_Radius_Edge_Blend>(const DB& db, const LIST& params, STEPSolid_With_Variable_Radius_Edge_Blend* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPEdge_Blended_Solid*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -4222,13 +4668,6 @@ template <> size_t GenericFill<STEPTorus>(const DB& db, const LIST& params, STEP
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPTrack_Blended_Solid>(const DB& db, const LIST& params, STEPTrack_Blended_Solid* in)
-{
-	size_t base = GenericFill(db,params,static_cast<STEPEdge_Blended_Solid*>(in));
-// this data structure is not used yet, so there is no code generated to fill its members
-	return base;
-}
-// -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPTrack_Blended_Solid_With_End_Conditions>(const DB& db, const LIST& params, STEPTrack_Blended_Solid_With_End_Conditions* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPTrack_Blended_Solid*>(in));
@@ -4302,9 +4741,23 @@ template <> size_t GenericFill<STEPUniform_Surface>(const DB& db, const LIST& pa
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPUser_Selected_Shape_Elements>(const DB& db, const LIST& params, STEPUser_Selected_Shape_Elements* in)
+template <> size_t GenericFill<STEPUser_Defined_Curve_Font>(const DB& db, const LIST& params, STEPUser_Defined_Curve_Font* in)
 {
-	size_t base = GenericFill(db,params,static_cast<STEPUser_Selected_Elements*>(in));
+	size_t base = GenericFill(db,params,static_cast<STEPCurve_Style_Font*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPUser_Defined_Marker>(const DB& db, const LIST& params, STEPUser_Defined_Marker* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPMapped_Item*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPUser_Defined_Terminator_Symbol>(const DB& db, const LIST& params, STEPUser_Defined_Terminator_Symbol* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPMapped_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }
@@ -4317,13 +4770,6 @@ template <> size_t GenericFill<STEPValue_Range>(const DB& db, const LIST& params
 }
 // -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPValue_Representation_Item>(const DB& db, const LIST& params, STEPValue_Representation_Item* in)
-{
-	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
-// this data structure is not used yet, so there is no code generated to fill its members
-	return base;
-}
-// -----------------------------------------------------------------------------------------------------------
-template <> size_t GenericFill<STEPVariational_Representation_Item>(const DB& db, const LIST& params, STEPVariational_Representation_Item* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPRepresentation_Item*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
@@ -4356,6 +4802,13 @@ template <> size_t GenericFill<STEPVertex>(const DB& db, const LIST& params, STE
 template <> size_t GenericFill<STEPVertex_Loop>(const DB& db, const LIST& params, STEPVertex_Loop* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPLoop*>(in));
+// this data structure is not used yet, so there is no code generated to fill its members
+	return base;
+}
+// -----------------------------------------------------------------------------------------------------------
+template <> size_t GenericFill<STEPVertex_Point>(const DB& db, const LIST& params, STEPVertex_Point* in)
+{
+	size_t base = GenericFill(db,params,static_cast<STEPVertex*>(in));
 // this data structure is not used yet, so there is no code generated to fill its members
 	return base;
 }

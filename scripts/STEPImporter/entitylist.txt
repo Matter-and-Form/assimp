@@ -1,3 +1,4 @@
+advanced_face
 axis
 boolean_result
 bounded_curve
@@ -43,7 +44,6 @@ poly_loop
 pre_defined_surface_side_style
 presentation_style_assignment
 presentation_style_select
-product
 representation
 representation_context
 representation_item

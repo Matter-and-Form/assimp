@@ -631,13 +631,13 @@ bool ProcessGeometricItem(const STEPRepresentation_Item& geo, unsigned int matid
         }
         fix_orientation = true;
     }
-    else  if(const STEPBoolean_Result* boolean = geo.ToPtr<STEPBoolean_Result>()) {
+    else  if(geo.ToPtr<STEPBoolean_Result>()) {
         STEPImporter::LogWarn("skipping STEPBoolean_Result entity");
         return false;
         //ProcessBoolean(*boolean,*meshtmp.get(),conv);
     }
     else {
-        STEPImporter::LogWarn("skipping unknown STEPGeometric_Representation_Item entity, type is " + geo.GetClassName());
+        STEPImporter::LogWarn("skipping unknown STEPGeometric_Representation_Item entity with type " + geo.GetClassName());
         return false;
     }
 

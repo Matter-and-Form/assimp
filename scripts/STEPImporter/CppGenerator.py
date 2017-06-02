@@ -144,7 +144,7 @@ def generate_fields(entity,schema):
 def handle_unset_args(field,entity,schema,argnum):
     n = ''
     # if someone derives from this class, check for derived fields.
-    if any(entity.name==e.parent for e in schema.entities.values()):
+    if any(entity.name in e.parents for e in schema.entities.values()):
         n += template_allow_derived.format(type=cleaned_name(entity.name),argcnt=len(entity.members),argnum=argnum)
     
     if not field.optional:
@@ -157,9 +157,6 @@ def get_single_conversion(field,schema,argnum=0,classname='?'):
     if field.collection:
         typen = 'LIST'
     return template_convert_single.format(type=typen,name=name,argnum=argnum,classname=classname,full_type=field.fullspec)
-
-def count_args_up(entity,schema):
-    return len(entity.members) + (count_args_up(schema.entities[entity.parent],schema) if entity.parent else 0)
 
 def resolve_base_type(base,schema):
     if base in PRIMITIVE_TYPES:
@@ -181,10 +178,16 @@ def gen_type_struct(typen,schema):
     return template_type.format(type=cleaned_name(typen.name),real_type=base)
 
 def gen_converter(entity,schema):
+    def count_args_up(e, schema, counts={}):
+        counts[e.name] = len(e.members)
+        for p in e.parents:
+            count_args_up(schema.entities[p], schema, counts)
+        return sum(counts.values())
+
     max_arg = count_args_up(entity,schema)
     arg_idx = arg_idx_ofs = max_arg - len(entity.members)
     
-    code = template_converter_prologue_a.format(parent=cleaned_name(entity.parent)) if entity.parent else template_converter_prologue_b
+    code = template_converter_prologue_a.format(parent=cleaned_name(entity.parents[0])) if entity.parents else template_converter_prologue_b
     if entity.name in schema.blacklist_partial:
         return code+template_converter_omitted+template_converter_epilogue;
         
@@ -201,25 +204,22 @@ def gen_converter(entity,schema):
 
 def get_base_classes(e,schema):
     def addit(e,out):
-        if e.parent:
-            out.append(e.parent)
-            addit(schema.entities[e.parent],out)
+        out += e.parents
+        for p in e.parents:
+            addit(schema.entities[p], out)
     res = []
     addit(e,res)
     return list(reversed(res))
 
 def get_derived(e,schema):
     def get_deriv(e,out): # bit slow, but doesn't matter here
-        s = [ee for ee in schema.entities.values() if ee.parent == e.name]
+        s = [ee for ee in schema.entities.values() if e.name in ee.parents]
         for sel in s:
             out.append(sel.name)
             get_deriv(sel,out)
     res = []
     get_deriv(e,res)
     return res
-
-def get_hierarchy(e,schema):
-    return get_derived(e.schema)+[e.name]+get_base_classes(e,schema)
 
 def sort_entity_list(schema):
     deps = []
@@ -279,19 +279,20 @@ def work(filename):
 
     sorted_entities = sort_entity_list(schema)
     for entity in sorted_entities:
-        parent = cleaned_name(entity.parent)+',' if entity.parent else ''
 
         name = cleaned_name(entity.name)
         if entity.name in schema.whitelist:
             converters += template_converter.format(type=name,contents=gen_converter(entity,schema))
             schema_table.append(template_schema.format(type=name,normalized_name=entity.name,argcnt=len(entity.members)))
-            entities += template_entity.format(entity=name,argcnt=len(entity.members),parent=parent,fields=generate_fields(entity,schema))
+            par_str = ", ".join(map(cleaned_name, entity.parents))
+            par_str += "," if par_str else ""
+            entities += template_entity.format(entity=name,argcnt=len(entity.members),parent=par_str,fields=generate_fields(entity,schema))
             predefs += template_entity_predef.format(entity=name)
             stub_decls += template_stub_decl.format(type=name)
         else:
             entities += template_entity_ni.format(entity=name)
             predefs += template_entity_predef_ni.format(entity=name)
-            schema_table.append(template_schema.format(type="NotImplemented",normalized_name=name,argcnt=0))
+            schema_table.append(template_schema.format(type="NotImplemented",normalized_name=entity.name,argcnt=0))
 
     schema_table = ','.join(schema_table)
 

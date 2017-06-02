@@ -49,7 +49,7 @@ from collections import OrderedDict
 re_match_entity = re.compile(r"""
 ENTITY\s+(\w+)\s*                                    # 'ENTITY foo'
 .*?                                                  #  skip SUPERTYPE-of
-(?:SUBTYPE\s+OF\s+\((\w+)\))?;                       # 'SUBTYPE OF (bar);' or simply ';'
+(?:SUBTYPE\s+OF\s+\(([\w\s,]+)\))?;                       # 'SUBTYPE OF (bar);' or simply ';'
 (.*?)                                                # 'a : atype;' (0 or more lines like this)
 (?:(?:INVERSE|UNIQUE|WHERE)\s*$.*?)?                 #  skip the INVERSE, UNIQUE, WHERE clauses and everything behind 
 END_ENTITY;                                          
@@ -73,9 +73,9 @@ class Schema:
         self.types = OrderedDict()
 
 class Entity:
-    def __init__(self,name,parent,members):
+    def __init__(self,name,parents,members):
         self.name = name
-        self.parent = parent
+        self.parents = parents
         self.members = members
 
 class Field:
@@ -103,13 +103,16 @@ def read(filename,silent=False):
             schema.types[name] = Type(name,aggregate,equals,enums)
             
         entities = re.findall(re_match_entity,contents)
-        for name,parent,fields_raw in entities:
-            print('process entity {0}, parent is {1}'.format(name,parent)) if not silent else None
+        for name,parents,fields_raw in entities:
+            if name == "face_surface":
+                print(parents)
+            print('process entity {0}, parents are {1}'.format(name,parents)) if not silent else None
             fields = re.findall(re_match_field,fields_raw)
             members = [Field(name,type,opt,coll) for name, opt, coll, type in fields]
             print('  got {0} fields'.format(len(members))) if not silent else None
-            
-            schema.entities[name] = Entity(name,parent,members)
+
+            parents = re.split(r",\s*", parents) if parents else []
+            schema.entities[name] = Entity(name,parents,members)
     return schema
 
 if __name__ == "__main__":

@@ -75,6 +75,7 @@ using namespace Assimp::STEP;
  * mentioned explicitly.
 
   STEPRepresentation_Map
+  STEPAdvanced_Face
 
  */
 
@@ -91,6 +92,16 @@ static const aiImporterDesc desc = {
     "stp step"
 };
 
+namespace {
+
+// forward declarations
+//void SetUnits(ConversionData& conv);
+//void SetCoordinateSpace(ConversionData& conv);
+void ProcessShapes(ConversionData &conv);
+//void MakeTreeRelative(ConversionData& conv);
+//void ConvertUnit(const EXPRESS::DataType& dt,ConversionData& conv);
+
+}
 
 // ------------------------------------------------------------------------------------------------
 // Constructor to be privately used by Importer
@@ -135,7 +146,6 @@ void STEPImporter::SetupProperties(const Importer* pImp)
 
 }
 
-
 // ------------------------------------------------------------------------------------------------
 // Imports the given file into the given scene structure.
 void STEPImporter::InternReadFile( const std::string& pFile,
@@ -175,11 +185,11 @@ void STEPImporter::InternReadFile( const std::string& pFile,
     // feed the schema into the reader and pre-parse all lines
     STEP::ReadFile(*db, schema, types_to_track, 1, NULL, 0);
 
-    const STEP::LazyObject* prod = db->GetObject("shape_definition_representation");
-    if (!prod)
-        ThrowException("Missing product or product has no shape");
+    const STEP::LazyObject *shapeDef = db->GetObject("shape_definition_representation");
+    if (!shapeDef)
+        ThrowException("Missing shape definition");
 
-    ConversionData conv(*db, prod->To<STEPProduct>(), pScene, settings);
+    ConversionData conv(*db, pScene, settings);
     //SetUnits(conv);
     //SetCoordinateSpace(conv);
     ProcessShapes(conv);
@@ -331,51 +341,16 @@ void ProcessShapes(ConversionData& conv)
     if (shapeDefReps->empty())
         STEPImporter::ThrowException("No shape definitions found");
 
+    conv.out->mRootNode = new aiNode();
 
     for(const STEP::LazyObject* lz : *shapeDefReps) {
         auto shapeDefRep = lz->ToPtr<STEPShape_Definition_Representation>();
-        if(!shapeDefRep)
-            continue;
-
-        if (auto brepRepresentation = shapeDefRep->UsedRepresentation->ToPtr<STEPAdvanced_Brep_Shape_Representation>()) {
-            STEPImporter::LogInfo("Processing boundary representation: " + brepRepresentation->Name);
-        } else {
-            STEPImporter::LogWarn("Assimp can't yet handle shape representation `" + shapeDefRep->GetClassName() + "`");
-        }
-
-        const STEP::DB::RefMap& refs = conv.db.GetRefs();
-        STEP::DB::RefMapRange range = refs.equal_range(conv.proj.GetID());
-        for(;range.first != range.second; ++range.first) {
-            if(const IfcRelAggregates* const aggr = conv.db.GetObject((*range.first).second)->ToPtr<IfcRelAggregates>()) {
-
-                for(const IfcObjectDefinition& def : aggr->RelatedObjects) {
-                    // comparing pointer values is not sufficient, we would need to cast them to the same type first
-                    // as there is multiple inheritance in the game.
-                    if (def.GetID() == prod->GetID()) {
-                        IFCImporter::LogDebug("selecting this spatial structure as root structure");
-                        // got it, this is the primary site.
-                        conv.out->mRootNode = ProcessSpatialStructure(NULL,*prod,conv,NULL);
-                        return;
-                    }
-                }
-
-            }
+        for (auto repItem : shapeDefRep->UsedRepresentation->Items) {
+            std::vector<unsigned int> meshes;
+            if (ProcessRepresentationItem(repItem, 0, meshes, conv))
+                AssignAddedMeshes(meshes, conv.out->mRootNode, conv);
         }
     }
-
-
-    IFCImporter::LogWarn("failed to determine primary site element, taking the first IfcSite");
-    for(const STEP::LazyObject* lz : *shapeDefReps) {
-        const IfcSpatialStructureElement* const prod = lz->ToPtr<IfcSpatialStructureElement>();
-        if(!prod) {
-            continue;
-        }
-
-        conv.out->mRootNode = ProcessSpatialStructure(NULL,*prod,conv,NULL);
-        return;
-    }
-
-    IFCImporter::ThrowException("failed to determine primary site element");
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -483,44 +458,6 @@ struct RateRepresentationPredicate {
         return Rate(a) < Rate(b);
     }
 };
-
-// ------------------------------------------------------------------------------------------------
-void ProcessProductRepresentation(const STEPProduct& el, aiNode* nd, std::vector< aiNode* >& subnodes, ConversionData& conv)
-{
-    if(!el.Representation) {
-        return;
-    }
-
-    // extract Color from metadata, if present
-    unsigned int matid = ProcessMaterials( el.GetID(), std::numeric_limits<uint32_t>::max(), conv, false);
-    std::vector<unsigned int> meshes;
-
-    // we want only one representation type, so bring them in a suitable order (i.e try those
-    // that look as if we could read them quickly at first). This way of reading
-    // representation is relatively generic and allows the concrete implementations
-    // for the different representation types to make some sensible choices what
-    // to load and what not to load.
-    const STEP::ListOf< STEP::Lazy< STEPRepresentation >, 1, 0 >& src = el.Representation.Get()->Representations;
-    std::vector<const STEPRepresentation*> repr_ordered(src.size());
-    std::copy(src.begin(),src.end(),repr_ordered.begin());
-    std::sort(repr_ordered.begin(),repr_ordered.end(),RateRepresentationPredicate());
-    for(const STEPRepresentation* repr : repr_ordered) {
-        bool res = false;
-        for(const STEPRepresentation_Item& item : repr->Items) {
-            if(const STEPMapped_Item* const geo = item.ToPtr<STEPMapped_Item>()) {
-                res = ProcessMappedItem(*geo,nd,subnodes,matid,conv) || res;
-            }
-            else {
-                res = ProcessRepresentationItem(item,matid,meshes,conv) || res;
-            }
-        }
-        // if we got something meaningful at this point, skip any further representations
-        if(res) {
-            break;
-        }
-    }
-    AssignAddedMeshes(meshes,nd,conv);
-}
 
 // ------------------------------------------------------------------------------------------------
 void MakeTreeRelative(aiNode* start, const aiMatrix4x4& combined)
