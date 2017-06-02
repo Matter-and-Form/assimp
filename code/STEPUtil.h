@@ -173,11 +173,10 @@ struct TempOpening
 // ------------------------------------------------------------------------------------------------
 struct ConversionData
 {
-    ConversionData(const STEP::DB& db, const STEP::STEPProduct& prod, aiScene* out,const STEPImporter::Settings& settings)
+    ConversionData(const STEP::DB& db, aiScene* out,const STEPImporter::Settings& settings)
         : len_scale(1.0)
         , angle_scale(-1.0)
         , db(db)
-        , prod(prod)
         , out(out)
         , settings(settings)
     {}
@@ -191,7 +190,6 @@ struct ConversionData
     bool plane_angle_in_radians;
 
     const STEP::DB& db;
-    const STEP::STEPProduct& prod;
     aiScene* out;
 
     STEPMatrix4 wcs;
