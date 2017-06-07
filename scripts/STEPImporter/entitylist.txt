@@ -39,6 +39,7 @@ material
 matrix
 named_unit
 object_placement
+plane
 polyline
 poly_loop
 pre_defined_surface_side_style

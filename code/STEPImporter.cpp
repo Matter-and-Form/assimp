@@ -74,8 +74,9 @@ using namespace Assimp::STEP;
  * all entity classes that are only indirectly referenced need to be
  * mentioned explicitly.
 
-  STEPRepresentation_Map
   STEPAdvanced_Face
+  STEPPlane
+  STEPRepresentation_Map
 
  */
 

@@ -1694,8 +1694,7 @@ template <> size_t GenericFill<STEPB_Spline_Curve_With_Knots>(const DB& db, cons
 template <> size_t GenericFill<STEPSurface>(const DB& db, const LIST& params, STEPSurface* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPGeometric_Representation_Item*>(in));
-// this data structure is not used yet, so there is no code generated to fill its members
-	return base;
+	if (params.GetSize() < 1) { throw STEP::TypeError("expected 1 arguments to STEPSurface"); }	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPBounded_Surface>(const DB& db, const LIST& params, STEPBounded_Surface* in)
@@ -2313,7 +2312,12 @@ template <> size_t GenericFill<STEPConical_Stepped_Hole_Transition>(const DB& db
 template <> size_t GenericFill<STEPElementary_Surface>(const DB& db, const LIST& params, STEPElementary_Surface* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPSurface*>(in));
-// this data structure is not used yet, so there is no code generated to fill its members
+	if (params.GetSize() < 2) { throw STEP::TypeError("expected 2 arguments to STEPElementary_Surface"); }    do { // convert the 'STEPPosition' argument
+        std::shared_ptr<const DataType> arg = params[base++];
+        if (dynamic_cast<const ISDERIVED*>(&*arg)) { in->ObjectHelper<Assimp::STEP::STEPElementary_Surface,1>::aux_is_derived[0]=true; break; }
+        try { GenericConvert( in->Position, arg, db ); break; } 
+        catch (const TypeError& t) { throw TypeError(t.what() + std::string(" - expected argument 1 to STEPElementary_Surface to be a `axis2_placement_3d`")); }
+    } while(0);
 	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
@@ -3601,8 +3605,7 @@ template <> size_t GenericFill<STEPPlanar_Box>(const DB& db, const LIST& params,
 template <> size_t GenericFill<STEPPlane>(const DB& db, const LIST& params, STEPPlane* in)
 {
 	size_t base = GenericFill(db,params,static_cast<STEPElementary_Surface*>(in));
-// this data structure is not used yet, so there is no code generated to fill its members
-	return base;
+	if (params.GetSize() < 2) { throw STEP::TypeError("expected 2 arguments to STEPPlane"); }	return base;
 }
 // -----------------------------------------------------------------------------------------------------------
 template <> size_t GenericFill<STEPPlane_Angle_Unit>(const DB& db, const LIST& params, STEPPlane_Angle_Unit* in)
