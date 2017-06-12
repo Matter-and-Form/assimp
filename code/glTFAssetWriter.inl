@@ -250,6 +250,10 @@ namespace glTF {
             v.AddMember("shininess", m.shininess, w.mAl);
         }
         obj.AddMember("values", v, w.mAl);
+
+        if (m.technique) {
+            obj.AddMember("technique", Value(m.technique->id, w.mAl).Move(), w.mAl);
+        }
     }
 
     namespace {
@@ -399,9 +403,14 @@ namespace glTF {
         }
     }
 
-    inline void Write(Value& /*obj*/, Program& /*b*/, AssetWriter& /*w*/)
+    inline void Write(Value& obj, Program& b, AssetWriter& w)
     {
-
+        if (b.fragmentShader) {
+            obj.AddMember("fragmentShader", b.fragmentShader->id, w.mAl);
+        }
+        if (b.vertexShader) {
+            obj.AddMember("vertexShader", b.vertexShader->id, w.mAl);
+        }
     }
 
     inline void Write(Value& obj, Sampler& b, AssetWriter& w)
@@ -425,9 +434,12 @@ namespace glTF {
         AddRefsVector(scene, "nodes", s.nodes, w.mAl);
     }
 
-    inline void Write(Value& /*obj*/, Shader& /*b*/, AssetWriter& /*w*/)
+    inline void Write(Value& obj, Shader& b, AssetWriter& w)
     {
-
+        if (!b.uri.empty()) {
+            obj.AddMember("uri", b.uri, w.mAl);
+        }
+        obj.AddMember("type", b.type, w.mAl);
     }
 
     inline void Write(Value& obj, Skin& b, AssetWriter& w)
@@ -453,9 +465,59 @@ namespace glTF {
 
     }
 
-    inline void Write(Value& /*obj*/, Technique& /*b*/, AssetWriter& /*w*/)
+    inline void Write(Value& obj, Technique& b, AssetWriter& w)
     {
+        if (!b.attributes.empty()) {
+            Value attrs;
+            attrs.SetObject();
+            for (const auto& attr : b.attributes) {
+                attrs.AddMember(StringRef(attr.first), StringRef(attr.second), w.mAl);
+            }
+            obj.AddMember("attributes", attrs, w.mAl);
+        }
 
+        if (!b.uniforms.empty()) {
+            Value unis;
+            unis.SetObject();
+            for (const auto& uniform : b.uniforms) {
+                unis.AddMember(StringRef(uniform.first), StringRef(uniform.second), w.mAl);
+            }
+            obj.AddMember("uniforms", unis, w.mAl);
+        }
+
+        if (!b.parameters.empty()) {
+            Value params;
+            params.SetObject();
+            for (const auto& parameter : b.parameters) {
+                Value param;
+                param.SetObject();
+                param.AddMember("type", parameter.type, w.mAl);
+                if (!parameter.semantic.empty()) {
+                    param.AddMember("semantic", parameter.semantic, w.mAl);
+                }
+
+                params.AddMember(StringRef(parameter.name), param, w.mAl);
+            }
+            obj.AddMember("parameters", params, w.mAl);
+        }
+
+        if (b.program) {
+            obj.AddMember("program", b.program->id, w.mAl);
+        }
+
+        if (!b.states.enable.empty()) {
+            Value states;
+            states.SetObject();
+
+            Value enables;
+            enables.SetArray();
+            for (WebGLState state : b.states.enable) {
+                enables.PushBack(state, w.mAl);
+            }
+            states.AddMember("enable", enables, w.mAl);
+
+            obj.AddMember("states", states, w.mAl);
+        }
     }
 
     inline void Write(Value& obj, Texture& tex, AssetWriter& w)
@@ -468,7 +530,7 @@ namespace glTF {
         }
     }
 
-    inline void Write(Value& /*obj*/, Light& /*b*/, AssetWriter& /*w*/)
+    inline void Write(Value& obj, Light& b, AssetWriter& w)
     {
 
     }

@@ -1,4 +1,4 @@
-﻿/*
+/*
 Open Asset Import Library (assimp)
 ----------------------------------------------------------------------
 
@@ -192,6 +192,12 @@ void glTFImporter::ImportMaterials(glTF::Asset& r)
         /*if (!mat.name.empty())*/ {
             aiString str(mat.id /*mat.name*/);
             aimat->AddProperty(&str, AI_MATKEY_NAME);
+        }
+
+        if (mat.technique) {
+            std::string json = mat.technique->ToJSON();
+            aiString ais(json);
+            aimat->AddProperty(&ais, "$mat.gltf.technique", 0, 0);
         }
 
         SetMaterialColorProperty(embeddedTexIdxs, r, mat.ambient,  aimat, aiTextureType_AMBIENT,  AI_MATKEY_COLOR_AMBIENT );
