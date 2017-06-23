@@ -263,8 +263,6 @@ struct Model {
     ObjFile::Object *m_pCurrent;
     //! Pointer to current material
     ObjFile::Material *m_pCurrentMaterial;
-    //! Pointer to default material
-    ObjFile::Material *m_pDefaultMaterial;
     //! Vector with all generated materials
     std::vector<std::string> m_MaterialLib;
     //! Vector with all generated vertices
@@ -293,7 +291,6 @@ struct Model {
         m_ModelName(""),
         m_pCurrent(NULL),
         m_pCurrentMaterial(NULL),
-        m_pDefaultMaterial(NULL),
         m_pGroupFaceIDs(NULL),
         m_strActiveGroup(""),
         m_pCurrentMesh(NULL)

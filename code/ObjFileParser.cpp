@@ -86,10 +86,6 @@ ObjFileParser::ObjFileParser( IOStreamBuffer<char> &streamBuffer, const std::str
     m_pModel.reset(new ObjFile::Model());
     m_pModel->m_ModelName = modelName;
 
-    // create default material and store it
-    m_pModel->m_pDefaultMaterial = new ObjFile::Material;
-    m_pModel->m_pDefaultMaterial->MaterialName.Set( DEFAULT_MATERIAL );
-
     // Start parsing the file
     parseFile( streamBuffer );
 }
@@ -494,8 +490,6 @@ void ObjFileParser::getFace( aiPrimitiveType type ) {
     // Set active material, if one set
     if( NULL != m_pModel->m_pCurrentMaterial ) {
         face->m_pMaterial = m_pModel->m_pCurrentMaterial;
-    } else {
-        face->m_pMaterial = m_pModel->m_pDefaultMaterial;
     }
 
     // Create a default object, if nothing is there
@@ -549,18 +543,7 @@ void ObjFileParser::getMaterialDesc() {
     if (!skip) {
         // Search for material
         std::map<std::string, ObjFile::Material*>::iterator it = m_pModel->m_MaterialMap.find(strName);
-        if (it == m_pModel->m_MaterialMap.end()) {
-			// Not found, so we don't know anything about the material except for its name.
-			// This may be the case if the material library is missing. We don't want to lose all
-			// materials if that happens, so create a new named material instead of discarding it
-			// completely.
-            ASSIMP_LOG_ERROR("OBJ: failed to locate material " + strName + ", creating new material");
-			m_pModel->m_pCurrentMaterial = new ObjFile::Material();
-			m_pModel->m_pCurrentMaterial->MaterialName.Set(strName);
-			m_pModel->m_MaterialLib.push_back(strName);
-			m_pModel->m_MaterialMap[strName] = m_pModel->m_pCurrentMaterial;
-        } else {
-            // Found, using detected material
+        if (it != m_pModel->m_MaterialMap.end()) {
             m_pModel->m_pCurrentMaterial = (*it).second;
         }
 
@@ -656,12 +639,7 @@ void ObjFileParser::getNewMaterial() {
         ++m_DataIt;
     }
     std::map<std::string, ObjFile::Material*>::iterator it = m_pModel->m_MaterialMap.find( strMat );
-    if ( it == m_pModel->m_MaterialMap.end() ) {
-        // Show a warning, if material was not found
-        ASSIMP_LOG_WARN("OBJ: Unsupported material requested: " + strMat);
-        m_pModel->m_pCurrentMaterial = m_pModel->m_pDefaultMaterial;
-    } else {
-        // Set new material
+    if ( it != m_pModel->m_MaterialMap.end() ) {
         if ( needsNewMesh( strMat ) ) {
             createMesh( strMat );
         }
