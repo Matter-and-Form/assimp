@@ -933,6 +933,29 @@ namespace glTF
 
     struct Technique : public Object
     {
+        struct ParameterValue {
+            std::vector<bool> _bool;
+            std::vector<float> _number;
+            std::vector<std::string> _string;
+
+            void Clear() { _bool.clear(); _number.clear(); _string.clear(); }
+
+            bool IsBool() { return !_bool.empty(); }
+            std::vector<bool> GetBool() { return _bool; }
+            void SetBool(bool b) { Clear(); _bool.push_back(b); }
+            void SetBool(const std::vector<bool> &b) { Clear(); _bool = b; }
+
+            bool IsNumber() { return !_number.empty(); }
+            std::vector<float> GetNumber() { return _number; }
+            void SetNumber(float n) { Clear(); _number.push_back(n); }
+            void SetNumber(const std::vector<float> &n) { Clear(); _number = n; }
+
+            bool IsString() { return !_string.empty(); }
+            std::vector<std::string> GetString() { return _string; }
+            void SetString(std::string s) { Clear(); _string.push_back(s); }
+            void SetString(const std::vector<std::string> &s) { Clear(); _string = s; }
+        };
+
         struct Parameter
         {
             std::string name;
@@ -940,6 +963,7 @@ namespace glTF
             ParameterType type;
             unsigned int count;
             std::string node;
+            ParameterValue value;
         };
 
         struct States

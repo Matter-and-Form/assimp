@@ -488,7 +488,7 @@ namespace glTF {
         if (!b.parameters.empty()) {
             Value params;
             params.SetObject();
-            for (const auto& parameter : b.parameters) {
+            for (auto& parameter : b.parameters) {
                 Value param;
                 param.SetObject();
                 param.AddMember("type", parameter.type, w.mAl);
@@ -500,6 +500,46 @@ namespace glTF {
                 }
                 if (parameter.count != 1) {
                     param.AddMember("count", parameter.count, w.mAl);
+                }
+
+                if (parameter.value.IsBool()) {
+                    Value value;
+                    const std::vector<bool> &bs = parameter.value.GetBool();
+                    if (bs.size() == 1) {
+                        value.SetBool(bs[0]);
+                    } else {
+                        value.SetArray();
+                        for (bool b : bs) {
+                            value.PushBack(b, w.mAl);
+                        }
+                    }
+                    param.AddMember("value", value, w.mAl);
+                } else if (parameter.value.IsNumber()) {
+                    Value value;
+                    const std::vector<float> &ns = parameter.value.GetNumber();
+                    if (ns.size() == 1) {
+                        value.SetDouble(ns[0]);
+                    } else {
+                        value.SetArray();
+                        for (float n : ns) {
+                            value.PushBack(n, w.mAl);
+                        }
+                    }
+                    param.AddMember("value", value, w.mAl);
+                } else if (parameter.value.IsString()) {
+                    Value value;
+                    const std::vector<std::string> &ss = parameter.value.GetString();
+                    if (ss.size() == 1) {
+                        value.SetString(ss[0].c_str(), ss[0].length());
+                    } else {
+                        value.SetArray();
+                        for (std::string s : ss) {
+                            Value stringValue;
+                            stringValue.SetString(s.c_str(), s.length());
+                            value.PushBack(stringValue, w.mAl);
+                        }
+                    }
+                    param.AddMember("value", value, w.mAl);
                 }
 
                 params.AddMember(StringRef(parameter.name), param, w.mAl);

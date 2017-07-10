@@ -156,6 +156,18 @@ namespace {
         Value::MemberIterator it = val.FindMember(id);
         return (it != val.MemberEnd() && it->value.IsInt()) ? &it->value : 0;
     }
+
+    inline Value* FindBool(Value& val, const char* id)
+    {
+        Value::MemberIterator it = val.FindMember(id);
+        return (it != val.MemberEnd() && it->value.IsBool()) ? &it->value : 0;
+    }
+
+    inline Value* FindFloat(Value& val, const char* id)
+    {
+        Value::MemberIterator it = val.FindMember(id);
+        return (it != val.MemberEnd() && it->value.IsNumber()) ? &it->value : 0;
+    }
 }
 
 //
@@ -765,10 +777,75 @@ inline void Technique::Read(Value& obj, Asset& r)
                 newParam.semantic = sem->GetString();
             if (Value* nd = FindString(it->value, "node"))
                 newParam.node = nd->GetString();
+
             if (Value* cnt = FindInt(it->value, "count"))
                 newParam.count = cnt->GetInt();
-            else
-                newParam.count = 1;
+            else newParam.count = 1;
+
+            if (Value* val = FindBool(it->value, "value"))
+                newParam.value.SetBool(val->GetBool());
+            else if (Value* val = FindFloat(it->value, "value"))
+                newParam.value.SetNumber(val->GetDouble());
+            else if (Value* val = FindString(it->value, "value"))
+                newParam.value.SetString(val->GetString());
+            else if (Value* vals = FindArray(it->value, "value")) {
+                if (vals->Size() > 0) {
+                    const Value& firstVal = (*vals)[0];
+
+                    if (firstVal.IsBool()) {
+                        std::vector<bool> newVal;
+                        newVal.push_back(firstVal.GetBool());
+                        bool isValid = true;
+                        for (size_t i = 1; i < vals->Size(); ++i) {
+                            const Value& val = (*vals)[i];
+                            if (val.IsBool())
+                                newVal.push_back(val.GetBool());
+                            else {
+                                isValid = false;
+                                break;
+                            }
+                        }
+                        if (isValid)
+                            newParam.value.SetBool(newVal);
+                        else
+                            DefaultLogger::get()->warn("GLTF: Skipping invalid parameter value of type bool[]");
+                    } else if (firstVal.IsNumber()) {
+                        std::vector<float> newVal;
+                        newVal.push_back(firstVal.GetDouble());
+                        bool isValid = true;
+                        for (size_t i = 1; i < vals->Size(); ++i) {
+                            const Value& val = (*vals)[i];
+                            if (val.IsNumber())
+                                newVal.push_back(val.GetDouble());
+                            else {
+                                isValid = false;
+                                break;
+                            }
+                        }
+                        if (isValid)
+                            newParam.value.SetNumber(newVal);
+                        else
+                            DefaultLogger::get()->warn("GLTF: Skipping invalid parameter value of type number[]");
+                    } else if (firstVal.IsString()) {
+                        std::vector<std::string> newVal;
+                        newVal.push_back(firstVal.GetString());
+                        bool isValid = true;
+                        for (size_t i = 1; i < vals->Size(); ++i) {
+                            const Value& val = (*vals)[i];
+                            if (val.IsString())
+                                newVal.push_back(val.GetString());
+                            else {
+                                isValid = false;
+                                break;
+                            }
+                        }
+                        if (isValid)
+                            newParam.value.SetString(newVal);
+                        else
+                            DefaultLogger::get()->warn("GLTF: Skipping invalid parameter value of type string[]");
+                    }
+                }
+            }
 
             parameters.push_back(newParam);
         }
@@ -813,7 +890,7 @@ inline std::string Technique::ToJSON()
 
     w.Key("parameters");
     w.StartObject();
-    for (const Parameter& param : parameters) {
+    for (Parameter& param : parameters) {
         w.Key(param.name.c_str());
         w.StartObject();
         w.Key("type");
@@ -830,6 +907,45 @@ inline std::string Technique::ToJSON()
             w.Key("node");
             w.String(param.node);
         }
+
+        if (param.value.IsBool()) {
+            const std::vector<bool> &bs = param.value.GetBool();
+            w.Key("value");
+            if (bs.size() == 1) {
+                w.Bool(bs[0]);
+            } else {
+                w.StartArray();
+                for (bool b : bs) {
+                    w.Bool(b);
+                }
+                w.EndArray();
+            }
+        } else if (param.value.IsNumber()) {
+            const std::vector<float> &ns = param.value.GetNumber();
+            w.Key("value");
+            if (ns.size() == 1) {
+                w.Double(ns[0]);
+            } else {
+                w.StartArray();
+                for (float n : ns) {
+                    w.Double(n);
+                }
+                w.EndArray();
+            }
+        } else if (param.value.IsString()) {
+            const std::vector<std::string> &ss = param.value.GetString();
+            w.Key("value");
+            if (ss.size() == 1) {
+                w.String(ss[0]);
+            } else {
+                w.StartArray();
+                for (std::string s : ss) {
+                    w.String(s);
+                }
+                w.EndArray();
+            }
+        }
+
         w.EndObject();
     }
     w.EndObject();
