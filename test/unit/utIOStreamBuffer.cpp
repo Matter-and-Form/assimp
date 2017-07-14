@@ -3,7 +3,8 @@
 Open Asset Import Library (assimp)
 ---------------------------------------------------------------------------
 
-Copyright (c) 2006-2016, assimp team
+Copyright (c) 2006-2017, assimp team
+
 
 All rights reserved.
 
@@ -61,10 +62,10 @@ TEST_F( IOStreamBufferTest, creationTest ) {
 
 TEST_F( IOStreamBufferTest, accessCacheSizeTest ) {
     IOStreamBuffer<char> myBuffer1;
-    EXPECT_NE( 0, myBuffer1.cacheSize() );
+    EXPECT_NE( 0U, myBuffer1.cacheSize() );
 
     IOStreamBuffer<char> myBuffer2( 100 );
-    EXPECT_EQ( 100, myBuffer2.cacheSize() );
+    EXPECT_EQ( 100U, myBuffer2.cacheSize() );
 }
 
 TEST_F( IOStreamBufferTest, open_close_Test ) {
@@ -77,6 +78,7 @@ TEST_F( IOStreamBufferTest, open_close_Test ) {
     tmpnam( buffer );
     std::FILE *fs( std::fopen( buffer, "w+" ) );
     size_t written( std::fwrite( buffer, 1, sizeof( char ) * L_tmpnam, fs ) );
+    EXPECT_NE( 0U, written );
     std::fflush( fs );
 
     TestDefaultIOStream myStream( fs, buffer );
@@ -91,10 +93,11 @@ TEST_F( IOStreamBufferTest, readlineTest ) {
     tmpnam( buffer );
     std::FILE *fs( std::fopen( buffer, "w+" ) );
     size_t written( std::fwrite( buffer, 1, sizeof( char ) * L_tmpnam, fs ) );
+    EXPECT_NE( 0U, written );
     std::fflush( fs );
 
     IOStreamBuffer<char> myBuffer( 26 );
-    EXPECT_EQ( 26, myBuffer.cacheSize() );
+    EXPECT_EQ( 26U, myBuffer.cacheSize() );
 
     TestDefaultIOStream myStream( fs, buffer );
     size_t size( myStream.FileSize() );
@@ -110,3 +113,4 @@ TEST_F( IOStreamBufferTest, readlineTest ) {
 TEST_F( IOStreamBufferTest, accessBlockIndexTest ) {
 
 }
+

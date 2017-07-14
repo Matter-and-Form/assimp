@@ -2,7 +2,8 @@
 Open Asset Import Library (assimp)
 ----------------------------------------------------------------------
 
-Copyright (c) 2006-2016, assimp team
+Copyright (c) 2006-2017, assimp team
+
 All rights reserved.
 
 Redistribution and use of this software in source and binary forms,
@@ -56,8 +57,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "BaseImporter.h"
 #include "irrXMLWrapper.h"
 
-namespace Assimp
-{
+namespace Assimp {
 
 /// \class X3DImporter
 /// Class that holding scene graph which include: groups, geometry, metadata etc.
@@ -101,7 +101,7 @@ namespace Assimp
 ///		Navigation component:
 ///			"Billboard", "Collision", "LOD", "NavigationInfo", "OrthoViewpoint", "Viewpoint", "ViewpointGroup"
 ///		Networking component:
-///			"Anchor", "LoadSensor"
+///			"EXPORT", "IMPORT", "Anchor", "LoadSensor"
 ///		NURBS component:
 ///			"Contour2D", "ContourPolyline2D", "CoordinateDouble", "NurbsCurve", "NurbsCurve2D", "NurbsOrientationInterpolator", "NurbsPatchSurface",
 ///			"NurbsPositionInterpolator", "NurbsSet", "NurbsSurfaceInterpolator", "NurbsSweptSurface", "NurbsSwungSurface", "NurbsTextureCoordinate",
@@ -199,9 +199,7 @@ public:
     /***********************************************/
 
     /// Default constructor.
-    X3DImporter()
-        : NodeElement_Cur( nullptr ), mReader( nullptr )
-    {}
+    X3DImporter();
 
     /// Default destructor.
     ~X3DImporter();
@@ -211,7 +209,7 @@ public:
     /***********************************************/
 
     /// Parse X3D file and fill scene graph. The function has no return value. Result can be found by analyzing the generated graph.
-    /// Also exception can be throwed if trouble will found.
+    /// Also exception can be thrown if trouble will found.
     /// \param [in] pFile - name of file to be parsed.
     /// \param [in] pIOHandler - pointer to IO helper object.
     void ParseFile( const std::string& pFile, IOSystem* pIOHandler );
@@ -566,7 +564,7 @@ private:
 	///			There shall be at least as many colours in the X3DColorNode node as there are faces.
 	/// b. If colorPerVertex is TRUE, colours are applied to each vertex, as follows:
 	///		If the colorIndex field is not empty, colours are applied to each vertex of the mesh in exactly the same manner that the coordIndex
-	///			field is used to choose coordinates for each vertex from the <Coordinate> node. The colorIndex field shall contain end-of-face markers (−1)
+	///			field is used to choose coordinates for each vertex from the <Coordinate> node. The colorIndex field shall contain end-of-face markers (-1)
 	///			in exactly the same places as the coordIndex field.
 	///		If the colorIndex field is empty, the coordIndex field is used to choose colours from the X3DColorNode node.
 	/// \param [in] pMesh - mesh for adding data.
@@ -828,13 +826,14 @@ private:
     /****************** Constants ******************/
     /***********************************************/
     static const aiImporterDesc Description;
+    static const std::string whitespace;
 
     /***********************************************/
     /****************** Variables ******************/
     /***********************************************/
     CX3DImporter_NodeElement* NodeElement_Cur;///< Current element.
     irr::io::IrrXMLReader* mReader;///< Pointer to XML-reader object
-    std::string mFileDir;
+    IOSystem *mpIOHandler;
 };// class X3DImporter
 
 }// namespace Assimp

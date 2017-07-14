@@ -3,7 +3,8 @@
 Open Asset Import Library (assimp)
 ---------------------------------------------------------------------------
 
-Copyright (c) 2006-2016, assimp team
+Copyright (c) 2006-2017, assimp team
+
 
 All rights reserved.
 
@@ -54,7 +55,7 @@ protected:
     }
 
     virtual void TearDown() {
-        delete m_data;
+        aiMetadata::Dealloc( m_data );
     }
 
 };
@@ -75,7 +76,7 @@ TEST_F( utMetadata, allocTest ) {
 
     data = aiMetadata::Alloc( 1 );
     EXPECT_NE( nullptr, data );
-    EXPECT_EQ( 1, data->mNumProperties );
+    EXPECT_EQ( 1U, data->mNumProperties );
     EXPECT_NE( nullptr, data->mKeys );
     EXPECT_NE( nullptr, data->mValues );
 }
@@ -177,3 +178,4 @@ TEST_F( utMetadata, get_set_aiVector3D_Test ) {
     EXPECT_EQ( vec, result );
     EXPECT_TRUE( success );
 }
+

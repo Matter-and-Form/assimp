@@ -3,7 +3,8 @@
 Open Asset Import Library (assimp)
 ---------------------------------------------------------------------------
 
-Copyright (c) 2006-2016, assimp team
+Copyright (c) 2006-2017, assimp team
+
 
 All rights reserved.
 
@@ -54,6 +55,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <assimp/IOSystem.hpp>
 #include <assimp/scene.h>
 #include <assimp/DefaultLogger.hpp>
+#include <assimp/importerdesc.h>
 #include <memory>
 
 using namespace Assimp;
@@ -702,7 +704,7 @@ void SMDImporter::ParseFile()
     {
         if(!SkipSpacesAndLineEnd(szCurrent,&szCurrent)) break;
 
-        // "version <n> \n", <n> should be 1 for hl and hl� SMD files
+        // "version <n> \n", <n> should be 1 for hl and hl2 SMD files
         if (TokenMatch(szCurrent,"version",7))
         {
             if(!SkipSpaces(szCurrent,&szCurrent)) break;

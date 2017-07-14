@@ -2,7 +2,8 @@
 Open Asset Import Library (assimp)
 ----------------------------------------------------------------------
 
-Copyright (c) 2006-2016, assimp team
+Copyright (c) 2006-2017, assimp team
+
 All rights reserved.
 
 Redistribution and use of this software in source and binary forms,
@@ -55,7 +56,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <memory>
 #include <functional>
-
+#include <map>
 
 namespace Assimp {
 namespace FBX {
@@ -76,12 +77,6 @@ LazyObject::LazyObject(uint64_t id, const Element& element, const Document& doc)
 LazyObject::~LazyObject()
 {
 
-}
-
-// ------------------------------------------------------------------------------------------------
-static void dumpObjectClassInfo( const char* obtype, const std::string &classtag ) {
-    DefaultLogger::get()->debug( "obtype: " + std::string(obtype ));
-    DefaultLogger::get()->debug( "Classtag: " + classtag );
 }
 
 // ------------------------------------------------------------------------------------------------

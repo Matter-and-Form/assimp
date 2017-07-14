@@ -1,7 +1,8 @@
 # Open Asset Import Library (assimp)
 # ----------------------------------------------------------------------
 #
-# Copyright (c) 2006-2016, assimp team
+# Copyright (c) 2006-2017, assimp team
+
 # All rights reserved.
 #
 # Redistribution and use of this software in source and binary forms,
@@ -37,7 +38,8 @@
 #----------------------------------------------------------------------
 cmake_minimum_required( VERSION 2.6 )
 
-#INCLUDE( AddGTest )
+include( CTest )
+enable_testing()
 
 INCLUDE_DIRECTORIES(
 	../contrib/gtest/include
@@ -58,14 +60,24 @@ SET( TEST_SRCS
   unit/AbstractImportExportBase.cpp
   unit/TestIOSystem.h
   unit/TestModelFactory.h
+  unit/ut3DImportExport.cpp
+  unit/ut3DSImportExport.cpp
+  unit/utACImportExport.cpp
+  unit/utAMFImportExport.cpp
+  unit/utASEImportExport.cpp  
   unit/utAnim.cpp
   unit/AssimpAPITest.cpp
+  unit/utB3DImportExport.cpp
   unit/utBatchLoader.cpp
   unit/utBlenderIntermediate.cpp
   unit/utBlendImportAreaLight.cpp
+  unit/utBlenderImportExport.cpp
   unit/utBlendImportMaterials.cpp
+  unit/utBVHImportExport.cpp
   unit/utColladaExportCamera.cpp
   unit/utColladaExportLight.cpp
+  unit/utColladaImportExport.cpp
+  unit/utCSMImportExport.cpp
   unit/utDefaultIOStream.cpp
   unit/utDXFImporterExporter.cpp
   unit/utFastAtof.cpp
@@ -74,6 +86,9 @@ SET( TEST_SRCS
   unit/utFindInvalidData.cpp
   unit/utFixInfacingNormals.cpp
   unit/utGenNormals.cpp
+  unit/utglTFImportExport.cpp
+  unit/utHMPImportExport.cpp
+  unit/utIFCImportExport.cpp
   unit/utImporter.cpp
   unit/utImproveCacheLocality.cpp
   unit/utIOSystem.cpp
@@ -81,6 +96,7 @@ SET( TEST_SRCS
   unit/utIssues.cpp
   unit/utJoinVertices.cpp
   unit/utLimitBoneWeights.cpp
+  unit/utLWSImportExport.cpp
   unit/utMaterialSystem.cpp
   unit/utMatrix3x3.cpp
   unit/utMatrix4x4.cpp
@@ -89,10 +105,15 @@ SET( TEST_SRCS
   unit/SceneDiffer.cpp
   unit/utSIBImporter.cpp
   unit/utObjImportExport.cpp
+  unit/utObjTools.cpp
+  unit/utOpenGEXImportExport.cpp
   unit/utPretransformVertices.cpp
+  unit/utPLYImportExport.cpp
+  unit/utPMXImporter.cpp
   unit/utRemoveComments.cpp
   unit/utRemoveComponent.cpp
   unit/utRemoveRedundantMaterials.cpp
+  unit/utRemoveVCProcess.cpp
   unit/utScenePreprocessor.cpp
   unit/utSharedPPData.cpp
   unit/utStringUtils.cpp
@@ -105,7 +126,9 @@ SET( TEST_SRCS
   unit/utTypes.cpp
   unit/utVertexTriangleAdjacency.cpp
   unit/utVersion.cpp
+  unit/utVector3.cpp
   unit/utXImporterExporter.cpp
+  unit/utD3MFImportExport.cpp
 )
 
 SOURCE_GROUP( tests FILES  ${TEST_SRCS} )
@@ -135,15 +158,6 @@ ENDIF(MSVC)
 target_link_libraries( unit assimp ${platform_libs} )
 
 add_subdirectory(headercheck)
-#if (ASSIMP_COVERALLS)
-#    include(Coveralls)
-#
-#    set(COVERAGE_SRCS ${assimp_src} ${TEST_SRCS} )
-#
-#    # Create the coveralls target.
-#    coveralls_setup(
-#        "${COVERAGE_SRCS}" # The source files.
-#        ON                 # If we should upload.
-#        "${PROJECT_SOURCE_DIR}/cmake-modules/") # (Optional) Alternate project cmake module path.
-#endif()
+
+add_test( unittests unit )
 
