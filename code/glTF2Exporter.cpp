@@ -1,4 +1,4 @@
-﻿/*
+/*
 Open Asset Import Library (assimp)
 ----------------------------------------------------------------------
 
@@ -116,7 +116,9 @@ glTF2Exporter::glTF2Exporter(const char* filename, IOSystem* pIOSystem, const ai
 
     ExportMetadata();
 
-    ExportMaterials();
+    if (pScene->mNumMaterials > 0) {
+        ExportMaterials();
+    }
 
     if (mScene->mRootNode) {
         ExportNodeHierarchy(mScene->mRootNode);
