@@ -290,6 +290,11 @@ inline Buffer::~Buffer()
 
 inline const char* Buffer::TranslateId(Asset& r, const char* id)
 {
+    // Compatibility with old spec
+    if (r.extensionsUsed.KHR_binary_glTF && strcmp(id, "KHR_binary_glTF") == 0) {
+        return "binary_glTF";
+    }
+
     return id;
 }
 
@@ -625,6 +630,28 @@ inline Image::Image()
 
 inline void Image::Read(Value& obj, Asset& r)
 {
+    // Check for extensions first (to detect binary embedded data)
+    if (Value* extensions = FindObject(obj, "extensions")) {
+        if (r.extensionsUsed.KHR_binary_glTF) {
+            if (Value* ext = FindObject(*extensions, "KHR_binary_glTF")) {
+
+                width  = MemberOrDefault(*ext, "width", 0);
+                height = MemberOrDefault(*ext, "height", 0);
+
+                ReadMember(*ext, "mimeType", mimeType);
+
+                if (Value* bufferViewVal = FindUInt(*ext, "bufferView")) {
+                    Ref<BufferView> bv = r.bufferViews.Retrieve(bufferViewVal->GetUint());
+                    if (bv) {
+                        mDataLength = bv->byteLength;
+                        mData = new uint8_t[mDataLength];
+                        memcpy(mData, bv->buffer->GetPointer() + bv->byteOffset, mDataLength);
+                    }
+                }
+            }
+        }
+    }
+
     if (!mDataLength) {
         if (Value* uri = FindString(obj, "uri")) {
             const char* uristr = uri->GetString();
@@ -989,7 +1016,40 @@ inline void AssetMetadata::Read(Document& doc)
 // Asset methods implementation
 //
 
-inline void Asset::Load(const std::string& pFile)
+inline void Asset::ReadBinaryHeader(IOStream& stream)
+{
+    GLB_Header header;
+    if (stream.Read(&header, sizeof(header), 1) != 1) {
+        throw DeadlyImportError("GLTF: Unable to read the file header");
+    }
+
+    if (strncmp((char*)header.magic, AI_GLB_MAGIC_NUMBER, sizeof(header.magic)) != 0) {
+        throw DeadlyImportError("GLTF: Invalid binary glTF file");
+    }
+
+    AI_SWAP4(header.version);
+    asset.version = header.version;
+    if (header.version != 1) {
+        throw DeadlyImportError("GLTF: Unsupported binary glTF version");
+    }
+
+    AI_SWAP4(header.sceneFormat);
+    if (header.sceneFormat != SceneFormat_JSON) {
+        throw DeadlyImportError("GLTF: Unsupported binary glTF scene format");
+    }
+
+    AI_SWAP4(header.length);
+    AI_SWAP4(header.sceneLength);
+
+    mSceneLength = static_cast<size_t>(header.sceneLength);
+
+    mBodyOffset = sizeof(header)+mSceneLength;
+    mBodyOffset = (mBodyOffset + 3) & ~3; // Round up to next multiple of 4
+
+    mBodyLength = header.length - mBodyOffset;
+}
+
+inline void Asset::Load(const std::string& pFile, bool isBinary)
 {
     mCurrentAssetDir.clear();
     int pos = std::max(int(pFile.rfind('/')), int(pFile.rfind('\\')));
@@ -1000,8 +1060,16 @@ inline void Asset::Load(const std::string& pFile)
         throw DeadlyImportError("GLTF: Could not open file for reading");
     }
 
-    mSceneLength = stream->FileSize();
-    mBodyLength = 0;
+    // is binary? then read the header
+    if (isBinary) {
+        SetAsBinary(); // also creates the body buffer
+        ReadBinaryHeader(*stream);
+    }
+    else {
+        mSceneLength = stream->FileSize();
+        mBodyLength = 0;
+    }
+
 
     // read the scene data
 
@@ -1062,6 +1130,15 @@ inline void Asset::Load(const std::string& pFile)
     }
 }
 
+inline void Asset::SetAsBinary()
+{
+    if (!extensionsUsed.KHR_binary_glTF) {
+        extensionsUsed.KHR_binary_glTF = true;
+        mBodyBuffer = buffers.Create("binary_glTF");
+        mBodyBuffer->MarkAsSpecial();
+    }
+}
+
 inline void Asset::ReadExtensionsUsed(Document& doc)
 {
     Value* extsUsed = FindArray(doc, "extensionsUsed");
@@ -1078,6 +1155,7 @@ inline void Asset::ReadExtensionsUsed(Document& doc)
     #define CHECK_EXT(EXT) \
         if (exts.find(#EXT) != exts.end()) extensionsUsed.EXT = true;
 
+    CHECK_EXT(KHR_binary_glTF);
     CHECK_EXT(KHR_materials_pbrSpecularGlossiness);
 
     #undef CHECK_EXT

@@ -43,6 +43,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * Declares a class to write gltf/glb files
  *
  * glTF Extensions Support:
+ *   KHR_binary_glTF: full
  *   KHR_materials_pbrSpecularGlossiness: full
  */
 #ifndef GLTF2ASSETWRITER_H_INC
@@ -81,6 +82,7 @@ public:
     AssetWriter(Asset& asset);
 
     void WriteFile(const char* path);
+    void WriteGLBFile(const char* path);
 };
 
 }
