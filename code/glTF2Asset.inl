@@ -290,11 +290,6 @@ inline Buffer::~Buffer()
 
 inline const char* Buffer::TranslateId(Asset& r, const char* id)
 {
-    // Compatibility with old spec
-    if (r.extensionsUsed.KHR_binary_glTF && strcmp(id, "KHR_binary_glTF") == 0) {
-        return "binary_glTF";
-    }
-
     return id;
 }
 
@@ -630,25 +625,18 @@ inline Image::Image()
 
 inline void Image::Read(Value& obj, Asset& r)
 {
-    // Check for extensions first (to detect binary embedded data)
-    if (Value* extensions = FindObject(obj, "extensions")) {
-        if (r.extensionsUsed.KHR_binary_glTF) {
-            if (Value* ext = FindObject(*extensions, "KHR_binary_glTF")) {
+    //mimeType is not specific to bufferViews (but must be defined in that case)
+    ReadMember(obj, "mimeType", mimeType);
 
-                width  = MemberOrDefault(*ext, "width", 0);
-                height = MemberOrDefault(*ext, "height", 0);
+    if (Value* bufferViewVal = FindUInt(obj, "bufferView")) {
+        Ref<BufferView> bv = r.bufferViews.Retrieve(bufferViewVal->GetUint());
 
-                ReadMember(*ext, "mimeType", mimeType);
+        //should there be a check for mimeType being set here?
 
-                if (Value* bufferViewVal = FindUInt(*ext, "bufferView")) {
-                    Ref<BufferView> bv = r.bufferViews.Retrieve(bufferViewVal->GetUint());
-                    if (bv) {
-                        mDataLength = bv->byteLength;
-                        mData = new uint8_t[mDataLength];
-                        memcpy(mData, bv->buffer->GetPointer() + bv->byteOffset, mDataLength);
-                    }
-                }
-            }
+        if (bv) {
+            mDataLength = bv->byteLength;
+            mData = new uint8_t[mDataLength];
+            memcpy(mData, bv->buffer->GetPointer() + bv->byteOffset, mDataLength);
         }
     }
 
@@ -1033,11 +1021,6 @@ inline void Asset::ReadBinaryHeader(IOStream& stream)
         throw DeadlyImportError("GLTF: Unsupported binary glTF version");
     }
 
-    AI_SWAP4(header.sceneFormat);
-    if (header.sceneFormat != SceneFormat_JSON) {
-        throw DeadlyImportError("GLTF: Unsupported binary glTF scene format");
-    }
-
     AI_SWAP4(header.length);
     AI_SWAP4(header.sceneLength);
 
@@ -1132,8 +1115,8 @@ inline void Asset::Load(const std::string& pFile, bool isBinary)
 
 inline void Asset::SetAsBinary()
 {
-    if (!extensionsUsed.KHR_binary_glTF) {
-        extensionsUsed.KHR_binary_glTF = true;
+    if (!isBinary) {
+        isBinary = true;
         mBodyBuffer = buffers.Create("binary_glTF");
         mBodyBuffer->MarkAsSpecial();
     }
@@ -1155,7 +1138,6 @@ inline void Asset::ReadExtensionsUsed(Document& doc)
     #define CHECK_EXT(EXT) \
         if (exts.find(#EXT) != exts.end()) extensionsUsed.EXT = true;
 
-    CHECK_EXT(KHR_binary_glTF);
     CHECK_EXT(KHR_materials_pbrSpecularGlossiness);
 
     #undef CHECK_EXT

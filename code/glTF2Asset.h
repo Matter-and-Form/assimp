@@ -193,27 +193,18 @@ namespace glTF2
         #include "./../include/assimp/Compiler/pushpack1.h"
     #endif
 
-    //! For the KHR_binary_glTF extension (binary .glb file)
-    //! 20-byte header (+ the JSON + a "body" data section)
+    //! For binary glTFs (binary .glb file)
+    //! 12-byte header (+ the JSON + a "body" data section)
     struct GLB_Header
     {
         uint8_t magic[4];     //!< Magic number: "glTF"
         uint32_t version;     //!< Version number
         uint32_t length;      //!< Total length of the Binary glTF, including header, scene, and body, in bytes
-        uint32_t sceneLength; //!< Length, in bytes, of the glTF scene
-        uint32_t sceneFormat; //!< Specifies the format of the glTF scene (see the SceneFormat enum)
     } PACK_STRUCT;
 
     #ifdef ASSIMP_API
         #include "./../include/assimp/Compiler/poppack1.h"
     #endif
-
-
-    //! Values for the GLB_Header::sceneFormat field
-    enum SceneFormat
-    {
-        SceneFormat_JSON = 0
-    };
 
     //! Values for the mesh primitive modes
     enum PrimitiveMode
@@ -1049,13 +1040,12 @@ namespace glTF2
         //! Keeps info about the enabled extensions
         struct Extensions
         {
-            bool KHR_binary_glTF;
             bool KHR_materials_pbrSpecularGlossiness;
 
         } extensionsUsed;
 
+        bool isBinary = false;
         AssetMetadata asset;
-
 
         // Dictionaries for each type of object
 

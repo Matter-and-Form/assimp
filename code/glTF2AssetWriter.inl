@@ -634,12 +634,6 @@ namespace glTF2 {
         header.length = uint32_t(sizeof(header) + sceneLength + bodyLength);
         AI_SWAP4(header.length);
 
-        header.sceneLength = uint32_t(sceneLength);
-        AI_SWAP4(header.sceneLength);
-
-        header.sceneFormat = SceneFormat_JSON;
-        AI_SWAP4(header.sceneFormat);
-
         outfile->Seek(0, aiOrigin_SET);
 
         if (outfile->Write(&header, 1, sizeof(header)) != sizeof(header)) {

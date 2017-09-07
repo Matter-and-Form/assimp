@@ -103,7 +103,7 @@ bool glTF2Importer::CanRead(const std::string& pFile, IOSystem* pIOHandler, bool
 {
     const std::string &extension = GetExtension(pFile);
 
-    if (extension != "gltf") // We currently can't read glTF2 binary files (.glb)
+    if (extension != "gltf" || extension != "glb")
         return false;
 
     if (checkSig && pIOHandler) {
