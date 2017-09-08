@@ -1017,7 +1017,7 @@ inline void Asset::ReadBinaryHeader(IOStream& stream)
 
     AI_SWAP4(header.version);
     asset.version = header.version;
-    if (header.version != 1) {
+    if (header.version != 2) {
         throw DeadlyImportError("GLTF: Unsupported binary glTF version");
     }
 
