@@ -1022,14 +1022,11 @@ inline void Asset::ReadBinaryHeader(IOStream& stream)
     }
 
     AI_SWAP4(header.length);
-    AI_SWAP4(header.sceneLength);
 
-    mSceneLength = static_cast<size_t>(header.sceneLength);
+    //mBodyOffset = sizeof(header);+mSceneLength;
+    //mBodyOffset = (mBodyOffset + 3) & ~3; // Round up to next multiple of 4
 
-    mBodyOffset = sizeof(header)+mSceneLength;
-    mBodyOffset = (mBodyOffset + 3) & ~3; // Round up to next multiple of 4
-
-    mBodyLength = header.length - mBodyOffset;
+    //mBodyLength = header.length - mBodyOffset;
 }
 
 inline void Asset::Load(const std::string& pFile, bool isBinary)
