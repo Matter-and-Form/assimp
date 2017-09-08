@@ -179,18 +179,14 @@ namespace glTF2 {
     inline void Write(Value& obj, Image& img, AssetWriter& w)
     {
         std::string uri;
-        if (w.mAsset.extensionsUsed.KHR_binary_glTF && img.bufferView) {
-            Value exts, ext;
-            exts.SetObject();
-            ext.SetObject();
 
-            ext.AddMember("bufferView", img.bufferView->index, w.mAl);
+        if (img.bufferView) {
+
+            obj.AddMember("bufferView", img.bufferView->index, w.mAl);
 
             if (!img.mimeType.empty())
-                ext.AddMember("mimeType", StringRef(img.mimeType), w.mAl);
+                obj.AddMember("mimeType", StringRef(img.mimeType), w.mAl);
 
-            exts.AddMember("KHR_binary_glTF", ext, w.mAl);
-            obj.AddMember("extensions", exts, w.mAl);
             return;
         }
         else if (img.HasData()) {
