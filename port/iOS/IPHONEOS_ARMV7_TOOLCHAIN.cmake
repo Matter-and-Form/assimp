@@ -2,9 +2,9 @@ SET (CMAKE_CROSSCOMPILING   TRUE)
 SET (CMAKE_SYSTEM_NAME      "Darwin")
 SET (CMAKE_SYSTEM_PROCESSOR "armv7")
 
-SET (SDKVER     "9.3")
+SET (SDKVER     "11.0")
 SET (DEVROOT    "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain")
-SET (SDKROOT    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS${SDKVER}.sdk")
+SET (SDKROOT    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk")
 SET (CMAKE_C_COMPILER         "${DEVROOT}/usr/bin/clang")
 SET (CMAKE_CXX_COMPILER        "${DEVROOT}/usr/bin/clang++")
 

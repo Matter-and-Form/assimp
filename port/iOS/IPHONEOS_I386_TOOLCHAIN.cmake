@@ -2,10 +2,8 @@ SET (CMAKE_CROSSCOMPILING   TRUE)
 SET (CMAKE_SYSTEM_NAME      "Darwin")
 SET (CMAKE_SYSTEM_PROCESSOR "i386")
 
-SET (SDKVER     "7.1")
-
 SET (DEVROOT    "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain")
-SET (SDKROOT    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator${SDKVER}.sdk")
+SET (SDKROOT    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk")
 SET (CMAKE_C_COMPILER         "${DEVROOT}/usr/bin/clang")
 SET (CMAKE_CXX_COMPILER        "${DEVROOT}/usr/bin/clang++")
 

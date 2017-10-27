@@ -6,7 +6,6 @@
 
 BUILD_DIR="./lib/iOS"
 
-IOS_SDK_VERSION=10.3
 IOS_SDK_TARGET=9.3
 #(iPhoneOS iPhoneSimulator) -- determined from arch
 IOS_SDK_DEVICE=
@@ -44,7 +43,7 @@ build_arch()
     unset DEVROOT SDKROOT CFLAGS LDFLAGS CPPFLAGS CXXFLAGS
 
     export DEVROOT=$XCODE_ROOT_DIR/Developer/Platforms/$IOS_SDK_DEVICE.platform/Developer
-    export SDKROOT=$DEVROOT/SDKs/$IOS_SDK_DEVICE$IOS_SDK_VERSION.sdk
+    export SDKROOT=$DEVROOT/SDKs/$IOS_SDK_DEVICE.sdk
     export CFLAGS="-arch $1 -pipe -no-cpp-precomp -stdlib=$CPP_STD_LIB -isysroot $SDKROOT -$CPP_DEV_TARGET=$IOS_SDK_TARGET -I$SDKROOT/usr/include/"
     export LDFLAGS="-L$SDKROOT/usr/lib/"
     export CPPFLAGS=$CFLAGS
