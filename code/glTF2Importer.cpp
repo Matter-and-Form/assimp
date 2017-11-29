@@ -516,7 +516,7 @@ aiNode* ImportNode(aiScene* pScene, glTF2::Asset& r, std::vector<unsigned int>& 
 {
     Node& node = *ptr;
 
-    aiNode* ainode = new aiNode(node.name);
+    aiNode* ainode = new aiNode(node.id);
 
     if (!node.children.empty()) {
         ainode->mNumChildren = unsigned(node.children.size());
