@@ -308,11 +308,13 @@ static aiMaterial* ImportMaterial(std::vector<int>& embeddedTexIdxs, Asset& r, M
 void glTF2Importer::ImportMaterials(glTF2::Asset& r)
 {
     const unsigned int numImportedMaterials = unsigned(r.materials.Size());
-    Material defaultMaterial;
 
-    mScene->mNumMaterials = numImportedMaterials + 1;
+    if (numImportedMaterials == 0) {
+        return;
+    }
+
+    mScene->mNumMaterials = numImportedMaterials;
     mScene->mMaterials = new aiMaterial*[mScene->mNumMaterials];
-    mScene->mMaterials[numImportedMaterials] = ImportMaterial(embeddedTexIdxs, r, defaultMaterial);
 
     for (unsigned int i = 0; i < numImportedMaterials; ++i) {
        mScene->mMaterials[i] = ImportMaterial(embeddedTexIdxs, r, r.materials[i]);

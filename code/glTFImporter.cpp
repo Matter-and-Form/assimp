@@ -182,6 +182,11 @@ inline void SetMaterialColorProperty(std::vector<int>& embeddedTexIdxs, Asset& /
 void glTFImporter::ImportMaterials(glTF::Asset& r)
 {
     mScene->mNumMaterials = unsigned(r.materials.Size());
+
+    if (mScene->mNumMaterials == 0) {
+        return;
+    }
+
     mScene->mMaterials = new aiMaterial*[mScene->mNumMaterials];
 
     for (unsigned int i = 0; i < mScene->mNumMaterials; ++i) {

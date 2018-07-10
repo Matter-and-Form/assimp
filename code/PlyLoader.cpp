@@ -183,7 +183,7 @@ void PLYImporter::InternReadFile(const std::string& pFile, aiScene* pScene, IOSy
     SkipSpacesAndLineEnd(szMe, (const char**)&szMe);
 
     // determine the format of the file data and construct the aiMesh
-    PLY::DOM sPlyDom;   
+    PLY::DOM sPlyDom;
     this->pcDOM = &sPlyDom;
 
     if (TokenMatch(szMe, "format", 6)) {
@@ -253,9 +253,13 @@ void PLYImporter::InternReadFile(const std::string& pFile, aiScene* pScene, IOSy
 
     // now generate the output scene object. Fill the material list
     pScene->mNumMaterials = (unsigned int)avMaterials.size();
-    pScene->mMaterials = new aiMaterial*[pScene->mNumMaterials];
-    for (unsigned int i = 0; i < pScene->mNumMaterials; ++i) {
-        pScene->mMaterials[i] = avMaterials[i];
+
+    // now generate the output scene object. Fill the material list
+    if (pScene->mNumMaterials > 0) {
+        pScene->mMaterials = new aiMaterial*[pScene->mNumMaterials];
+        for (unsigned int i = 0; i < pScene->mNumMaterials; ++i) {
+            pScene->mMaterials[i] = avMaterials[i];
+        }
     }
 
     // fill the mesh list
